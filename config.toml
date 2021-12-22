@@ -658,11 +658,11 @@ enableEmoji = true
         dataRepoId = "R_kgDOGj1teQ"
         dataCategory = "Announcements"
         dataCategoryId = "DIC_kwDOGj1tec4CAYc_"
-        dataMapping = "pathname"
+        dataMapping = "title"
         dataReactionsEnabled = "0"
         dataEmitMetadata = "0"
         lightTheme = "light"
-        darkTheme = "dark"
+        darkTheme = "dark_dimmed"
 
     # Third-party library config
     [params.page.library]
