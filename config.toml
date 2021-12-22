@@ -1,4 +1,4 @@
-baseURL = "https://ktuyends.netlify.app"
+baseURL = "https://ktuyen.netlify.app"
 
 # [en, vi, fr, pl, ...] determines default content language
 defaultContentLanguage = "vi"
@@ -652,12 +652,12 @@ enableEmoji = true
 
       # giscus comment config (https://giscus.app/)
       [params.page.comment.giscus]
-        enable = false
+        enable = true
         # owner/repo
-        dataRepo = ""
-        dataRepoId = ""
-        dataCategory = ""
-        dataCategoryId = ""
+        dataRepo = "ktuyends/myblog"
+        dataRepoId = "R_kgDOGj1teQ"
+        dataCategory = "Announcements"
+        dataCategoryId = "DIC_kwDOGj1tec4CAYc_"
         dataMapping = "pathname"
         dataReactionsEnabled = "1"
         dataEmitMetadata = "0"
