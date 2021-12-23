@@ -2,6 +2,8 @@
 title: "My Diary"
 date: 2021-12-08
 draft: false
+comment:
+  enable: false
 ---
 
 {{< showcase title="Hạnh phúc giản đơn" summary="Bạn tôi hay bảo, quen biết nhau là duyên. Nhưng để gắn kết cuộc đời với nhau chúng ta còn cần một chữ phận. Tôi thì chưa đi qua nhiều năm tháng thăng trầm như bạn tôi,..." image="/02-hanh-phuc-gian-don/featured.jpg" link="/02-hanh-phuc-gian-don" >}}
