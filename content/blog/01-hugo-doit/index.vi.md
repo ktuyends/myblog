@@ -1032,9 +1032,9 @@ Math:
 
 $$ c = \pm\sqrt{a^2 + b^2} $$
 
-\\[ f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i \xi x} d \xi \\]
+$$ f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i \xi x} d \xi $$
 
-$ c = \pm\sqrt{a^2 + b^2} $ and \\( f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i \xi x} d \xi \\)
+\$ c = \pm\sqrt{a^2 + b^2} \$ and $f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i \xi x} d \xi$
 
 Fraction: 
 
@@ -1048,7 +1048,7 @@ Escape character
 {?X} -> X
 ```
 
-{{< math >}}$\|\boldsymbol{x}\|_{0}=\sqrt[0]{\sum_{i} x_{i}^{0}}${{< /math >}}
+\{{< math >}}$\|\boldsymbol{x}\|_{0}=\sqrt[0]{\sum_{i} x_{i}^{0}}${{< /math >}}
 
 Or
 
@@ -1203,6 +1203,8 @@ Showcase
 {{< showcase title="Theme Documentation - Content" summary="Find out how to create and organize your content quickly and intuitively in DoIt theme." image="/theme-documentation-content/featured-image.webp" link="/theme-documentation-content" column="3" >}}
 
 Reference
+
+Bài viết này cũng như vậy, tôi tóm tắt lại một số nội dung trong quyển sách *bookdown: Authoring Books and Technical Documents with R Markdown* của [@bookdown2016].
 
 ## 6. Emoji
 
@@ -2434,12 +2436,4 @@ Theme DoIt hỗ trợ chúng ta chèn một số Emoji vào trong bài viết. C
 | :yemen: | `yemen` | :mayotte: | `mayotte` |
 | :south_africa: | `south_africa` | :zambia: | `zambia` |
 | :zimbabwe: | `zimbabwe` | | |
-
-
-
-
-
-
-
-
 

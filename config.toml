@@ -835,7 +835,7 @@ enableEmoji = true
   series = ":slug"
   ds-notes = ":slug"
   my-diary = ":slug"
-  diary = ":slug"
+  diary = ":filename"
   projects = ":slug"
 
 # Privacy config (https://gohugo.io/about/hugo-and-gdpr/)
