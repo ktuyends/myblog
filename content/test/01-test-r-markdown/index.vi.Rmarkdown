@@ -1,0 +1,80 @@
+---
+title: "Test R Markdown"
+subtitle: ""
+slug: test-rmarkdown-in-blog
+summary: "Đơn giản là nghịch thôi mà!"
+date: 2021-05-10
+lastmod: 2021-05-10
+draft: false
+authors: ["Tuyen Kieu"]
+images: ["featured.png"]
+toc:
+  enable: true
+license: ''  
+hiddenFromHomePage: false
+lightgallery: true
+---
+
+## 1. Sometimes I Write Crap
+
+Code Inline: \$a^2 + b^2 = c^2$
+
+\$$f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i \xi x} d \xi$$
+
+## 2. R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+fit <- lm(dist ~ speed, data = cars)
+fit
+```
+
+## 3. Including Plots
+
+You can also embed plots. See Figure \@ref(fig:pie) for example:
+
+```{r pie, fig.cap='A fancy pie chart.', tidy=FALSE, fig.height = 4, fig.align='center'}
+par(mar = c(0, 1, 0, 1))
+pie(
+  c(280, 60, 20),
+  c('Sky', 'Sunny side of pyramid', 'Shady side of pyramid'),
+  col = c('#0292D8', '#F7EA39', '#C4B632'),
+  init.angle = -50, border = NA
+)
+```
+
+## 4. SQL in R Markdown
+
+```{r}
+library(DBI)
+con <- dbConnect(odbc::odbc(),
+                 Driver = "ODBC Driver 17 for SQL Server",
+                 Server = "KTUYEN-PC\\DSSQL2019",
+                 Database = "AdventureWorks2019",
+                 Trusted_Connection = "Yes")
+```
+
+```{sql connection = con}
+SELECT TOP 10 Name, CreditRating
+FROM Purchasing.Vendor
+WHERE CreditRating < 3
+```
+
+## 5. Python
+
+```{python, fig.align='center'}
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```

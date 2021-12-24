@@ -1,0 +1,10 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tuyen&#39;s Blog</title>
+        <link>https://ktuyen.netlify.app/en/</link>
+        <description>Sometimes I write something just so that I can go back and read it</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>ktuyen.ds@gmail.com (Tuyen Kieu)</managingEditor>
+            <webMaster>ktuyen.ds@gmail.com (Tuyen Kieu)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+            <atom:link href="https://ktuyen.netlify.app/en/index.xml" rel="self" type="application/rss+xml" />
+        </channel>
+</rss>

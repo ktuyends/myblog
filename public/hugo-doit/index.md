@@ -1,25 +1,5 @@
----
-title: "Khám Phá Theme Hugo DoIt"
-subtitle: ""
-slug: hugo-doit
-date: 2021-12-08
-lastmod: 2021-12-08
-draft: false
-authors: ["Tuyen Kieu"]
-description: "Discover what the Hugo - DoIt theme is all about and the core-concepts behind it."
-images: []
-featuredImage: "featured-image.webp"
-tags: ["Hugo"]
-categories: []
-series: []
-series_weight: 1
-toc:
-  enable: true
-license: ''  
-hiddenFromHomePage: false
-lightgallery: true
-weight: 1
----
+# Khám Phá Theme Hugo DoIt
+
 
 <!--more-->
 
@@ -2436,4 +2416,5 @@ Theme DoIt hỗ trợ chúng ta chèn một số Emoji vào trong bài viết. C
 | :yemen: | `yemen` | :mayotte: | `mayotte` |
 | :south_africa: | `south_africa` | :zambia: | `zambia` |
 | :zimbabwe: | `zimbabwe` | | |
+
 
