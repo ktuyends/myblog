@@ -216,7 +216,7 @@ Themes và shell tải về, giải nén trong thư mục `.themes` còn icon th
 
 Trong phần tiếp theo, tôi tổng hợp lại một số phần mềm cơ bản nên cài cho Ubuntu và một số phần mềm khác như MySQL, Rstudio, Anaconda để làm việc với Data.
 
-## 3. Software Installation
+## 3. Cài đặt phần mềm
 
 Trước khi cài đặt phần mềm, ta nên update lại nó bằng lệnh:
 
