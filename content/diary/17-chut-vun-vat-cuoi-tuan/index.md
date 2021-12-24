@@ -3,19 +3,18 @@ title: "Chút vụn vặt cuối tuần"
 slug: chut-vun-vat-cuoi-tuan
 subtitle: ""
 summary: "Chỉ còn khoảng ba tháng nữa, là kết thúc năm 2021. Không biết, một năm qua của các bạn thế nào. Đã làm được hết những điều mong muốn chưa, và còn gì tiếc nuối nữa hay không..."
-authors: []
-tags: [My Diary]
-categories: [My Diary]
 date: 2021-11-07
 lastmod: 2021-11-07
-featured: false
 draft: false
-image:
-  caption: ""
-  focal_point: ""
-  preview_only: true
-projects: []
-toc: false
+authors: ["Tuyen Kieu"]
+images: ["featured.jpg"]
+featuredImage: "featured.jpg"
+tags: ["My Diary"]
+toc:
+  enable: false
+license: ''  
+hiddenFromHomePage: false
+lightgallery: true
 ---
 
 <p style = "text-align: justify">Hà Nội, 07/11/2021</p>

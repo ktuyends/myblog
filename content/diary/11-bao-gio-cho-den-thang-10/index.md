@@ -3,19 +3,18 @@ title: "Bao giờ cho đến tháng 10"
 slug: bao-gio-cho-den-thang-10
 subtitle: ""
 summary: "Tôi nằm nghĩ vu vơ, trong căn phòng của mình, mất ngủ vì tiếng mưa rơi ngoài hiên. Nhà tôi nhỏ, lại dùng mái tôn, mỗi lần mưa về, thật là ồn mà..."
-authors: []
-tags: [My Diary]
-categories: [My Diary]
 date: 2020-04-20
 lastmod: 2020-04-20
-featured: false
 draft: false
-image:
-  caption: ""
-  focal_point: ""
-  preview_only: false
-projects: []
-toc: false
+authors: ["Tuyen Kieu"]
+images: ["featured.jpg"]
+featuredImage: "featured.jpg"
+tags: ["My Diary"]
+toc:
+  enable: false
+license: ''  
+hiddenFromHomePage: false
+lightgallery: true
 ---
 
 <p style = "text-align: justify">Hà Nội, 02/04/2020.</p>
@@ -32,4 +31,4 @@ toc: false
 
 <p style = "text-align: justify">Tôi thích một trích đoạn trong bộ phim trên, khi người chồng nói với người vợ trong phiên chợ âm dương: "Anh chỉ muốn những người sống được hạnh phúc. Chỉ có những người đang sống mới làm được điều đó. Anh đã làm xong phần việc của mình rồi". Và tôi nghĩ, anh tôi cũng muốn nói với tôi như vậy...</p>
 
-<p style = "text-align: justify">Sáu năm qua, tôi đi nhiều, gặp gỡ và tiếp xúc với nhiều người. Nhiều đến nỗi, tôi không nhớ và đếm hết được. Giống như trong bài <a href="/my-diary/tram-dung-chan/">Trạm dừng chân</a> tôi từng viết. Họ đều là những người, đi cùng tôi trong một quãng thời gian ngắn hoặc dài. Rồi đến một bến đỗ nào đó, sẽ có người dừng lại, có người bước tiếp. Cách đây vài ngày, khi tháng tư còn chưa kịp gõ cửa, tôi đã từng nghĩ, liệu mình còn gặp lại họ lần nào trong đời hay không. Chắc là không rồi...</p>
+<p style = "text-align: justify">Sáu năm qua, tôi đi nhiều, gặp gỡ và tiếp xúc với nhiều người. Nhiều đến nỗi, tôi không nhớ và đếm hết được. Giống như trong bài <a href="/09-tram-dung-chan/">Trạm dừng chân</a> tôi từng viết. Họ đều là những người, đi cùng tôi trong một quãng thời gian ngắn hoặc dài. Rồi đến một bến đỗ nào đó, sẽ có người dừng lại, có người bước tiếp. Cách đây vài ngày, khi tháng tư còn chưa kịp gõ cửa, tôi đã từng nghĩ, liệu mình còn gặp lại họ lần nào trong đời hay không. Chắc là không rồi...</p>

@@ -3,26 +3,22 @@ title: "Lang thang bãi giữa"
 slug: lang-thang-bai-giua
 subtitle: ""
 summary: "Có lần, tôi đi đóng tiền vé gửi xe, chú bảo vệ nhìn tôi rồi hỏi: Lâu rồi không đạp xe hả cháu. Tôi cười, nhìn chú rồi bảo: kí túc xá bây giờ chắc chẳng còn mấy người đi xe đạp đâu chú nhỉ?"
-authors: []
-tags: [My Diary]
-categories: [My Diary]
 date: 2018-04-21
 lastmod: 2018-04-21
-featured: false
 draft: false
-image:
-  caption: ""
-  focal_point: ""
-  preview_only: true
-projects: []
-toc: false
+authors: ["Tuyen Kieu"]
+images: ["featured.jpg"]
+tags: ["My Diary"]
+toc:
+  enable: false
+license: ''  
+hiddenFromHomePage: false
+lightgallery: true
 ---
 
 <p style = "text-align: justify">Hai năm rồi, tôi không đạp xe. Nếu có đi đâu đó thì cũng là đi xe bus hoặc nhỏ bạn phi xe qua đón. Có lần, tôi đi đóng tiền vé gửi xe, chú bảo vệ nhìn tôi rồi hỏi: Lâu rồi không đạp xe hả cháu. tôi cười, nhìn chú rồi bảo: kí túc xá bây giờ chắc chẳng còn mấy người đi xe đạp đâu chú nhỉ? Nhìn mấy hàng xe bám đầy bụi trong khu gửi xe là tôi biết mà. Nhiều người có khi còn thấy lạ khi tuổi này rồi còn đi xe đạp. Như thằng bạn suk zak của tôi, không biết nó nghe ai kể lại chuyện ngày xưa tôi đạp xe đi nhậu, rồi nó nhìn tôi như người ngoài hành tinh vậy. Mấy lần đi nhậu về tôi kể với nó, song, nó nhắn lại: Hôm nay mày lại đạp xe đi nhậu hả. Nó mà ở gần là tôi đấm cho nó sml rồi. Suk zak!</p>
 
 <p align="center"><img src="lang-thang.jpg" style="max-width:100%"></p>
-
----
 
 <p style = "text-align: justify">Nhớ lại ngày trước, mỗi khi có dịp tôi đều lên google, tìm mấy nơi quanh hà nội thích hợp cho việc đạp xe lòng vòng. Bãi giữa sông hồng ngày đó chắc có lẽ là nơi tôi hay xuống nhất. Cũng chẳng biết tại sao nữa. Lần đầu xuống đây tôi còn không biết đường trong này đi như thế nào, đến gps còn không thể tìm nổi đường để đi. Rồi tôi cứ đi mãi đi mãi, đi qua vườn cải của nhà nào đó, tự nhiên một con chó từ đâu chui ra, đuổi tôi chạy bạt mạng, suýt nữa thì mất luôn đôi dép, chó gì mà đuổi xa dã man vậy trời. Đúng là số chó mà.</p>
 

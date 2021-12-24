@@ -3,19 +3,18 @@ title: "Vẻ đẹp bình dị giữa đời thường"
 slug: ve-dep-binh-di-giua-doi-thuong
 subtitle: ""
 summary: "Giữa những xô bồ của cuộc sống thường ngày, có bao giờ bạn nhận ra rằng, đôi khi những điều nhỏ bé, giản dị quanh ta lại chính là những thứ đáng yêu nhất mà bấy lâu nay ta vẫn đang..."
-authors: []
-tags: [My Diary]
-categories: [My Diary]
 date: 2021-12-08
 lastmod: 2021-12-08
-featured: false
 draft: false
-image:
-  caption: ""
-  focal_point: ""
-  preview_only: false
-projects: []
-toc: false
+authors: ["Tuyen Kieu"]
+images: ["featured.jpg"]
+featuredImage: "featured.jpg"
+tags: ["My Diary"]
+toc:
+  enable: false
+license: ''  
+hiddenFromHomePage: false
+lightgallery: true
 ---
 
 <p style = "text-align: justify">Có một ngày giữa tháng năm, khi đang ngồi nhậu với anh Ngọc trong khu ký túc xá ồn ào và nhộn nhịp. Anh quay sang hỏi tôi: <i>Tuyến, em thích một người như thế nào?</i></p>
@@ -32,7 +31,7 @@ toc: false
 
 <p style = "text-align: justify">Thanh xuân tôi lang bạt nhiều, mỗi thế giới là một câu chuyện riêng. Thế nhưng, tôi ít khi đem chuyện của thế giới này kể ở thế giới khác. Lúc Trang hỏi tôi, tôi đã từng nghĩ đến một người. Vào một ngày đẹp trời nào đó, khi nghe tôi kể mình sắp đi công tác, em nói với tôi: <i>"Ngày mai bão về đấy, anh cẩn thận nha, về sớm"</i>.</p>
 
-<p style = "text-align: justify">Trời ơi, nghe mà ấm lòng làm sao, mặc dù nó chỉ là một câu nói rất bình thường mà thôi. Không hiểu tại sao tôi vẫn rung động như vậy. Có lẽ giống như bài <a href="/my-diary/happy-simple/">simple happiness</a>, tôi viết nhiều năm trước...Hạnh phúc, hóa ra chỉ cần đơn giản vậy thôi.</p> 
+<p style = "text-align: justify">Trời ơi, nghe mà ấm lòng làm sao, mặc dù nó chỉ là một câu nói rất bình thường mà thôi. Không hiểu tại sao tôi vẫn rung động như vậy. Có lẽ giống như bài <a href="/02-hanh-phuc-gian-don/">simple happiness</a>, tôi viết nhiều năm trước...Hạnh phúc, hóa ra chỉ cần đơn giản vậy thôi.</p> 
 
 <p style = "text-align: justify">Tự dưng, tôi nghĩ đến một bài đăng trên blog của <a href="https://yusakumi-kudo-haha.tumblr.com/">Yusakumi Kudo</a>: <i>Có một vài người, bởi vì được gặp gỡ họ mà tâm trạng của bạn tốt như bầu trời ngày nắng đẹp, quang đãng trong xanh</i>.</p>
 

@@ -3,19 +3,18 @@ title: "Hôm nay, tôi làm lại từ đầu"
 slug: hom-nay-toi-lam-lai-tu-dau
 subtitle: ""
 summary: "Tôi nhớ mình từng viết ở đâu đó một câu thế này: \"Có lẽ, đến một thời điểm nào đó, nhiều thứ không còn phù hợp nữa\". Bởi vì, tôi biết thời gian của mình không còn nhiều nữa rồi..."
-authors: []
-tags: [My Diary]
-categories: [My Diary]
 date: 2020-12-01
 lastmod: 2020-12-01
-featured: false
 draft: false
-image:
-  caption: ""
-  focal_point: ""
-  preview_only: true
-projects: []
-toc: false
+authors: ["Tuyen Kieu"]
+images: ["featured.jpg"]
+featuredImage: "featured.jpg"
+tags: ["My Diary"]
+toc:
+  enable: false
+license: ''  
+hiddenFromHomePage: false
+lightgallery: true
 ---
 
 <p style = "text-align: justify">Tháng mười hai, bắt đầu bằng một ngày thứ ba lạnh se sắt, tờ lịch đã vơi đi gần hết, lại thêm một năm nữa sắp trôi qua. Tự dưng, thấy mình già thêm đôi chút.</p>

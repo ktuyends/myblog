@@ -7,8 +7,7 @@ date: 2017-01-27
 lastmod: 2017-01-27
 draft: false
 authors: ["Tuyen Kieu"]
-images: [""]
-featuredImage: ""
+images: ["featured.jpg"]
 tags: ["My Diary"]
 toc:
   enable: false

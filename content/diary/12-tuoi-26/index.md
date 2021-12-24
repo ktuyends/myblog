@@ -3,19 +3,17 @@ title: "Tuổi 26, chợt nhận ra mình...thay đổi rồi"
 slug: viet-cho-tuoi-26
 subtitle: ""
 summary: "Ai rồi cũng có một thời tuổi trẻ, cái thời ngây ngô dùng sinh mệnh để đo độ dài của thời gian, viết nên những câu chuyện của riêng mình. Dù ưu tú hay bình đạm, chăm chỉ hay lười biếng,..."
-authors: []
-tags: [My Diary]
-categories: [My Diary]
 date: 2020-05-12
 lastmod: 2020-05-12
-featured: false
 draft: false
-image:
-  caption: ""
-  focal_point: ""
-  preview_only: true
-projects: []
-toc: false
+authors: ["Tuyen Kieu"]
+images: ["featured.jpg"]
+tags: ["My Diary"]
+toc:
+  enable: false
+license: ''  
+hiddenFromHomePage: false
+lightgallery: true
 ---
 
 <p style = "text-align: justify">Hà Nội, 12/05/2020.</p>

@@ -3,19 +3,18 @@ title: "Thành phố xa lạ"
 slug: thanh-pho-xa-la
 subtitle: ""
 summary: "Tôi hay gọi Hà Nội những ngày này là thành phố của xa lạ. Phố xá không còn đông đúc, nhộn nhịp như thường ngày. Hàng quán thì đóng cửa, người về nghe xao xác."
-authors: []
-tags: [My Diary]
-categories: [My Diary]
 date: 2018-12-31
 lastmod: 2018-12-31
-featured: false
 draft: false
-image:
-  caption: ""
-  focal_point: ""
-  preview_only: true
-projects: []
-toc: false
+authors: ["Tuyen Kieu"]
+images: ["featured.jpg"]
+featuredImage: "featured.jpg"
+tags: ["My Diary"]
+toc:
+  enable: false
+license: ''  
+hiddenFromHomePage: false
+lightgallery: true
 ---
 
 <p style = "text-align: justify">Hà Nội, 31/12/2018.</p>

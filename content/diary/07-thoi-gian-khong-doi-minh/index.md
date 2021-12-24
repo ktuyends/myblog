@@ -3,24 +3,23 @@ title: "Thời gian không đợi mình"
 slug: thoi-gian-khong-doi-minh
 subtitle: ""
 summary: "25 rồi, cũng không hy vọng sẽ làm được điều gì to lớn, chỉ mong học xong, sắp xếp ổn định mọi thứ. Để rồi, lại bắt đầu đi tìm câu trả lời, cho những câu hỏi mới..."
-authors: []
-tags: [My Diary]
-categories: [My Diary]
 date: 2018-05-12
 lastmod: 2018-05-12
-featured: false
 draft: false
-image:
-  caption: ""
-  focal_point: ""
-  preview_only: false
-projects: []
-toc: false
+authors: ["Tuyen Kieu"]
+images: ["featured.jpg"]
+featuredImage: "featured.jpg"
+tags: ["My Diary"]
+toc:
+  enable: false
+license: ''  
+hiddenFromHomePage: false
+lightgallery: true
 ---
 
 <p style = "text-align: justify">Nửa đêm, ngồi oánh nhau với thằng M, tôi bảo với nó: Có tuổi rồi, tay chân chậm chạp lóng ngóng quá. Nói vui vậy, để nó đi ngủ. Vậy mà nó hông tha cho tôi đi ngủ, bọn trẻ bây giờ sung sức ghê. Nếu như ngày còn đi học, tôi có thể thức đến 4h sáng làm bài rồi 6h đến trường, thì giờ gần như là không thể. Nhạc sĩ Vũ Thành An, có một bài hát tên là: "Rồi cũng già". Từ lúc nghe xong bài này, tôi cứ bị ám ảnh mãi bởi giai điệu của nó, rồi rảnh rảnh tôi lại ngồi lẩm bẩm: Ngày mai, rồi mình cũng già, không thể nào níu lại nữa...</p>
 
-<p style = "text-align: justify">Hồi sáng, đang ngồi tìm tư liệu, thì nhận được tin nhắn từ B:</br>
+<p style = "text-align: justify">Hồi sáng, đang ngồi tìm tư liệu, thì nhận được tin nhắn từ Dẻ:</br>
 - Peace ơiiii, Peace à</br>
 - Peace lại già thêm tuổi nữa rồi Peace ơiii</p>
 

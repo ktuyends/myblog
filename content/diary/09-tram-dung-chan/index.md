@@ -3,19 +3,18 @@ title: "Trạm dừng chân"
 slug: tram-dung-chan
 subtitle: ""
 summary: "Có bao giờ bạn tự hỏi bạn là gì? Hôm nay người ta có thể tâm sự, chia sẻ với bạn về những chuyện quá khứ của họ...Nhưng ai biết được, ngày mai có khi bạn lại thuộc về một phần quá khứ của người ấy."
-authors: []
-tags: [My Diary]
-categories: [My Diary]
 date: 2018-08-25
 lastmod: 2018-08-25
-featured: false
 draft: false
-image:
-  caption: ""
-  focal_point: ""
-  preview_only: true
-projects: []
-toc: false
+authors: ["Tuyen Kieu"]
+images: ["featured.jpg"]
+featuredImage: "featured.jpg"
+tags: ["My Diary"]
+toc:
+  enable: false
+license: ''  
+hiddenFromHomePage: false
+lightgallery: true
 ---
 
 <p style = "text-align: justify">Hôm nay, H nhắn tin cho tôi, nói chuyện với nhau được vài tin, tôi nghĩ có lẽ ngày mà chúng tôi không còn đi với nhau chắc cũng sắp tới rồi. Bỗng dưng tôi nhớ đến một người bạn, mà thực ra tôi cũng chẳng biết gì về người đó cả, ngay cả tên thật là gì tôi cũng không biết. Điều duy nhất tôi còn giữ lại là một lá thư bạn viết cho tôi trước ngày rời đi, trong đó có đoạn thế này:</p>

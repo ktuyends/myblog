@@ -3,19 +3,18 @@ title: "Hà nội, có một ngày như thế"
 slug: ha-noi-co-mot-ngay-nhu-the
 subtitle: ""
 summary: "Hà Nội, 12/5/2018, vội thu xếp đồ đạc, chạy ra bến để bắt chuyến xe cuối cùng trở về nhà. Vì, hôm sau là một ngày đặc biệt,..."
-authors: []
-tags: [My Diary]
-categories: [My Diary]
 date: 2018-05-13
 lastmod: 2018-05-13
-featured: false
 draft: false
-image:
-  caption: ""
-  focal_point: ""
-  preview_only: true
-projects: []
-toc: false
+authors: ["Tuyen Kieu"]
+images: ["featured.jpg"]
+featuredImage: "featured.jpg"
+tags: ["My Diary"]
+toc:
+  enable: false
+license: ''  
+hiddenFromHomePage: false
+lightgallery: true
 ---
 
 <p style = "text-align: justify">Hà Nội, 12/5/2018</p>

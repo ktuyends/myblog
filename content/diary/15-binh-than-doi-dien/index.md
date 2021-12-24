@@ -3,19 +3,18 @@ title: "Bình thản đối diện, nhẹ nhàng bước qua"
 slug: binh-than-doi-dien-nhe-nhang-buoc-qua
 subtitle: ""
 summary: "Chiều mưa câm lặng, ngồi ăn bữa cơm chiều với bố, rồi đi gặp vài đứa bạn thân. Cuộc sống, đơn giản vậy thôi. Sáng thức giấc, làm những việc cần làm, xong xuôi thì đi ngủ để đợi..."
-authors: []
-tags: [My Diary]
-categories: [My Diary]
 date: 2020-12-27
 lastmod: 2020-12-27
-featured: false
 draft: false
-image:
-  caption: ""
-  focal_point: ""
-  preview_only: true
-projects: []
-toc: false
+authors: ["Tuyen Kieu"]
+images: ["featured.png"]
+featuredImage: "featured.png"
+tags: ["My Diary"]
+toc:
+  enable: false
+license: ''  
+hiddenFromHomePage: false
+lightgallery: true
 ---
 
 <p style = "text-align: justify">Hà Nội, 27/12/2020.</p>

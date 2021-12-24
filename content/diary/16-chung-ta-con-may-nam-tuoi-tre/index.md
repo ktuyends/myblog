@@ -3,19 +3,18 @@ title: "Chúng ta, còn mấy năm tuổi trẻ"
 slug: chung-ta-con-may-nam-tuoi-tre
 subtitle: ""
 summary: "Hắn không biết, hắn sẽ chỉ nhìn trời xanh mây trắng, nhìn mặt trời mọc rồi lặn, cảm thán mình, cuối cùng vẫn là kẻ bình thường. Có ngày, hắn tự nói với mình, hắn không còn trẻ nữa,..."
-authors: []
-tags: [My Diary]
-categories: [My Diary]
 date: 2021-09-02
 lastmod: 2021-09-02
-featured: false
 draft: false
-image:
-  caption: ""
-  focal_point: ""
-  preview_only: true
-projects: []
-toc: false
+authors: ["Tuyen Kieu"]
+images: ["featured.jpg"]
+featuredImage: "featured.jpg"
+tags: ["My Diary"]
+toc:
+  enable: false
+license: ''  
+hiddenFromHomePage: false
+lightgallery: true
 ---
 
 <p style = "text-align: justify">Một ngày đẹp trời nắng đã lên cao, một buổi sáng mùa thu cũng sắp kết thúc, chợt hắn nghe thấy hình như đâu đó có ai đang gọi hắn. Hắn tỉnh dậy, nhảy khỏi giường, mắt nhắm mắt mở vội vã chạy ra mở cửa, thì ra là chú bảo vệ:</p>
@@ -38,8 +37,6 @@ toc: false
 <p style = "text-align: justify">Giống như NH từng nhắn cho hắn nhiều năm trước: "Không hiểu vì sao, tớ với cậu cứ xa dần, tớ cảm thấy thế. Chắc tại tớ với cậu đều thay đổi và có ít thời gian rảnh hơn trước".</p>
 
 <p style = "text-align: justify">Có lẽ lòng người rất yếu mềm, cũng rất dễ thay đổi, một thoáng gió lay cỏ động đủ bóp chết tất cả quá khứ. Nhiều lúc bạn oán trách người khác chẳng được như xưa, song thực ra chính bạn cũng đã đánh mất bản thân mình năm đó.</p>
-
-![](danbo.jpg)
 
 <p style = "text-align: justify">Ngày xưa hắn mộng tưởng rất nhiều chuyện. Sau này mình sẽ đi con đường này, hoặc con đường kia. Mình sẽ cùng một ai đó từng bước đi cùng nhau, bước tiếp con đường phía trước. Lý tưởng rất tốt đẹp, hiện thực lại quá tàn khốc, hắn rốt cuộc biết, hắn tuổi nhỏ, quá ngây thơ. Hắn cho là mình tất có một phen thành tựu, nhưng trên thực tế, hắn không có thể làm đến.</p>
 
