@@ -2,20 +2,100 @@
 // Custom style
 // ==============================
 
+//link
+
+.single .content a {
+    border-bottom: 1px dashed;
+}
+
+.single .content a, .single .content a::before, .single .content a::after {
+    color: #161209;
+}
+
+.single .content>h2>.header-mark::before, .single .content>h3>.header-mark::before, .single .content>h4>.header-mark::before, .single .content>h5>.header-mark::before, .single .content>h6>.header-mark::before {
+    content: none;
+}
+
+.single .post-meta a, .single .post-meta a::before, .single .post-meta a::after {
+    color: #161209;
+}
+
+[theme=dark] .single .content a, [theme=dark] .single .content a::before, [theme=dark] .single .content a::after {
+    color: #a9a9b3;
+}
+
+.single .content .showcase-title a {
+    border-bottom: none;
+}
+
+.single .content .showcase-image a {
+    border-bottom: none;
+}
+
+// background
+
+body {
+    background-color: #f4ecd5;
+}
+
+// header background
+
+header {
+    background-color: #efe3c1;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15);
+}
+
+.search input {
+    background-color: #efe3c1;
+}
+
+// Showcase background
+
+.single .content .showcase-box {
+    background: #e1e1e1;
+}
+
+// code background
+
+.single .content .highlight>.chroma .code-header {
+    color: #7e7e7e;
+    background: #e1e1e1;
+}
+
+.single .content .highlight > .chroma.open .code-header {
+    background: #ededed;
+}    
+
+.single .content code, .single .content pre, .single .content .highlight table, .single .content .highlight tr, .single .content .highlight td {
+    background: #f5f5f5;
+}
+
+// table background
+
+.single .content .table-wrapper > table thead {
+    background: #ededed;
+}
+
+.single .content .table-wrapper > table th, .single .content .table-wrapper > table td {
+    border: 1px solid #e8e8e8;
+}
+
+.single .content .table-wrapper>table {
+    background: #fff;
+}
+
+// font
+
 .single .content p {
     margin: 1.0rem 0;
 }
 
-html {
-    font-family: 'Noto Serif', serif;
-    font-size: 1em;
-    line-height: 1.75rem;
+// hr
+
+.single .content hr {
+    border-top: 1px solid #adadad;
 }
 
-.header-title {
-    font-family: 'Noto Serif', serif;
-}
-
-.single .content .showcase-summary {
-    line-height: 1.52rem;
+.single .content .table-wrapper>table th, .single .content .table-wrapper>table td {
+    border: 0.7px solid #c4c3c3;
 }
