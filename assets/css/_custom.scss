@@ -113,3 +113,14 @@ html {
 .single .content .showcase-summary {
     line-height: 1.40rem;
 }
+
+.single .content pre {
+    padding: 0 0.6rem 0 0.4rem;
+    margin: .25rem 0 .25rem 0;
+}
+
+.single .content img {
+    margin: auto;
+    display: block;
+    text-align: center;
+}
