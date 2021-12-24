@@ -208,11 +208,11 @@ install.packages("downlit")
 
 Sau đó, chúng ta sử dụng RStudio: `File > New Project > New Directory > Book project using bookdown`
 
-<p align="center"><img src="bookdown.png"></p>
+<p><img src="bookdown.png"></p>
 
 Khi đó, một quyển sách đơn giản được tạo ra bởi RStudio. Để xem kết quả, ta chọn `build -> build book`:
 
-<p align="center"><img src="book_preview.png"></p>
+<p><img src="book_preview.png"></p>
 
 ### 2.2. Cấu trúc của một quyển sách sử dụng `bookdown`
 
@@ -309,7 +309,7 @@ output_dir: "docs"
 
 Sau đó, push quyển sách của chúng ta lên GitHub, vào phần cài đặt của Repository chứa quyển sách thay đổi `Source` thành: `master branch /docs folder`:
 
-<p align="center"><img src="github.png"></p>
+<p><img src="github.png"></p>
 
 Khi đó quyển sách của chúng ta sẽ có địa chỉ là: `http(s)://<username>.github.io/<projectname>`
 
