@@ -395,7 +395,7 @@ enableEmoji = true
       enable = true
       rss = true
       days = 30
-      maxCount = 3
+      maxCount = 1
 
   # List (category or tag) page config
   [params.list]
