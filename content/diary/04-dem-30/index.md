@@ -3,19 +3,18 @@ title: "Đêm 30, qua thanh cửa sổ màu xanh"
 slug: dem-30-qua-thanh-cua-so-mau-xanh
 subtitle: ""
 summary: "Hà Nội, trời xanh, mây trắng, đêm trở gió. Tôi, qua thanh cửa sổ màu xanh, không biết nên vui hay buồn, không biết năm qua làm đúng hay sai. Quen thêm vài thằng bạn..."
-authors: []
-tags: [My Diary]
-categories: [My Diary]
 date: 2017-01-27
 lastmod: 2017-01-27
-featured: false
 draft: false
-image:
-  caption: ""
-  focal_point: ""
-  preview_only: false
-projects: []
-toc: false
+authors: ["Tuyen Kieu"]
+images: [""]
+featuredImage: ""
+tags: ["My Diary"]
+toc:
+  enable: false
+license: ''  
+hiddenFromHomePage: false
+lightgallery: true
 ---
 
 <p style = "text-align: justify">Hà Nội, trời xanh, mây trắng, đêm trở gió. Tôi, qua thanh cửa sổ màu xanh, nhìn hàng đèn đêm sáng mờ mờ ở phía xa xa, đứng chờ bình nước tiếp cho ai đó hết, chưa biết bao giờ mới xong. Đêm đầu tiên không táo quân.</p>

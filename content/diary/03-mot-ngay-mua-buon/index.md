@@ -3,27 +3,22 @@ title: "Một ngày mưa buồn"
 slug: mot-ngay-mua-buon
 subtitle: ""
 summary: "Những cơn mưa tháng năm của 1 năm về trước. Đã mang đi một người thân trong gia đình tôi, như một khoảng trống không gì bù đắp được mà mỗi lần nhắc đến chúng tôi chưa bao giờ..."
-authors: []
-tags: [My Diary]
-categories: [My Diary]
 date: 2015-05-16
 lastmod: 2015-05-16
-featured: true
 draft: false
-image:
-  caption: ""
-  focal_point: ""
-  placement: 2
-  preview_only: true
-projects: []
-toc: false
+authors: ["Tuyen Kieu"]
+images: ["featured.jpg"]
+tags: ["My Diary"]
+toc:
+  enable: false
+license: ''  
+hiddenFromHomePage: false
+lightgallery: true
 ---
 
 <p style = "text-align: justify">Hà nội, 16/05/2015</p>
 
 <p style = "text-align: justify">Những cơn mưa tháng năm của 1 năm về trước. Đã mang đi một người thân trong gia đình tôi, như một khoảng trống không gì bù đắp được mà mỗi lần nhắc đến chúng tôi chưa bao giờ vơi đi niềm đau.</p>
-
-{{< figure src="featured.jpg" id="" >}}
 
 <p style = "text-align: justify">Vào một ngày mùa hè, vừa bước chân vô giảng đường cố gắng học nốt cho xong môn cuối để về với gia đình. Em tôi nhắn tin báo anh T mất rồi. Tôi hoảng hốt, gọi điện về cho bố, bố tôi vừa nói vừa khóc. Rồi những cuộc gọi liên tục đến từ cậu tôi, chú tôi hỏi tôi ở đâu để qua đón. Suốt chặng đường về, đầu óc tôi trống rỗng, vừa đi, vừa khóc. Anh tôi đã đi thật rồi...</p>
 
