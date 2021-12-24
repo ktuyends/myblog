@@ -9,7 +9,7 @@ authors: ["Tuyen Kieu"]
 description: "Discover what the Hugo - DoIt theme is all about and the core-concepts behind it."
 images: []
 featuredImage: "featured-image.webp"
-tags: ["Hugo"]
+tags: []
 categories: []
 series: []
 series_weight: 1
