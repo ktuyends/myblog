@@ -329,7 +329,7 @@ enableEmoji = true
   # DoIt theme version
   version = "0.2.X"
   # site default theme ("light", "dark", "black", "auto")
-  defaultTheme = "dark"
+  defaultTheme = "light"
   # public git repo url only then enableGitInfo is true
   gitRepo = ""
   # which hash function used for SRI, when empty, no SRI is used ("sha256", "sha384", "sha512", "md5")
