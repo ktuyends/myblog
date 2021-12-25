@@ -33,7 +33,7 @@ other = "Danh mục"
 
 # === Pagination ===
 [more]
-other = "Thêm"
+other = "More"
 # === Pagination ===
 
 # === partials/header.html ===
