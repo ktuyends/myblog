@@ -18,6 +18,8 @@ enableGitInfo = true
 # whether to use emoji code
 enableEmoji = true
 
+buildFuture = true
+
 [languages]
   [languages.vi]
     weight = 1
