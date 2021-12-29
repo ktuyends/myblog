@@ -1,5 +1,5 @@
 ---
-title: "DA Tools - Tableau Prep"
+title: "DA Tools - Tableau Prep (Phần 1)"
 subtitle: ""
 slug: tableau-prep
 date: 2021-12-16
@@ -21,7 +21,11 @@ lightgallery: true
 
 <!--more-->
 
-## 1. Làm quen với Tableau Prep
+## 1. Giới thiệu Tableau Prep
+
+{{< youtube 1tpgs5hCr2o >}}
+
+### 1.1. Làm quen với Tableau Prep
 
 **Cài đặt Tableau Prep Builder**
 
@@ -63,7 +67,7 @@ Bước 3: Output Step
 > - Tableau flow file (.tfl): Chỉ lưu logic của flow và vị trí của input, output.
 > - Packaged Tableau flow file (.tflx): Lưu mọi thứ, bao gồm flow, các files input và output.
 
-## 2. Lập kế hoạch chuẩn bị dữ liệu
+### 1.2. Lập kế hoạch chuẩn bị dữ liệu
 
 **Bước 1: Hiểu về dữ liệu**
 
@@ -91,7 +95,7 @@ Với Rows:
 
 **Bước 3: Xây dựng Flow**
 
-## 3. Shaping Data
+### 1.3. Shaping Data
 
 Shaping data chúng ta có thể hiểu đơn giản là thay đổi cấu trúc bảng dữ liệu bằng phép xoay. Ví dụ có thể chuyển một cột thành nhiều cột, hoặc chuyển nhiều cột thành một cột.
 
@@ -110,3 +114,99 @@ Một số cách Shaping data chúng ta có thể làm với Tableau:
 - Aggregate
 - Join
 - Union
+
+### 1.4. Các kiểu dữ liệu trong Tableau
+
+**Numbers:**
+
+Số (numbers) trong Tableau gồm hai loại:
+
+- Số nguyên
+- Số thực
+
+Một số hàm sử dụng với dữ liệu số:
+
+- Làm tròn: *round(), ceiling(), floor()*
+- Giá trị tuyệt đối: *abs()*
+- Zero is null: *zn()*
+- Hàm *sign()*: Trả về -1 nếu âm, 1 nếu dương, còn lại trả về 0.
+
+> Tableau Prep không phân biệt các ký tự in hoa với in thường
+
+**Dates:**
+
+Một số hàm sử dụng với Date:
+
+- Hàm *dateadd()*
+- Hàm *makedate()*
+- Hàm *dateparse()*
+
+**String:**
+
+Một số thuộc tính của string (chuỗi các ký tự):
+
+- Mỗi ký tự có một vị trí (Bao gồm khoảng trắng, ký tự đặc biệt)
+- Các ký tự có thể được sắp xếp từ *A -> Z*
+- Các ký tự có thể phần biệt giữa in hoa với in thường
+- Đôi khi cần chia tách các ký tự, ví dụ như giữa họ và tên
+- Sự đồng nhất, ví dụ quá khứ sử dụng một tên khác, hiện tại sử dụng một tên khác. Ví dụ City và city có sự khác nhau về chính tả
+- Khoảng trắng, đôi khi hai giá trị nhìn có vẻ giống nhau nhưng lại không khớp, đó có thể là do khoảng trắng giữa hai giá trị khác nhau
+
+Một số hàm hay sử dụng với string:
+
+- Hàm *split()*: Tách một chuỗi ký tự dài thành các chuỗi ngắn hơn
+- Hàm *trim()*: Loại bỏ các khoảng trắng thừa
+- Hàm *upper()* và *lower()*: Chuyển đổi ký tự thành in hoa hoặc in thường
+- Hàm *left()*, *right()*, *mid()*: Trích xuất ký tự dựa vào vị trí
+- Hàm *find()*, *findnth()*: Xác định vị trí xuất hiện của ký tự
+- Hàm *len()*: Trả về độ dài của một chuỗi ký tự
+- Hàm *replace()*: Thay thế các ký tự
+
+**Một số hàm liên quan đến kiểu Boolean**
+
+Hàm IFF: Kiểm tra dựa trên điều kiện logic
+
+```
+IIF(logical test, if True return this, if False return this)
+```
+
+Hàm *contains()*: Kiểm tra xem một chuỗi ký tự có nằm trong một chuỗi không
+
+```
+contains([columns],'keyword')
+```
+
+Hàm *IsDate()*, *IsNull()*
+
+Hàm *IF/THEN*, cấu trúc 1:
+
+```
+IF <logical test> THEN <if True return this>
+ELSE <if False return this>
+end
+```
+
+Cấu trúc 2:
+
+```
+IF <logical test 1> THEN <if True return this 1>
+ELSEIF <logical test 2> THEN <if True return this 2>
+...
+ELSE <if False return this>
+end
+```
+
+
+Hàm *CASE*: Kiểm tra dựa trên giá trị
+
+```
+CASE [Columns]
+WHEN <value 1> THEN <return this 1>
+WHEN <value 2> THEN <return this 2>
+...
+END
+```
+
+## 2. Shape of Data
+
+## 3. Output
