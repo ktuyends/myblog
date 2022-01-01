@@ -46,12 +46,12 @@ Bây giờ, tôi vẫn đọc nhưng không đọc nhiều như ngày trước. 
 18. Lâm Uyên Hành
 19. Yêu Thần Ký
 20. Vạn Cổ Thần Đế
+21. Toàn Cầu Cao Võ 
+22. Ta Có Một Thân Bị Động Kỹ
 
----
 #### Đang đọc:
 
-21. Tinh Môn
-22. Dạ Mệnh Danh Thuật
-23. Ta Có Một Thân Bị Động Kỹ
-24. Toàn Cầu Cao Võ
+23. Tinh Môn
+24. Dạ Mệnh Danh Thuật
+
 

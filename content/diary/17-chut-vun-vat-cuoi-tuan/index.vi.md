@@ -2,7 +2,7 @@
 title: "Chút vụn vặt cuối tuần"
 slug: chut-vun-vat-cuoi-tuan
 subtitle: ""
-summary: "Chỉ còn khoảng ba tháng nữa, là kết thúc năm 2021. Không biết, một năm qua của các bạn thế nào. Đã làm được hết những điều mong muốn chưa, và còn gì tiếc nuối nữa hay không..."
+summary: "Hắn dừng xe, đỗ ngay bên cạnh một chiếc ghế đá dài, ven bờ hồ nào đấy, phía dưới hình như còn có mấy bác đang câu cá. Thở dài, đặt chiếc balo xuống, gọi một ly trà đá..."
 date: 2021-11-07
 lastmod: 2021-11-07
 draft: false

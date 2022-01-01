@@ -154,8 +154,8 @@ print("See how I broke\nthis line?")
 Theo mặc định, câu lệnh `print()` sẽ chèn một newline sau khi được thực thi. Để tránh điều này ta có thể sử dụng tham số `end`:
 
 ```python
-print(print("First string", end=' ')
-print("Second string"))
+print("First string", end=' ')
+print("Second string")
 ```
 
 ## 2. Cấu trúc rẽ nhánh

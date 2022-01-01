@@ -6,11 +6,11 @@ comment:
   enable: false
 ---
 
-{{< showcase title="Tản mạn ngày cuối năm" summary="Đang suy nghĩ" image="/18-tan-man-ngay-cuoi-nam/cuoi-nam.jpg" link="/18-tan-man-ngay-cuoi-nam" >}}
+{{< showcase title="Tạm biệt 2021, chào 2022!" summary="Một năm qua của các bạn thế nào, đã làm được hết những điều mình mong muốn chưa, và còn gì tiếc nuối nữa hay không..." image="/18-tan-man-ngay-dau-nam/cuoi-nam.jpg" link="/18-tan-man-ngay-dau-nam" >}}
 
 {{< showcase title="Vẻ đẹp bình dị giữa đời thường" summary="Giữa những xô bồ của cuộc sống thường ngày, có bao giờ bạn nhận ra rằng, đôi khi những điều nhỏ bé, giản dị quanh ta lại chính là những thứ đáng yêu nhất mà bấy lâu nay ta vẫn đang..." image="/14-ve-dep-binh-di/featured.jpg" link="/14-ve-dep-binh-di" >}}
 
-{{< showcase title="Chút vụn vặt cuối tuần" summary="Chỉ còn khoảng ba tháng nữa, là kết thúc năm 2021. Không biết, một năm qua của các bạn thế nào. Đã làm được hết những điều mong muốn chưa, và còn gì tiếc nuối nữa hay không..." image="/17-chut-vun-vat-cuoi-tuan/featured.jpg" link="/17-chut-vun-vat-cuoi-tuan" >}}
+{{< showcase title="Chút vụn vặt cuối tuần" summary="Hắn dừng xe, đỗ ngay bên cạnh một chiếc ghế đá dài, ven bờ hồ nào đấy, phía dưới hình như còn có mấy bác đang câu cá. Thở dài, đặt chiếc balo xuống, gọi một ly trà đá..." image="/17-chut-vun-vat-cuoi-tuan/featured.jpg" link="/17-chut-vun-vat-cuoi-tuan" >}}
 
 {{< showcase title="Chúng ta, còn mấy năm tuổi trẻ" summary="Hắn không biết, hắn sẽ chỉ nhìn trời xanh mây trắng, nhìn mặt trời mọc rồi lặn, cảm thán mình, cuối cùng vẫn là kẻ bình thường. Có ngày, hắn tự nói với mình, hắn không còn trẻ nữa,..." image="/16-chung-ta-con-may-nam-tuoi-tre/featured.jpg" link="/16-chung-ta-con-may-nam-tuoi-tre" >}}
 

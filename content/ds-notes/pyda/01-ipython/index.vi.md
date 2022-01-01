@@ -1,7 +1,7 @@
 ---
-title: "Pyda - Numpy"
+title: "Pyda - Jupyter Notebook"
 subtitle: ""
-slug: py-numpy
+slug: py-Jupyter
 date: 2022-01-20
 lastmod: 2022-01-20
 draft: false
