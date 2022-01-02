@@ -275,8 +275,6 @@ Trong Python:
 
 ## 4. Functions
 
-### 4.1. Tạo hàm
-
 {{< figure src="func.png" >}}
 
 Cú pháp:
@@ -292,43 +290,6 @@ Phân biệt argument (đối số) và parameter (tham số):
 - Parameter: Được gọi khi định nghĩa hàm, nó đại diện cho một giá trị mà hàm sẽ nhận được khi được gọi
 - Argument: Đại diện cho giá trị truyền cho tham số khi thực hiện gọi hàm
 
-### 4.2. Hàm ẩn danh lambda
-
-Cú pháp:
-
-```python
-# hàm ẩn danh
-var_name = lambda parameters: expression
-
-# Gọi hàm nếu nó được gán
-var_name(parameters)
-
-# Gọi hàm nếu k được gán
-(lambda parameters: expression)(parameters)
-```
-
-### 4.3. Map, Filter và Reduce
-
-**Hàm *map()***
-
-```python
-# iter1, iter2 là các đối số của function
-# function sẽ lặp qua từng giá trị 
-map(function, iterable1, iterable2 ,...)
-```
-
-**Hàm *filter()***
-
-Hàm này, ý nghĩa như cái tên. Nó hoạt động tương tự như hàm `map()` nhưng nó chỉ trả về các giá trị mà function trả về TRUE.
-
-**Hàm *reduce()***
-
-Hàm này, hoạt động tương tự các hàm trên, điểm khác là nó mang tính tích lũy.
-
-```python
-from functools import reduce
-reduce(function, iterable)
-```
 
 ## 5. Một số cấu trúc dữ liệu cơ bản
 
@@ -1013,4 +974,131 @@ s.replace("Fender", "Gibson")
 - *str.strip()*: Loại bỏ khoảng trắng trước và sau str
 - *str.lstrip(), str.rstrip()*
 
+
+
+## 8. Tìm kiếm và thay thế chuỗi
+
+### 8.1. Các phương thức chính
+
+```python
+# Đếm
+string.count(substring, start=0, end=len(string))
+
+# check 
+string.startswith(substring_or_tuple, start=0, end=len(string))
+string.endswith(substring_or_tuple, start=0, end=len(string))
+```
+
+```python
+# Tìm kiếm vị trí đầu tiên, trả về -1 nếu k tìm thấy
+string.find(substring, start=0, end=len(string))
+
+# Tìm kiếm vị trí cuối cùng
+string.rfind(substring, start=0, end=len(string))
+
+# index, trả về lỗi nếu k tìm thấy
+string.index(substring, start=0, end=len(string))
+string.rindex(substring, start=0, end=len(string))
+
+# Thay thế
+string.replace(old_substring, new_substring, count=-1)
+```
+
+### 8.2. Biểu thức chính quy (RegEx)
+
+**Ký tự đặc biệt**
+
+| Ký hiệu | Ý nghĩa |
+|--|--|
+| `[abc]` | Tập hợp các ký tự a, b, c |
+| `[^abc]` | Tất cả các ký tự ngoại trừ a, b, c |
+| `.` | Đại diện cho một ký tự đơn bất kỳ. |
+| `^chr` | Xem một chuỗi có bắt đầu bằng `chr` không. |
+| `chr$` | Xem một chuỗi có kết thúc bằng `chr` không. |
+| `chr*` | Mang ý nghĩa `chr` có thể xuất hiện 0 hoặc nhiều lần. |
+| `chr+` | Mang ý nghĩa `chr` có thể xuất hiện 1 hoặc nhiều lần. |
+| `chr?` | Mang ý nghĩa `chr` có thể xuất hiện 0 hoặc 1 lần. |
+| `chr{m, n}` | Mang ý nghĩa `chr` lặp lại ít nhất m lần, nhiều nhất n lần. |
+| `a\|b` | Mang ý nghĩa hoặc là a hoặc là b. |
+| `()` | Nhóm các mẫu lại với nhau.
+| `\$a` | Ký tự `\` xác định các ký tự đặc biệt |
+
+**Chuỗi đặc biệt**
+
+| Ký hiệu | Ý nghĩa |
+|--|--|
+| `\Astr` | Chuỗi ký tự bắt đầu bằng `str` |
+| `str\Z` | Chuỗi ký tự kết thúc bằng `str` |
+| `\bstr` | Bắt đầu một từ bằng `str` |
+| `str\b` | Kết thúc một từ bằng `str` |
+| `\B` | Ngược lại với `\b` |
+| `\d` | Tương đương `[0-9]` |
+| `\D` | Tương đương `[^0-9]` |
+| `\s` | Khớp với vị trí string chứa khoảng trắng |
+| `\S` | Khớp với vị trí string không chứa khoảng trắng |
+| `\w` | Tương đương `[a-zA-Z0-9_]` |
+| `\W` | Tương đương `[^a-zA-Z0-9_]`  |
+
+
+### 8.3. Module re
+
+
+```python
+# import
+import re
+
+```
+
+**Một số phương thức cơ bản**
+
+```python
+# List các strings khớp với pattern
+re.findall(pattern, string) 
+
+# List các strings tách bởi pattern
+re.split(pattern, string, maxsplit = 0) 
+```
+
+```python
+# Tìm kiếm và thay thế
+re.sub(pattern, replace, string, count = 0)
+
+# Tìm kiếm và thay thế, trả về tuple (new_string, n)
+re.subn(pattern, replace, string, count = 0)
+````
+
+
+
+**Đối tượng match**
+
+```python
+# Trả về đối tượng match đầu tiên nếu tìm thấy
+# Ngược lại trả về None
+match = re.search(pattern, str)
+```
+
+```python
+# Xem kết quả 
+match.groups(n)
+match.groups()
+
+# Xem vị trí
+match.start()
+match.end()
+match.span()
+
+# Xem reg, str
+match.re
+match.string
+```
+
+**Raw string**
+
+```python
+string = '\n and \r are escape sequences.'
+result = re.findall(r'[\n\r]', string) 
+
+print(result)
+# Output: ['\n', '\r']
+```
 
