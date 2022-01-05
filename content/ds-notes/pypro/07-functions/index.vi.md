@@ -1,9 +1,9 @@
 ---
-title: "Pypro - Làm việc với các files"
+title: "Pypro - Functions"
 subtitle: ""
-slug: file-and-exception
-date: 2021-12-26
-lastmod: 2021-12-26
+slug: python-functions
+date: 2021-12-27
+lastmod: 2021-12-27
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
@@ -11,7 +11,7 @@ images: []
 tags: ["Programming"]
 categories: []
 series: [Python Programming]
-series_weight: 6
+series_weight: 7
 toc:
   enable: true
 license: ''  
