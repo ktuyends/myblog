@@ -1,9 +1,9 @@
 ---
-title: "Pypro - Lập trình hướng đối tượng"
+title: "Pypro - Xử lý ngoại lệ"
 subtitle: ""
-slug: python-oop
-date: 2021-12-28
-lastmod: 2021-12-28
+slug: python-exception-handling
+date: 2021-12-27
+lastmod: 2021-12-27
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
@@ -11,7 +11,7 @@ images: []
 tags: ["Programming"]
 categories: []
 series: [Python Programming]
-series_weight: 8
+series_weight: 7
 toc:
   enable: true
 license: ''  

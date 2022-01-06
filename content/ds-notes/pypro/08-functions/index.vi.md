@@ -1,9 +1,9 @@
 ---
-title: "Pypro - Một số chủ đề khác"
+title: "Pypro - Functions"
 subtitle: ""
-slug: python-others
-date: 2021-12-30
-lastmod: 2021-12-30
+slug: python-functions
+date: 2021-12-28
+lastmod: 2021-12-28
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
@@ -11,7 +11,7 @@ images: []
 tags: ["Programming"]
 categories: []
 series: [Python Programming]
-series_weight: 10
+series_weight: 8
 toc:
   enable: true
 license: ''  

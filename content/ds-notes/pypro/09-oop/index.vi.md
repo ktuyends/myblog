@@ -1,17 +1,17 @@
 ---
-title: "Pyda - Numpy"
+title: "Pypro - Lập trình hướng đối tượng"
 subtitle: ""
-slug: py-numpy
-date: 2022-01-21
-lastmod: 2022-01-21
+slug: python-oop
+date: 2021-12-29
+lastmod: 2021-12-29
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
 images: []
-tags: ["Python for DA"]
+tags: ["Programming"]
 categories: []
-series: [Python for Data Analysis]
-series_weight: 2
+series: [Python Programming]
+series_weight: 9
 toc:
   enable: true
 license: ''  

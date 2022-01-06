@@ -1,9 +1,9 @@
 ---
-title: "Pypro - Xử lý ngoại lệ"
+title: "Pypro - Một số chủ đề khác"
 subtitle: ""
-slug: python-exception-handling
-date: 2021-12-26
-lastmod: 2021-12-26
+slug: python-others
+date: 2021-12-31
+lastmod: 2021-12-31
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
@@ -11,7 +11,7 @@ images: []
 tags: ["Programming"]
 categories: []
 series: [Python Programming]
-series_weight: 6
+series_weight: 11
 toc:
   enable: true
 license: ''  
