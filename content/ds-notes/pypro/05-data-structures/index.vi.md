@@ -762,13 +762,9 @@ dq.append(20) # # push: append at top
 dq.popleft() # pop: remove at top
 ```
 
-## 6. Numpy và Array
+## 6. Một số hàm làm việc với cấu trúc dữ liệu
 
-## 7. Pandas
-
-## 8. Một số hàm làm việc với cấu trúc dữ liệu
-
-### 8.1. Hàm Range
+### 6.1. Hàm Range
 
 Cú pháp: `range(start_index=0, end_index, step=1) => range`
 
@@ -799,7 +795,7 @@ for var in range(5, -1, -1):
   print(var) # [5,4,3,2,1]
 ```
 
-### 8.2. Hàm enumerate
+### 6.2. Hàm enumerate
 
 Cú pháp: `enumerate(iterable) => enumerate`
 
@@ -817,7 +813,7 @@ for i, val in enumerate(my_list):
   print(val) # 100,200,500,100
 ```
 
-### 8.3. Hàm zip
+### 6.3. Hàm zip
 
 Cú pháp: `zip(*iterable) => zip`
 
@@ -844,7 +840,7 @@ for var1, var2 in zip(a,b):
   print(var1, var2) # [('This','is','something'), (14, 3, 6)]
 ```
 
-### 8.4. Hàm sorted
+### 6.4. Hàm sorted
 
 Cú pháp: `sorted(iterable, key=None, reverse=False) => list`
 
