@@ -121,7 +121,6 @@ conda remove pack_name
 # Xem danh sách các packages được cài đặt
 pip list
 
-
 # Cài đặt package
 pip install pack_name
 
