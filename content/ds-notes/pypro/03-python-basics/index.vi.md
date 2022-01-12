@@ -581,7 +581,7 @@ class Employee:
     def is_workday(day):
         if dat.week(day) == 5 or day.week(day) ==6
             return day
-        reutn TRUE
+        return TRUE
 
 # Tạo các cá thể của lớp Employee
 emp_1 = Employee('Anthony', 'Nguyen', 70000)

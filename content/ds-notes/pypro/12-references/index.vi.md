@@ -2,8 +2,8 @@
 title: "Pypro - Tài Liệu Tham Khảo"
 subtitle: ""
 slug: python-references
-date: 2021-12-31
-lastmod: 2021-12-31
+date: 2022-01-01
+lastmod: 2022-01-01
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
@@ -30,3 +30,5 @@ lightgallery: true
 - [Machine Learning Plus](https://www.machinelearningplus.com/category/python/)
 
 FUHRER, C. (2021). *[SCIENTIFIC COMPUTING WITH PYTHON - high -performance scientific computing with numpy,... scipy, and panda.](https://learning.oreilly.com/library/view/scientific-computing-with/9781838822323/)* S.l: PACKT PUBLISHING LIMITED.
+
+Deitel, P. & Deitel, H. (2019). *[Intro to Python for Computer Science and Data Science : Learning to Program with AI, Big Data and The Cloud.](https://learning.oreilly.com/library/view/intro-to-python/9780135404799/)* City: Pearson.
