@@ -1,5 +1,5 @@
 ---
-title: "Pyda - Jupyter Notebook"
+title: "Pysc - Jupyter Notebook"
 subtitle: ""
 slug: py-Jupyter
 date: 2022-01-20
@@ -8,9 +8,9 @@ draft: false
 authors: ["Tuyen Kieu"]
 description: ""
 images: []
-tags: ["Python for DA"]
+tags: ["Scientific Computing"]
 categories: []
-series: [Python for Data Analysis]
+series: [Scientific Computing with Python]
 series_weight: 1
 toc:
   enable: true
