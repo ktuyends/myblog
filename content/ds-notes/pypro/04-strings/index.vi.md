@@ -301,7 +301,7 @@ Phương thức `re.search(pattern, str)` sẽ tìm kiếm, nếu nó tìm thấ
 |match.re| Trả về *pattern* trong phương thức *search*|
 |match.string| Trả về *string* trong phương thức *search*|
 
-### 7.2. Ví dụ
+### 7.3. Ví dụ
 
 **Ví dụ 1: Tìm kiếm với findall**
 
