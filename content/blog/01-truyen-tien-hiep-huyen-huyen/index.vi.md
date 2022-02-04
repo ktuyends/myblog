@@ -26,32 +26,32 @@ Bây giờ, tôi vẫn đọc nhưng không đọc nhiều như ngày trước. 
 ---
 #### Đã đọc:
 
-1. Đấu La Đại Lục
-2. Đấu Phá Thương Khung
-3. Vũ Động Càn Khôn
-4. Tinh Thần Biến
-5. Vũ Luyện Đỉnh Phong
-6. Vũ Thần Chúa Tể
-7. Đế Tôn
-8. Mục Thần Ký
-9. Nhất Thế Chi Tôn
-10. Tiên Nghịch
-11. Vạn Cổ Đệ Nhất Tông
-12. Vạn Tộc Chi Kiếp
-13. Toàn Chức Pháp Sư
-14. Nhất Kiếm Độc Tôn
-15. Đại Quản Gia Là Ma Hoàng
-16. Solo Leveling
-17. Thiên Đạo Đồ Thư Quán
-18. Lâm Uyên Hành
-19. Yêu Thần Ký
-20. Vạn Cổ Thần Đế
-21. Toàn Cầu Cao Võ 
-22. Ta Có Một Thân Bị Động Kỹ
+1. Đế Tôn *(2921/2921)* 
+2. Yêu Thần Ký *(496/496)* 
+3. Tiên Nghịch *(1975/1975)* 
+4. Solo Leveling *(179/179)* 
+5. Mục Thần Ký *(1834/1834)*
+6. Đấu La Đại Lục *(517/517)*
+7. Tinh Thần Biến *(671/671)*
+8. Lâm Uyên Hành *(961/961)*
+9. Vạn Tộc Chi Kiếp *(966/966)* 
+10. Nhất Thế Chi Tôn *(1425/1425)*
+11. Vũ Động Càn Khôn *(1309/1309)* 
+12. Toàn Chức Pháp Sư *(3136/3136)* 
+13. Vạn Cổ Đệ Nhất Tông *(2008/2008)*
+14. Đấu Phá Thương Khung *(1641/1641)*
+15. Thiên Đạo Đồ Thư Quán *(2264/2264)*
+16. Đại Quản Gia Là Ma Hoàng *(770/1312)*
+17. Vũ Luyện Đỉnh Phong *(3282/6003)*
+18. Toàn Cầu Cao Võ *(770/1437)*
+19. Vũ Thần Chúa Tể *(2793/?)*
+20. Nhất Kiếm Độc Tôn *(1975/?)*
+21. Ta Có Một Thân Bị Động Kỹ *(810/?)*
+22. Vạn Cổ Thần Đế *(3480/?)*
 
 #### Đang đọc:
 
-23. Tinh Môn
-24. Dạ Mệnh Danh Thuật
-25. Cửu Tinh Bá Thể Quyết
+23. Tinh Môn 
+24. Dạ Mệnh Danh Thuật *(545/?)*
+25. Cửu Tinh Bá Thể Quyết *(0 -> 1852, 2797 -> 3202/?)*
 
