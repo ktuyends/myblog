@@ -1,9 +1,9 @@
 ---
-title: "DA Tools - Tableau Prep (Phần 2)"
+title: "DA Tools - Data fundamentals"
 subtitle: ""
-slug: tableau-prep-02
-date: 2021-12-16
-lastmod: 2021-12-16
+slug: data-fundamentals
+date: 2022-02-25
+lastmod: 2022-02-25
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
@@ -11,14 +11,12 @@ images: []
 tags: ["DA Tools"]
 categories: []
 series: [Data Analysis Tools]
-series_weight: 4
+series_weight: 2
 toc:
   enable: true
 license: ''  
 hiddenFromHomePage: false
 lightgallery: true
-draft: true
 ---
 
 <!--more-->
-

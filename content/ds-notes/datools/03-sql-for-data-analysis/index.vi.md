@@ -1,9 +1,9 @@
 ---
-title: "DA Tools - Tableau Desktop"
+title: "DA Tools - SQL for data analysis"
 subtitle: ""
-slug: tableau-desktop
-date: 2021-12-17
-lastmod: 2021-12-17
+slug: sql-for-data-analysis
+date: 2022-02-26
+lastmod: 2022-02-26
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
@@ -11,13 +11,13 @@ images: []
 tags: ["DA Tools"]
 categories: []
 series: [Data Analysis Tools]
-series_weight: 5
+series_weight: 3
 toc:
   enable: true
 license: ''  
 hiddenFromHomePage: false
 lightgallery: true
-draft: true
 ---
 
 <!--more-->
+

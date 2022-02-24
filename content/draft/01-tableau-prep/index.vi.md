@@ -8,10 +8,8 @@ draft: false
 authors: ["Tuyen Kieu"]
 description: ""
 images: []
-tags: ["DA Tools"]
+tags: ["Tableau"]
 categories: []
-series: [Data Analysis Tools]
-series_weight: 3
 toc:
   enable: true
 license: ''  
@@ -147,7 +145,7 @@ Một số thuộc tính của string (chuỗi các ký tự):
 
 - Mỗi ký tự có một vị trí (Bao gồm khoảng trắng, ký tự đặc biệt)
 - Các ký tự có thể được sắp xếp từ *A -> Z*
-- Các ký tự có thể phần biệt giữa in hoa với in thường
+- Các ký tự có thể phân biệt giữa in hoa với in thường
 - Đôi khi cần chia tách các ký tự, ví dụ như giữa họ và tên
 - Sự đồng nhất, ví dụ quá khứ sử dụng một tên khác, hiện tại sử dụng một tên khác. Ví dụ City và city có sự khác nhau về chính tả
 - Khoảng trắng, đôi khi hai giá trị nhìn có vẻ giống nhau nhưng lại không khớp, đó có thể là do khoảng trắng giữa hai giá trị khác nhau

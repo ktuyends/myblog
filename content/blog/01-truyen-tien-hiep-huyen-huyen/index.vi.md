@@ -52,6 +52,7 @@ Bây giờ, tôi vẫn đọc nhưng không đọc nhiều như ngày trước. 
 #### Đang đọc:
 
 23. Tinh Môn 
-24. Dạ Mệnh Danh Thuật *(545/?)*
-25. Cửu Tinh Bá Thể Quyết *(0 -> 1852, 2797 -> 3202/?)*
+24. Dạ Mệnh Danh Thuật *(563/?)*
+25. Cửu Tinh Bá Thể Quyết *(4515/?)*
+
 
