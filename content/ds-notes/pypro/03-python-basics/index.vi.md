@@ -11,7 +11,7 @@ images: []
 tags: ["Programming"]
 categories: []
 series: [Python Programming]
-series_weight: 4
+series_weight: 3
 toc:
   enable: true
 license: ''  
@@ -710,3 +710,45 @@ del emp.fullname
 ```
 
 
+
+## 8. IPython
+
+Để bắt đầu với IPython hoặc Notebook, ta sử dụng một trong các lệnh sau:
+
+- *ipython*
+- *jupyter notebook*
+- *jupyter lab*
+
+**Tìm hiểu thông tin về một đối tượng**
+
+```python
+# Cách 1: sử dụng hàm help
+help(len)
+
+# Cách 2:
+# Xem thông tin với ?
+# Xem source code với ??
+len?
+```
+
+**Auto-completion với Tab**
+
+**Một số lệnh *Magic commands***
+
+|Magic Commands| Ý nghĩa |
+|-|-|
+| *\%paste* | Dán một khối các câu lệnh đã được Copy và thực thi|
+| *\%cpaste* | Dán một hoặc nhiều khối các câu lệnh |
+| *\%run file_name.py* | Thực thi một file từ IPython |
+| *\%timeit* | Xem thời gian thực thi của một dòng lệnh |
+| *\%%timeit* | Xem thời gian thực thi của một khối các câu lệnh |
+| *\%prun* | Profiling code|
+| *\%lprun* | Line-by-line profiler|
+| *\%mprun* | Line-by-line memory profiler  |
+| *\%memit* | Đo lường bộ nhớ được sử dụng khi thực thi một câu lệnh |
+
+{{< admonition type=notes title="Lưu ý" open=true >}}
+- Muốn sử dụng `%lprun` ta phải cài đặt thư viện `line_profiler` và sử dụng câu lệnh `%load_ext line_profiler` để khai báo.
+- Muốn sử dụng `%memit` và `%mprun` ta phải cài đặt thư viện `memory_profiler`.
+- Câu lệnh `%mprun` chỉ áp dụng được với các hàm được định nghĩa trong một Module.
+{{< /admonition >}}
