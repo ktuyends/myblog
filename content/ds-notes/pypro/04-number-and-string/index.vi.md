@@ -1,17 +1,17 @@
 ---
-title: "DA Tools - Data fundamentals"
+title: "Pypro - Numbers và strings"
 subtitle: ""
-slug: data-fundamentals
-date: 2022-02-25
-lastmod: 2022-02-25
+slug: numbers-and-strings
+date: 2022-03-01
+lastmod: 2022-03-01
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
 images: []
-tags: ["DA Tools"]
+tags: ["Programming"]
 categories: []
-series: [Data Analysis Tools]
-series_weight: 2
+series: [Python Programming]
+series_weight: 4
 toc:
   enable: true
 license: ''  
