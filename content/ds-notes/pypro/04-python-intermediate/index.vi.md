@@ -1,9 +1,9 @@
 ---
-title: "Pypro - Numbers và strings"
+title: "Pypro - Hàm và một số chủ đề nâng cao"
 subtitle: ""
-slug: numbers-and-strings
-date: 2022-03-01
-lastmod: 2022-03-01
+slug: python-intermediate
+date: 2022-03-02
+lastmod: 2022-03-02
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""

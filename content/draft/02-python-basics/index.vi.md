@@ -10,8 +10,6 @@ description: ""
 images: []
 tags: ["Programming"]
 categories: []
-series: [Python Programming]
-series_weight: 3
 toc:
   enable: true
 license: ''  
