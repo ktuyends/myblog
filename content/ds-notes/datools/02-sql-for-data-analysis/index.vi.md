@@ -2,8 +2,8 @@
 title: "DA Tools - SQL for data analysis"
 subtitle: ""
 slug: sql-for-data-analysis
-date: 2022-02-26
-lastmod: 2022-02-26
+date: 2022-02-25
+lastmod: 2022-02-25
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
@@ -11,7 +11,7 @@ images: []
 tags: ["DA Tools"]
 categories: []
 series: [Data Analysis Tools]
-series_weight: 3
+series_weight: 2
 toc:
   enable: true
 license: ''  
@@ -187,20 +187,3 @@ VALUES
 ```
 
 ## 3. Truy vấn dữ liệu
-
-### 3.1. Câu lệnh SELECT
-
-```sql
--- Câu lệnh cơ bản
-SELECT <column_1>
-      ,<column_2>
-      ,<column_3>
-FROM <table_name>
-
--- TOP, LIMIT
-SELECT TOP (number_of_records) <column_1>
-       ,<column_2>
-       ,<column_3>
-FROM <table_name>
-```
-
