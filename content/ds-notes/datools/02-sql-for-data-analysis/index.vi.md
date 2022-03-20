@@ -20,7 +20,6 @@ lightgallery: true
 ---
 
 <!--more-->
-
 ## 1. Cài đặt và kết nối với server
 
 Để làm việc với SQL Server, ta cần cài đặt:
@@ -186,4 +185,36 @@ VALUES
     );
 ```
 
-## 3. Truy vấn dữ liệu
+
+## 3. CSDL thực hành
+
+### 3.1. Giới thiệu về CSDL Parch & Posey
+
+Parch & Posey là CSDL về một công ty giả định, chuyên bán các loại giấy khác nhau. Tôi lấy CSDL này từ khóa học [SQL for Data Analysis](https://www.udacity.com/course/sql-for-data-analysis--ud198).
+
+Mô hình ERD (Mô hình quan hệ thực thể):
+
+{{< figure src="parch-and-posey.png" >}}
+
+Từ mô hình trên ta có thể thấy CSDL này gồm 5 bảng. Bạn có thể nghĩ về mội mỗi bảng như một Spreadsheet trong Excel:
+
+- Web_events (Chương trình khuyến mãi)
+- Accounts (Tài khoản)
+- Orders (Đơn hàng)
+- Sales_reps (Nhân viên bán hàng)
+- Region (Khu vực)
+
+### 3.2. Kết nối với CSDL
+
+Vì bài viết này được thực hiện trên *Jupyter Notebook* và hệ quản trị CSDL tôi sử dụng là *SQL Server*, nên trước khi đi vào nội dung chính, ta cần kết nối Python với CSDL. Về các bước thực hiện thì tôi đã có một bài viết chi tiết khác [ở đây](/jupyter-notebooks-for-sql-server/).
+
+
+```python
+# Load jupyter magic
+%load_ext sql
+
+# Connect
+%sql mssql+pyodbc://ktuyends@KTUYEN-PC\DSSQL2019/Parch?trusted_connection=yes&driver=ODBC+Driver+17+for+SQL+Server
+```
+
+## 4. SQL cơ bản

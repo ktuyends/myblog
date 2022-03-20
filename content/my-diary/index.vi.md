@@ -6,6 +6,8 @@ comment:
   enable: false
 ---
 
+{{< showcase title="Những ngày thinh lặng" summary="Sáng sớm, mưa rơi tí tách tí tách dưới mặt đất, đem toàn bộ căn phòng đều bao phủ bởi một tầng màn mưa bên trong. Trước cửa dưới mái hiên,..." image="/19-nhung-ngay-thinh-lang/featured.jpg" link="/19-nhung-ngay-thinh-lang" >}}
+
 {{< showcase title="Tạm biệt 2021, chào 2022!" summary="Một năm qua của các bạn thế nào, đã làm được hết những điều mình mong muốn chưa, và còn gì tiếc nuối nữa hay không..." image="/18-tan-man-ngay-dau-nam/cuoi-nam.jpg" link="/18-tan-man-ngay-dau-nam" >}}
 
 {{< showcase title="Vẻ đẹp bình dị giữa đời thường" summary="Giữa những xô bồ của cuộc sống thường ngày, có bao giờ bạn nhận ra rằng, đôi khi những điều nhỏ bé, giản dị quanh ta lại chính là những thứ đáng yêu nhất mà bấy lâu nay ta vẫn đang..." image="/14-ve-dep-binh-di/featured.jpg" link="/14-ve-dep-binh-di" >}}

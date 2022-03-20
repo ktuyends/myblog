@@ -1,12 +1,12 @@
 ---
-title: "DA Tools - Excel skills"
+title: "DA Tools - Excel notes"
 subtitle: ""
-slug: excel-skills
+slug: excel-notes
 date: 2022-02-26
 lastmod: 2022-02-26
 draft: false
 authors: ["Tuyen Kieu"]
-description: "Excel là một trong những công cụ linh hoạt, dễ học và được sử dụng phổ biến nhất trong Data Analysis."
+description: ""
 images: []
 tags: ["DA Tools"]
 categories: []
@@ -20,6 +20,15 @@ lightgallery: true
 ---
 
 <!--more-->
+
+## 1. Excel cơ bản
+
+### 1.1. Autofill và Flash Fill
+
+***Autofill*** được sử dụng để tạo ra một chuỗi các giá trị dựa vào một hoặc một số giá trị đứng trước. ***Flash Fill*** được sử dụng để tạo ra các giá trị dựa vào các mẫu phía trước, ví dụ như tách hoặc gộp họ tên, ngày tháng,...
+
+{{< figure src="autofill.png" width="75%" >}}
+
 
 ## 3. Power Query
 
