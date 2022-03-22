@@ -256,3 +256,48 @@ print(example_value)
 message_text = (f'Trời hôm nay '
                 f'mưa rất to')
 print(message_text)
+```
+
+### 3.3. Comments
+
+Có hai cách viết comments trong Python:
+
+```python
+# Cách 1:
+# This is a single-line comment.
+
+# Cách 2:
+
+"""This is a
+multiline string that
+also works as a multiline comment. """
+```
+
+Khi viết comments trong Python, ta chú ý một số nguyên tắc sau:
+
+- Comments theo sau code, nên viết cách code 2 khoảng trắng.
+- Comments thường là các câu hoàn chỉnh, trường hợp comments quá dài ta có thể viết trên nhiều dòng.  
+- Chúng ta phân tách các comments bằng một comment trống.
+- Các comments nên có cùng mức độ thụt lề dòng với khối code định ghi chú.
+
+Ví dụ:
+
+```python
+# Here is a comment about this code:
+someCode()
+
+# Here is a lengthier block comment that spans multiple lines using
+# several single-line comments in a row.
+#
+# These are known as block comments.
+
+if someCondition:
+    # Here is a comment about some other code:
+    someOtherCode()  # Here is an inline comment.
+```
+{{< admonition type=notes title="Docstrings" open=true >}}
+Trong Python, Docstrings là các comments nhiều dòng, có thể xuất hiện ở đầu của một module, hoặc theo sau các câu lệnh `def` và `class` khi khởi tạo các hàm hoặc các lớp. Chúng cung cấp thông tin về module, class, function hoặc các phương thức được định nghĩa.
+
+Một số công cụ tạo tài liệu tự động, sẽ sử dụng các thông tin này để xây dựng các files help, hoặc web pages.
+{{< /admonition >}}
+

@@ -14,23 +14,34 @@ series: [Data Analysis Tools]
 series_weight: 3
 toc:
   enable: true
-license: ''  
+license: ""
 hiddenFromHomePage: false
 lightgallery: true
 ---
 
 <!--more-->
 
-## 1. Excel cơ bản
+## 1. Bắt đầu với Excel
 
-### 1.1. Autofill và Flash Fill
+## 2. Một số thao tác cơ bản
 
-***Autofill*** được sử dụng để tạo ra một chuỗi các giá trị dựa vào một hoặc một số giá trị đứng trước. ***Flash Fill*** được sử dụng để tạo ra các giá trị dựa vào các mẫu phía trước, ví dụ như tách hoặc gộp họ tên, ngày tháng,...
+## 3. Định dạng
 
-{{< figure src="autofill.png" width="75%" >}}
+## 4. Sử dụng công thức
 
+## 5. Tổng hợp dữ liệu
 
-## 3. Power Query
+## 6. Tables
+
+## 7. Charts
+
+## 8. PivotTables
+
+## 9. PivotCharts
+
+## 10. Objects
+
+## 11. Power Query
 
 {{< figure src="power-tools.png" >}}
 
@@ -53,9 +64,9 @@ Chúng ta có thể gộp các files với nhau:
 
 ### Quy trình làm việc với Power Query
 
-**Bước 1:** Lấy dữ liệu từ các nguồn khác nhau: *Data > Get Data*
+**Bước 1:** Lấy dữ liệu từ các nguồn khác nhau: _Data > Get Data_
 
-**Bước 2:** Một bảng Navigator xuất hiện: 
+**Bước 2:** Một bảng Navigator xuất hiện:
 
 {{< figure src="get-data-2.png" >}}
 
@@ -72,23 +83,23 @@ Chúng ta chọn bảng dữ liệu muốn nhập và sau đó chọn Edit/Trans
 
 {{< figure src="formula.png" >}}
 
-**Bước 3:** Sau khi thực hiện các thao tác xử lý, biến đổi dữ liệu. Chúng ta cần lưu lại kết quả của mình: *File > Close and Load to*
+**Bước 3:** Sau khi thực hiện các thao tác xử lý, biến đổi dữ liệu. Chúng ta cần lưu lại kết quả của mình: _File > Close and Load to_
 
 {{< figure src="close.png" >}}
 
-Ở đây, các bạn có thể lưu kết quả dưới dạng Table, hoặc nếu k muốn xuất kết quả thì ta chọn vào: *Only Create Connection*
+Ở đây, các bạn có thể lưu kết quả dưới dạng Table, hoặc nếu k muốn xuất kết quả thì ta chọn vào: _Only Create Connection_
 
 **Bước cuối cùng:** Power Query không tự cập nhật lại kết quả khi chúng ta thay đổi dữ liệu nguồn, vì vậy chúng ta cần phải Refresh lại Outputs hoặc Queries tương ứng.
 
-## 4.Power Pivot
+## 12.Power Pivot
 
-Khi làm việc với Excel, ta phải gom rất rất nhiều tập dữ liệu vào một tập dữ liệu để phân tích và xử lý. Cách làm này, có thể hiệu quả với các tập dữ liệu nhỏ, nhưng khi dữ liệu của chúng ta trở nên rất nhiều và lớn. Excel sẽ không thể nào xử lý được. Power Pivot, là một công cụ giúp chúng ta giải quyết khó khăn này. 
+Khi làm việc với Excel, ta phải gom rất rất nhiều tập dữ liệu vào một tập dữ liệu để phân tích và xử lý. Cách làm này, có thể hiệu quả với các tập dữ liệu nhỏ, nhưng khi dữ liệu của chúng ta trở nên rất nhiều và lớn. Excel sẽ không thể nào xử lý được. Power Pivot, là một công cụ giúp chúng ta giải quyết khó khăn này.
 
-Giả sử ta có rất nhiều các bảng dữ liệu (tập dữ liệu), có thể được lưu trữ ở một nơi hoặc nhiều nơi khác nhau, ví dụ như các bảng excel, database, web data,...Power Pivot giúp chúng ta liên kết các tập dữ liệu này với nhau nếu chúng có một mối quan hệ nhất định. Công việc của chúng ta đơn giản là xác định các mối quan hệ và sau đó liên kết các tập dữ liệu này lại với nhau. Ta gọi nó là Data Model, và coi nó như một tập dữ liệu lớn để phân tích mà không cần phải gộp tất cả vào một bảng. 
+Giả sử ta có rất nhiều các bảng dữ liệu (tập dữ liệu), có thể được lưu trữ ở một nơi hoặc nhiều nơi khác nhau, ví dụ như các bảng excel, database, web data,...Power Pivot giúp chúng ta liên kết các tập dữ liệu này với nhau nếu chúng có một mối quan hệ nhất định. Công việc của chúng ta đơn giản là xác định các mối quan hệ và sau đó liên kết các tập dữ liệu này lại với nhau. Ta gọi nó là Data Model, và coi nó như một tập dữ liệu lớn để phân tích mà không cần phải gộp tất cả vào một bảng.
 
 ### Lookup Table và Data Table
 
-Data Model là một khái niệm rất quan trọng khi làm việc với Power Pivot, Power BI. Tạm thời ta có thể hiểu Data Model là một tập hợp các bảng được kết nối với nhau thông qua các khóa tương tự như cơ sở dữ liệu quan hệ. Data Model thông thường sẽ gồm hai loại bảng: 
+Data Model là một khái niệm rất quan trọng khi làm việc với Power Pivot, Power BI. Tạm thời ta có thể hiểu Data Model là một tập hợp các bảng được kết nối với nhau thông qua các khóa tương tự như cơ sở dữ liệu quan hệ. Data Model thông thường sẽ gồm hai loại bảng:
 
 - Bảng data (hoặc bảng fact)
 - Bảng lookup (hoặc bảng Dim, Dimension)
@@ -105,23 +116,23 @@ Ví dụ trong bảng này, bảng màu xanh dương sẽ là bảng Data, còn 
 
 ### Thêm Add-ins Power Pivot
 
-Đầu tiên, ta phải thêm Add-ins Power Pivot nếu nó chưa được thêm: *File -> Option -> Add-ins -> COM Add-ins -> Go*, sau đó tích vào Power Pivot và OK để hoàn thành.
+Đầu tiên, ta phải thêm Add-ins Power Pivot nếu nó chưa được thêm: _File -> Option -> Add-ins -> COM Add-ins -> Go_, sau đó tích vào Power Pivot và OK để hoàn thành.
 
 Kết quả:
 
 {{< figure src="power-pivot.png" >}}
 
-Để vào cửa sổ Power Pivot, ta chọn *Manage Data Model*
+Để vào cửa sổ Power Pivot, ta chọn _Manage Data Model_
 
 {{< figure src="manage-pp.png" >}}
 
 ### Import và kết nối các bảng dữ liệu
 
-Cách import các bảng dữ liệu rất đơn giản, giống như chúng ta import vào Power Query, nhưng lúc *Close and Load To...* ta chọn *Add this data to the Data Model* và *Only Create Connection*:
+Cách import các bảng dữ liệu rất đơn giản, giống như chúng ta import vào Power Query, nhưng lúc _Close and Load To..._ ta chọn _Add this data to the Data Model_ và _Only Create Connection_:
 
 {{< figure src="close.png" >}}
 
-Sau khi import các bảng dữ liệu, ta vào Power Pivot và Chọn *Diagram View* để bắt đầu thực hiện kết nối các bảng với nhau. Việc này khá đơn giản, ta chỉ cần kéo "key" từ data table vào lookup table.
+Sau khi import các bảng dữ liệu, ta vào Power Pivot và Chọn _Diagram View_ để bắt đầu thực hiện kết nối các bảng với nhau. Việc này khá đơn giản, ta chỉ cần kéo "key" từ data table vào lookup table.
 
 > Lưu ý: Có một số cách sắp xếp các bảng, thường sẽ là các bảng lookup table ở trên cùng 1 hàng và data table ở phía dưới. Hoặc data table ở giữa còn lookup table ở xung quanh.
 
@@ -129,8 +140,7 @@ Sau khi import các bảng dữ liệu, ta vào Power Pivot và Chọn *Diagram 
 
 Để thêm một Columns trong một bảng nào đó, ta click vào Add Columns và đặt tên cho cột đó. Sau đó nhập công thức trong ô formula giống như trong Excel.
 
-Measures tương tự như những phép toán chúng ta đã gặp như SUM, COUNT. Tuy nhiên bằng việc sử dụng DAX, chúng ta có thể tạo ra các Measures phức tạp hơn. Để thêm Measures, trong tab Power Pivot ta chọn: *Measures -> New Measure*, sau đó nhập các thông tin cần thiết. 
-
+Measures tương tự như những phép toán chúng ta đã gặp như SUM, COUNT. Tuy nhiên bằng việc sử dụng DAX, chúng ta có thể tạo ra các Measures phức tạp hơn. Để thêm Measures, trong tab Power Pivot ta chọn: _Measures -> New Measure_, sau đó nhập các thông tin cần thiết.
 
 > Lưu ý: Power Query sẽ sử dụng ngôn ngữ M, Power Pivot sử dụng ngôn ngữ DAX. Vì vậy các bạn sẽ cần phải tìm hiểu thêm về các công thức M và DAX. Công thức sử dụng DAX sẽ bắt đầu bằng dấu `=`.
 
@@ -138,9 +148,9 @@ Measures tương tự như những phép toán chúng ta đã gặp như SUM, CO
 
 Sử dụng Pivot Table với Power Pivot tương tự như Pivot Table bình thường, chỉ khác việc chúng ta sẽ có nhiều bảng dữ liệu hơn:
 
-- Trong Excel, chọn *Insert > PivotTable* hoặc
-- Trong Power Pivot, chọn *PivotTable*
+- Trong Excel, chọn _Insert > PivotTable_ hoặc
+- Trong Power Pivot, chọn _PivotTable_
 
-Sau đó chúng ta tích vào: *Use this workbook’s Data Model* và *Existing Workbook*.
+Sau đó chúng ta tích vào: _Use this workbook’s Data Model_ và _Existing Workbook_.
 
 Với Data Model, chúng ta hoàn toàn có thể tạo ra các Measures trực tiếp từ Pivot Table, bằng cách click chuột phải vào bảng muốn tạo Measures và chọn Add Measures.

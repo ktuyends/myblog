@@ -210,6 +210,11 @@ poetry new my-project
 cd my-project
 ls
 
+# Cài đặt phiên bản Python
+pyenv versions
+pyenv install --list
+pyenv install <version>
+
 # Chỉ định phiên bản Python
 pyenv local <version>
 poetry env use python
@@ -229,7 +234,9 @@ poetry remove package_to_remove
 # Thêm Project vào Vscode chạy
 poetry shell
 code .
+```
 
+```bash
 # Thay đổi phiên bản Python
 pyenv install <new_version>
 pyenv local <new_version>

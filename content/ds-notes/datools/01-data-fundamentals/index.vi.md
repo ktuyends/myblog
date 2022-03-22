@@ -14,13 +14,9 @@ series: [Data Analysis Tools]
 series_weight: 1
 toc:
   enable: true
-license: ''  
+license: ""
 hiddenFromHomePage: false
 lightgallery: true
 ---
 
 <!--more-->
-
-
-- ER vs Transaction
-- Star Scheme vs Snow Flake
