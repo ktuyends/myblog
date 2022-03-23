@@ -301,3 +301,172 @@ Trong Python, Docstrings là các comments nhiều dòng, có thể xuất hiệ
 Một số công cụ tạo tài liệu tự động, sẽ sử dụng các thông tin này để xây dựng các files help, hoặc web pages.
 {{< /admonition >}}
 
+
+## 4. Cấu trúc điều khiển
+
+### 4.1. Các toán tử Boolean
+
+- Toán tử so sánh: *==, !=, >, >=, <, <=*
+- So sánh về mặt đối tượng: *is, is not*
+- Toán tử boolean: *and, or, not, and not, or not*
+- Toán tử: *in, not in*
+
+### 4.2. Một số lưu ý
+
+{{< admonition type=notes title="Lưu ý 1:" open=true >}}
+Khi so sánh hai iterable cùng loại, Python sẽ lấy lần lượt từng phần tử trong iterable ra để so sánh:
+
+```python
+'Kteam' == "Kteam" # True
+'Free' == 'Education' # False
+```
+{{< /admonition >}}
+
+{{< admonition type=notes title="Toán tử == và toán tử is" open=true >}}
+Toán tử `==` được sử dụng để so sánh hai đối tượng về mặt giá trị. Toán tử `is` được sử dụng để so sánh xem hai đối tượng có cùng vị trí trong bộ nhớ hay không.
+
+Với các tập hợp các phần tử có thứ tự xác định, toán tử `==` sẽ so sánh các phần tử tương ứng với từng vị trí cụ thế. Ngược lại với các tập hợp mà các phần tử không có thứ tự xác định, nó sẽ dựa vào giá trị bên trong.
+
+```python
+# Ví dụ 1
+a = [10, 20, 30]
+b = [10, 20, 30]
+a is b # False
+a == b # True
+
+# Ví dụ 2:
+a = (10, 20, 30)
+b = (20, 10, 30)
+a == b # False
+
+# Ví dụ 3
+a = {10, 20, 30}
+b = {30, 20, 10}
+print(a is b, a == b) # False, True
+
+# Ví dụ 4
+a = {'a': 1, 200: 'two hundred'}
+b = {200: 'two hundred', 'a': 1}
+print(a is b, a == b) # False, True
+```
+{{< /admonition >}}
+
+{{< admonition type=notes title="Đối tượng singleton" open=true >}}
+Theo mặc định các số nguyên từ -5 đến 256 (đối tượng singleton) được Python tạo sẵn, vì vậy nó có địa chỉ xác định. Nên khi ta sử dụng toán tử `is` để so sánh hoặc sử dụng `id(num)` để kiểm tra vị trí thì nó luôn cố định.
+
+Một số đối tượng singleton khác như: *True, False, None*. Với những đối tượng này, ta nên sử dụng toán tử `is` thay vì sử dụng `==`.
+{{< /admonition >}}
+
+{{< admonition type=notes title="Kiểu boolean" open=true >}}
+Khi nhắc đến kiểu dữ liệu boolean, mọi thứ biểu thị giá trị `0`, rỗng, `None`,...sẽ được hiểu là False. Ngược lại là True.
+
+```python
+bool(0), bool(-1), bool(1), bool(100) # (False, True, True, True)
+bool(None) # False
+```
+{{< /admonition >}}
+
+### 4.3. Câu lệnh if
+
+```python
+# Câu lệnh đơn giản
+if <dieu_kien>:
+    # Nếu điều kiện trả về True
+    # Thực thi câu lệnh
+
+# If...else
+if <dieu_kien>:
+    # Nếu điều kiện trả về True
+    # Thực thi câu lệnh
+else:
+    # Nếu điều kiện trả về False
+    # Thự thi câu lệnh
+```
+
+```python
+# if...elif...else
+if <dieu_kien_1>:
+    # Nếu điều kiện 1 trả về True
+    # Thực thi câu lệnh
+elif <dieu_kien_2>:
+    # Nếu điều kiện 2 trả về True
+    # Thực thi câu lệnh
+else:
+    # Nếu các điều kiện trả về False
+    # Thự thi câu lệnh
+
+# if rút gọn
+<value_if_True> if <dieu_kien> else <value_if_False>
+```
+
+{{< admonition type=notes title="Cấu trúc Match - Case" open=true >}}
+Đây là một cấu trúc mới xuất hiện trong Python 3.10. Thay vì kiểm tra các điều kiện như câu lệnh `if`, nó kiểm tra các trường hợp có thể xảy ra. Cú pháp:
+
+```python
+my_var = 10
+match my_var:
+    case value_1:
+        # Do something
+    case value_2:
+        # Do something
+    case _:
+        # Thực hiện nếu tất cả các lệnh trên bị bỏ qua
+```
+
+{{< /admonition >}}
+
+### 4.4. Vòng lặp for
+
+```python
+# Cú pháp
+# iterable: string, list, tuple, dictionary, set, range()
+# iterable: Là một đối tượng, có khả năng trả về lần lượt từng giá trị 
+for var in iterable:
+    # Thực thi các câu lệnh
+
+else: # Có thể có hoặc không
+    # Nếu vòng lặp không bị break
+    # Thì thực thi else sau khi kết thúc vòng lặp 
+```
+
+### 4.5. Vòng lặp while
+
+```python
+# Cú pháp
+while <dieu_kien>:
+    # Thực thi cho đến khi điều kiện trả về False
+
+else: # Có thể có hoặc không
+    # Nếu vòng lặp không bị break
+    # Thì thực thi else sau khi kết thúc vòng lặp 
+```
+
+### 4.6. break, continue và pass
+
+- break: thoát khỏi vòng lặp
+- continue: thoát khỏi lượt lặp hiện tại, chuyển sang lượt lặp tiếp theo
+- pass: Không thực thi gì hết, chỉ mang ý nghĩa giữ chỗ
+
+> Nếu sử dụng câu lệnh `try-finally` bên trong vòng lặp, thì `finally` luôn luôn thực thi, dù cho vòng lặp gặp phải break hoặc continue.
+
+### 4.7. enumerate và zip
+
+```python
+# zip()
+a = ['a', 'b', 'c']
+b = [5, 10, 15]
+zip(a, b) # [('a', 5), ('b', 10), ('c', 15)]
+
+# enumerate
+my_list = ['monday', 'tuesday', 'sunday']
+enumerate(my_list) # [(0, 'monday'), (1, 'tuesday'), (2, 'sunday')]
+```
+
+### 4.8. Assertion
+
+```python
+assert <expression>
+```
+
+Khi gặp câu lệnh `assert`, Python sẽ đánh giá biểu thức logic đi kèm. Nếu biểu thức trả về `True` thì câu lệnh sẽ kết thúc và không có gì xảy ra, ngược lại nếu biểu thức trả về `False` thì một ngoại lệ _(exception)_ sẽ được trả về.
+

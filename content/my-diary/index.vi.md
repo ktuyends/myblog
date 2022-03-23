@@ -6,7 +6,7 @@ comment:
   enable: false
 ---
 
-{{< showcase title="Những ngày thinh lặng" summary="Sáng sớm, mưa rơi tí tách tí tách dưới mặt đất, đem toàn bộ căn phòng đều bao phủ bởi một tầng màn mưa bên trong. Trước cửa dưới mái hiên,..." image="/19-nhung-ngay-thinh-lang/featured.jpg" link="/19-nhung-ngay-thinh-lang" >}}
+{{< showcase title="Đôi khi, anh nghĩ đến Xù" summary="Đêm nay, Hà Nội mưa, mưa rơi tí tách tí tách dưới mặt đất, đem toàn bộ căn phòng đều bao phủ bởi một tầng màn mưa bên trong. Trước cửa..." image="/19-nhung-ngay-thinh-lang/featured.jpg" link="/19-nhung-ngay-thinh-lang" >}}
 
 {{< showcase title="Tạm biệt 2021, chào 2022!" summary="Một năm qua của các bạn thế nào, đã làm được hết những điều mình mong muốn chưa, và còn gì tiếc nuối nữa hay không..." image="/18-tan-man-ngay-dau-nam/cuoi-nam.jpg" link="/18-tan-man-ngay-dau-nam" >}}
 

@@ -218,26 +218,27 @@ pyenv install <version>
 # Chỉ định phiên bản Python
 pyenv local <version>
 poetry env use python
-
-# Cài đặt các package cho Project
-poetry add <pack_name>
-poetry install
 ```
 
 ```bash
+# Cài đặt các package cho Project
+poetry add <pack_name>
+poetry install
+
 # update các package
 poetry update
 
 # Xóa package
 poetry remove package_to_remove
-
-# Thêm Project vào Vscode chạy
-poetry shell
-code .
 ```
 
 ```bash
-# Thay đổi phiên bản Python
+# Activate environment
+# After, run Project in VS Code
+poetry shell
+code .
+
+# Trường hợp thay đổi phiên bản Python
 pyenv install <new_version>
 pyenv local <new_version>
 poetry env use python

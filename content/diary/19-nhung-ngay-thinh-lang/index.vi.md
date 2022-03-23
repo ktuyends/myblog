@@ -1,6 +1,6 @@
 ---
-title: "Những ngày thinh lặng"
-slug: nhung-ngay-thinh-lang
+title: "Đôi khi, anh nghĩ đến Uyên"
+slug: doi-khi-anh-nghi-den-uyen
 subtitle: ""
 summary: "Sáng sớm, mưa rơi tí tách tí tách dưới mặt đất, đem toàn bộ căn phòng đều bao phủ bởi một tầng màn mưa bên trong. Trước cửa dưới mái hiên,..."
 date: 2022-03-20
@@ -12,13 +12,11 @@ featuredImage: "featured.jpg"
 tags: ["My Diary"]
 toc:
   enable: false
-license: ''  
+license: ""
 hiddenFromHomePage: false
 lightgallery: true
 ---
 
-<p style = "text-align: justify">Hà Nội, năm Covid thứ 3, 20/03/2022</p>
+<p style = "text-align: justify">Hà Nội, 22/03/2022</p>
 
-<p style = "text-align: justify">Sáng sớm, mưa rơi tí tách tí tách dưới mặt đất, đem toàn bộ căn phòng đều bao phủ bởi một tầng màn mưa bên trong. Trước cửa dưới mái hiên, hắn ngồi thẫn thờ dựa người vào ghế, không biết là đang suy nghĩ gì.</p>
-
-Hôm nay là chủ nhật, hắn không phải đi làm. 
+<p style = "text-align: justify">Đêm nay, Hà Nội mưa, mưa rơi tí tách tí tách dưới mặt đất, đem toàn bộ căn phòng đều bao phủ bởi một tầng màn mưa bên trong. Trước cửa dưới mái hiên, hắn ngồi thẫn thờ dựa người vào ghế, lặng nhìn...</p>
