@@ -12,7 +12,7 @@ featuredImage: "featured.jpg"
 tags: ["Something"]
 toc:
   enable: false
-license: ''  
+license: ""
 hiddenFromHomePage: false
 lightgallery: true
 ---
@@ -24,35 +24,36 @@ Trong một group nào đấy, mọi người bắt đầu bảo thôi qua đọ
 Bây giờ, tôi vẫn đọc nhưng không đọc nhiều như ngày trước. Đơn giản là vì khi bạn đọc quá nhiều truyện, yêu cầu của bạn đối với một bộ truyện tự nhiên cao hơn. Các bộ truyện bây giờ không sáng tạo nhiều như trước, chủ yếu ăn theo xu hướng, motip lặp đi lặp lại, đã không còn gây tò mò, hứng thú nữa. Đọc nhiều quá cũng là cái tội, haizz
 
 ---
+
 #### Đã đọc:
 
-1. Đế Tôn *(2921/2921)* 
-2. Yêu Thần Ký *(496/496)* 
-3. Tiên Nghịch *(1975/1975)* 
-4. Solo Leveling *(179/179)* 
-5. Mục Thần Ký *(1834/1834)*
-6. Đấu La Đại Lục *(517/517)*
-7. Tinh Thần Biến *(671/671)*
-8. Lâm Uyên Hành *(961/961)*
-9. Vạn Tộc Chi Kiếp *(966/966)* 
-10. Nhất Thế Chi Tôn *(1425/1425)*
-11. Vũ Động Càn Khôn *(1309/1309)* 
-12. Toàn Chức Pháp Sư *(3136/3136)* 
-13. Vạn Cổ Đệ Nhất Tông *(2008/2008)*
-14. Đấu Phá Thương Khung *(1641/1641)*
-15. Thiên Đạo Đồ Thư Quán *(2264/2264)*
-16. Đại Quản Gia Là Ma Hoàng *(770/1312)*
-17. Vũ Luyện Đỉnh Phong *(3282/6003)*
-18. Toàn Cầu Cao Võ *(770/1437)*
-19. Vũ Thần Chúa Tể *(2793/?)*
-20. Nhất Kiếm Độc Tôn *(1975/?)*
-21. Ta Có Một Thân Bị Động Kỹ *(810/?)*
-22. Vạn Cổ Thần Đế *(3480/?)*
-23. Cửu Tinh Bá Thể Quyết *(4755/?)*
+1. Đế Tôn _(2921/2921)_
+2. Yêu Thần Ký _(496/496)_
+3. Tiên Nghịch _(1975/1975)_
+4. Solo Leveling _(179/179)_
+5. Mục Thần Ký _(1834/1834)_
+6. Đấu La Đại Lục _(517/517)_
+7. Tinh Thần Biến _(671/671)_
+8. Lâm Uyên Hành _(961/961)_
+9. Vạn Tộc Chi Kiếp _(966/966)_
+10. Nhất Thế Chi Tôn _(1425/1425)_
+11. Vũ Động Càn Khôn _(1309/1309)_
+12. Toàn Chức Pháp Sư _(3136/3136)_
+13. Vạn Cổ Đệ Nhất Tông _(2008/2008)_
+14. Đấu Phá Thương Khung _(1641/1641)_
+15. Thiên Đạo Đồ Thư Quán _(2264/2264)_
+16. Đại Quản Gia Là Ma Hoàng _(770/1312)_
+17. Vũ Luyện Đỉnh Phong _(3282/6003)_
+18. Toàn Cầu Cao Võ _(770/1437)_
+19. Vũ Thần Chúa Tể _(2793/?)_
+20. Nhất Kiếm Độc Tôn _(1975/?)_
+21. Ta Có Một Thân Bị Động Kỹ _(810/?)_
+22. Vạn Cổ Thần Đế _(3480/?)_
+23. Cửu Tinh Bá Thể Quyết _(4763/?)_
 
 #### Đang đọc:
 
-24. Tinh Môn *(503/?)*
-25. Dạ Mệnh Danh Thuật *(680/?)*
-26. Mink Đường Phố Số 13 *(475/?)*
-27. Xích Tâm Tuần Thiên *(70/?)*
+24. Tinh Môn _(503/?)_
+25. Dạ Mệnh Danh Thuật _(695/?)_
+26. Mink Đường Phố Số 13 _(297/?)_
+27. Xích Tâm Tuần Thiên _(198/?)_
