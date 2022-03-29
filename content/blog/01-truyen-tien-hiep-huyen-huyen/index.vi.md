@@ -49,11 +49,11 @@ Bây giờ, tôi vẫn đọc nhưng không đọc nhiều như ngày trước. 
 20. Nhất Kiếm Độc Tôn _(1975/?)_
 21. Ta Có Một Thân Bị Động Kỹ _(810/?)_
 22. Vạn Cổ Thần Đế _(3480/?)_
-23. Cửu Tinh Bá Thể Quyết _(4763/?)_
+23. Cửu Tinh Bá Thể Quyết _(4764/?)_
 
 #### Đang đọc:
 
-24. Tinh Môn _(503/?)_
-25. Dạ Mệnh Danh Thuật _(695/?)_
-26. Mink Đường Phố Số 13 _(297/?)_
-27. Xích Tâm Tuần Thiên _(198/?)_
+24. Tinh Môn _(510/?)_
+25. Dạ Mệnh Danh Thuật _(699/?)_
+26. Mink Đường Phố Số 13 _(301/?)_
+27. Xích Tâm Tuần Thiên _(200/?)_

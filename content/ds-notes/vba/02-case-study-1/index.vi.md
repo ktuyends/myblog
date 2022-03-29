@@ -1,17 +1,17 @@
 ---
-title: "VBA for Creative Problem Solving, Projects"
+title: "VBA - Case Study 01"
 subtitle: ""
-slug: vba-projects
-date: 2022-03-28
-lastmod: 2022-03-28
+slug: vba-case-study-01
+date: 2022-03-29
+lastmod: 2022-03-29
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
 images: []
-tags: ["Excel VBA"]
+tags: ["Basic VBA"]
 categories: []
 series: [VBA Programming]
-series_weight: 3
+series_weight: 2
 toc:
   enable: true
 license: ""
