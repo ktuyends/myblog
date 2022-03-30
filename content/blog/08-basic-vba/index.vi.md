@@ -1,17 +1,14 @@
 ---
-title: "VBA - Creative Problem Solving"
+title: "Làm quen với lập trình VBA"
 subtitle: ""
-slug: basic-vba
-date: 2022-03-28
-lastmod: 2022-03-28
+slug: intro-to-vba-programming
+summary: "VBA là viết tắt của Visual Basic Application, ta có thể hiểu nó như là một ứng dụng lập trình cơ bản trong Microsoft Office."
+date: 2022-03-30
+lastmod: 2022-03-30
 draft: false
 authors: ["Tuyen Kieu"]
-description: ""
-images: []
-tags: ["Basic VBA"]
-categories: []
-series: [VBA Programming]
-series_weight: 1
+images: ["featured.png"]
+tags: ["Blog", "VBA Programming"]
 toc:
   enable: true
 license: ""
@@ -762,3 +759,418 @@ Unload UserForm1
 UserForm1.Show
 End Sub
 ```
+
+## 9. Case study
+
+### 9.1. Giới thiệu về Case study
+
+Trong Case study này, chúng ta sẽ đi xây dựng một User Form cho phép người dùng sử dụng tỷ giá hối đoái thực tế ở một thời điểm xác định để chuyển đổi tiền tệ từ đơn vị này sang đơn vị khác. Ngoài ra, nó còn cho phép người dùng xem biểu đồ tỷ giá hối đoái trong vòng 30 ngày gần nhất với ngày được xác định.
+
+Quy trình cơ bản:
+
+- Xác định các thành phần của user form
+- Lấy thông tin về tỷ giá hối đoái dựa vào ngày được nhập vào form từ Website
+- Đưa thông tin lấy được vào trong Excel
+- Thực hiện các tính toán
+- Vẽ đồ thị
+
+### 9.2. Xác định các thành phần của user form
+
+{{< figure src="userform1.png" width=60% >}}
+
+### 9.3. Lấy dữ liệu từ internet
+
+Trong phần này, chúng ta sẽ thực hiện một số nhiệm vụ gồm:
+
+- Xác định ngày hiện tại và đưa vào DateBox.
+- Lấy dữ liệu tỷ lệ hối đoái tương ứng với ngày trong DateBox từ internet.
+- Nhập các thông tin tương ứng từ dữ liệu lấy được vào trong ComboBox.
+
+```vbnet
+Option Explicit
+
+Sub OpenForm()
+
+' Khai báo
+Dim i As Integer
+Dim DateArray As Variant
+Dim currencies As Worksheet, importedCurrencies As Worksheet
+Dim DateBox As Variant
+Dim DateDay As Integer, DateMonth As String, DateYear As Integer
+Dim url As String
+
+Dim currImp As Variant, currImpTwo As Variant, currImpLabel As Variant, currCopy As Variant
+Dim currImpCode As String, currImpName As String
+
+Set currencies = Workbooks("currency-converter.xlsm").Worksheets("Currencies")
+Set importedCurrencies = Workbooks("currency-converter.xlsm").Worksheets("Sheet1")
+
+currencies.Select
+Range("A1").Select
+
+' Xử lý Date và nhập vào DateBox
+
+DateArray = Split(Now())
+
+UserForm1.DateBox = DateAdd("d", -2, DateArray(0))
+
+DateDay = Day(UserForm1.DateBox)
+DateMonth = Month(UserForm1.DateBox)
+DateYear = Year(UserForm1.DateBox)
+
+If Len(DateMonth) = 1 Then
+    DateMonth = "0" & DateMonth
+End If
+
+' Lấy dữ liệu từ Internet
+
+    url = "URL;https://www.xe.com/currencytables/?from=USD&date=" & DateYear & "-" & DateMonth & "-" & DateDay & "#table-section"
+    With Worksheets("Sheet1").QueryTables.Add(Connection:=url, Destination:=Worksheets("Sheet1").Range("A1"))
+        .Name = "My Query"
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = True
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = False
+        .RefreshStyle = xlOverwriteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlEntirePage
+        .WebFormatting = xlWebFormattingNone
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+
+' Lọc thông tin và đưa vào sheet currencies
+
+For Each currImp In importedCurrencies.Range("A:A")
+    If Len(currImp) = 3 Then
+        currImpCode = currImp.Value
+        currImpName = currImp.Offset(0, 1).Value
+            For Each currCopy In currencies.Range("A:A")
+                If currCopy = currImpCode And currCopy <> "USD" Then
+                    Exit For
+                ElseIf currCopy = currImpCode And currCopy = "USD" Then
+                    currCopy.Offset(0, 1).Value = "US Dollar"
+                    Exit For
+                ElseIf currCopy = "" Then
+                    currCopy.Value = currImpCode
+                    currCopy.Offset(0, 1).Value = currImpName
+                    Exit For
+                End If
+            Next
+    ElseIf currImp.Offset(1, 0).Value = "" And currImp.Offset(2, 0).Value = "" _
+           And currImp.Offset(3, 0).Value = "" And currImp.Offset(4, 0).Value = "" Then
+        Exit For
+    End If
+Next
+
+' Nhập thông tin vào trong Combobox
+
+For i = 1 To WorksheetFunction.CountA(Columns("A:A"))
+    UserForm1.ConvFromBox.AddItem ActiveCell.Offset(i - 1, 0) & " - " & ActiveCell.Offset(i - 1, 1)
+Next i
+
+For i = 1 To WorksheetFunction.CountA(Columns("A:A"))
+    UserForm1.ConvToBox.AddItem ActiveCell.Offset(i - 1, 0) & " - " & ActiveCell.Offset(i - 1, 1)
+Next i
+
+UserForm1.ConvFromBox.Text = Range("A1") & " - " & Range("B1")
+UserForm1.ConvToBox.Text = Range("A1") & " - " & Range("B1")
+UserForm1.Show
+End Sub
+```
+
+### 9.4. Thực hiện chuyển đổi tiền tệ
+
+```vbnet
+
+Private Sub ConvertBotton_Click()
+
+' Khai báo
+Dim currencies As Worksheet, importedCurrencies As Worksheet
+Dim DateArray As Variant
+Dim DateDay As String, DateMonth As String, DateYear As String
+Dim url As String
+Dim Exists As Boolean
+Dim currImp As Variant, currImpTwo As Variant, currImpLabel As Variant, currCopy As Variant
+Dim currImpCode As String, currImpName As String
+Dim initAmt As Double, convAmt As Double
+Dim convFrom As String, convFromName As String, convTo As String, convToName As String
+Dim initAmtUnit As String, convToUnit As String
+Dim testVar As String
+Dim currentDate As String
+Dim currYear As Integer
+
+Set currencies = Workbooks("currency-converter.xlsm").Worksheets("Currencies")
+Set importedCurrencies = Workbooks("currency-converter.xlsm").Worksheets("Sheet1")
+
+Application.ScreenUpdating = False
+importedCurrencies.Visible = True
+
+'SAVE CURRENT YEAR
+
+DateArray = Split(Now())
+currentDate = DateArray(0)
+currYear = Year(currentDate)
+
+'ERROR CHECKING AND DATE ACQUISITION
+
+If UserForm1.AmtBox = "" Then MsgBox ("Input cannot be blank. "): GoTo Reset
+If Not IsNumeric(UserForm1.AmtBox) Then MsgBox ("Value must be a number."): GoTo Reset
+If UserForm1.AmtBox <= 0 Then MsgBox ("Please enter a positive number."): GoTo Reset
+If DateBox = "" Then MsgBox ("Date cannot be empty."): GoTo Reset
+If Not IsDate(DateBox) Then MsgBox ("Incorrect date format."): GoTo Reset
+
+DateDay = Day(DateBox)
+DateMonth = Month(DateBox)
+DateYear = Year(DateBox)
+
+If Len(DateDay) = 1 Then DateDay = "0" & DateDay
+If Len(DateMonth) = 1 Then DateMonth = "0" & DateMonth
+If Len(DateYear) < 4 Then MsgBox ("Incorrect year length."): GoTo Reset
+If DateYear > currYear Then MsgBox ("Year cannot exceed current year."): GoTo Reset
+
+'IMPORT CURRENCY INFORMATION
+
+    url = "URL;https://www.xe.com/currencytables/?from=USD&date=" & DateYear & "-" & DateMonth & "-" & DateDay & "#table-section"
+    With Worksheets("Sheet1").QueryTables.Add(Connection:=url, Destination:=Worksheets("Sheet1").Range("A1"))
+        .Name = "My Query"
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = True
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = False
+        .RefreshStyle = xlOverwriteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlEntirePage
+        .WebFormatting = xlWebFormattingNone
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+
+'IMPORT/UPDATE CURRENCIES LIST INTO CURRENCIES SHEET
+
+For Each currImp In importedCurrencies.Range("A:A")
+    If Len(currImp) = 3 Then
+        currImpCode = currImp.Value
+        currImpName = currImp.Offset(0, 1).Value
+            For Each currCopy In currencies.Range("A:A")
+                If currCopy = currImpCode And currCopy <> "USD" Then
+                    Exit For
+                ElseIf currCopy = currImpCode And currCopy = "USD" Then
+                    currCopy.Offset(0, 1).Value = "US Dollar"
+                    Exit For
+                ElseIf currCopy = "" Then
+                    currCopy.Value = currImpCode
+                    currCopy.Offset(0, 1).Value = currImpName
+                    Exit For
+                End If
+            Next
+    ElseIf currImp.Offset(1, 0).Value = "" And currImp.Offset(2, 0).Value = "" _
+           And currImp.Offset(3, 0).Value = "" And currImp.Offset(4, 0).Value = "" Then
+        Exit For
+    End If
+Next
+
+'CONVERT SELECTED CURRENCY
+
+    initAmt = UserForm1.AmtBox.Value
+    convFrom = Left(UserForm1.ConvFromBox, 3)
+    convFromName = Right(UserForm1.ConvFromBox, Len(UserForm1.ConvFromBox) - 6)
+    convTo = Left(UserForm1.ConvToBox, 3)
+    convToName = Right(UserForm1.ConvToBox, Len(UserForm1.ConvToBox) - 6)
+    For Each currImp In importedCurrencies.Range("A:A")
+        If currImp = convFrom And currImp.Offset(0, 1).Value = convFromName Then
+            initAmtUnit = currImp.Offset(0, 2).Value
+            For Each currImpTwo In importedCurrencies.Range("A:A")
+                If currImpTwo = convTo And currImpTwo.Offset(0, 1).Value = convToName Then
+                    convToUnit = currImpTwo.Offset(0, 2).Value
+                    UserForm1.FinalAmtBox.Text = Round(initAmt * (convToUnit / initAmtUnit))
+                    GoTo Reset:
+                End If
+            Next
+        End If
+    Next
+
+Reset:
+Sheets("Sheet1").Visible = False
+Application.ScreenUpdating = True
+
+End Sub
+```
+
+### 9.5. Vẽ đồ thị
+
+```vbnet
+Private Sub PlotBotton_Click()
+
+Dim TodaysDate As String
+Dim SelectedCurrency As String
+Dim i As Integer
+Dim url As String
+Dim plotVar As Variant
+Dim plotData As Worksheet, importedCurrencies As Worksheet
+Dim DateArray As Variant
+Dim currentDate As String
+Dim currYear As Integer
+Dim DateDay As String, DateMonth As String, DateYear As String
+Dim currImp As Variant, currImpTwo As Variant, currImpLabel As Variant, currCopy As Variant
+Dim currImpCode As String, currImpName As String
+Dim initAmt As Double, convAmt As Double
+Dim convFrom As String, convFromName As String, convTo As String, convToName As String
+Dim initAmtUnit As String, convToUnit As String
+Dim Chart6 As ChartObject
+
+Application.ScreenUpdating = False
+
+Set importedCurrencies = Workbooks("currency-converter.xlsm").Worksheets("Sheet1")
+Set plotData = Workbooks("currency-converter.xlsm").Worksheets("PlotData")
+
+plotData.Visible = True
+importedCurrencies.Visible = True
+
+If UserForm1.AmtBox = "" Then MsgBox ("Input cannot be blank. "): GoTo ErrorReset
+If Not IsNumeric(UserForm1.AmtBox) Then MsgBox ("Value must be a number."): GoTo ErrorReset
+If UserForm1.AmtBox <= 0 Then MsgBox ("Please enter a positive number."): GoTo ErrorReset
+
+plotData.Select: Range("A30").Select
+
+TodaysDate = UserForm1.DateBox.Value
+SelectedCurrency = Left(UserForm1.ConvFromBox, 3)
+
+'SAVE CURRENT YEAR
+
+DateArray = Split(Now())
+currentDate = DateArray(0)
+currYear = Year(currentDate)
+
+'ERROR CHECKING AND DATE ACQUISITION
+
+If UserForm1.AmtBox = "" Then MsgBox ("Input cannot be blank. "): GoTo ErrorReset
+If Not IsNumeric(UserForm1.AmtBox) Then MsgBox ("Value must be a number."): GoTo ErrorReset
+If UserForm1.AmtBox <= 0 Then MsgBox ("Please enter a positive number."): GoTo ErrorReset
+If DateBox = "" Then MsgBox ("Date cannot be empty."): GoTo ErrorReset
+If Not IsDate(DateBox) Then MsgBox ("Incorrect date format."): GoTo ErrorReset
+
+DateDay = Day(DateBox)
+DateMonth = Month(DateBox)
+DateYear = Year(DateBox)
+
+If Len(DateDay) = 1 Then DateDay = "0" & DateDay
+If Len(DateMonth) = 1 Then DateMonth = "0" & DateMonth
+If Len(DateYear) < 4 Then MsgBox ("Incorrect year length."): GoTo ErrorReset
+If DateYear > currYear Then MsgBox ("Year cannot exceed current year."): GoTo ErrorReset
+
+'CALCULATE 30 DAYS PRIOR TO SELECTED DATE
+For i = 30 To 1 Step -1
+    Range("A" & 30 - i + 1) = DateAdd("d", -i + 1, TodaysDate)
+Next i
+
+'IMPORT CURRENCY INFORMATION BASED OFF DATE INFORMATION ABOVE
+
+For Each plotVar In Sheets("PlotData").Range("A:A")
+
+    DateDay = Day(plotVar)
+    DateMonth = Month(plotVar)
+    DateYear = Year(plotVar)
+
+    If Len(DateDay) = 1 Then DateDay = "0" & DateDay
+    If Len(DateMonth) = 1 Then DateMonth = "0" & DateMonth
+
+'IMPORT CURRENCY INFORMATION
+
+    url = "URL;https://www.xe.com/currencytables/?from=USD&date=" & DateYear & "-" & DateMonth & "-" & DateDay & "#table-section"
+    With Worksheets("Sheet1").QueryTables.Add(Connection:=url, Destination:=Worksheets("Sheet1").Range("A1"))
+        .Name = "My Query"
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = True
+        .RefreshOnFileOpen = False
+        .BackgroundQuery = False
+        .RefreshStyle = xlOverwriteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .WebSelectionType = xlEntirePage
+        .WebFormatting = xlWebFormattingNone
+        .WebPreFormattedTextToColumns = True
+        .WebConsecutiveDelimitersAsOne = True
+        .WebSingleBlockTextImport = False
+        .WebDisableDateRecognition = False
+        .WebDisableRedirections = False
+        .Refresh BackgroundQuery:=False
+    End With
+
+'CONVERT SELECTED CURRENCY
+
+    initAmt = UserForm1.AmtBox.Value
+    convFrom = Left(UserForm1.ConvFromBox, 3)
+    convFromName = Right(UserForm1.ConvFromBox, Len(UserForm1.ConvFromBox) - 6)
+    convTo = Left(UserForm1.ConvToBox, 3)
+    convToName = Right(UserForm1.ConvToBox, Len(UserForm1.ConvToBox) - 6)
+    For Each currImp In importedCurrencies.Range("A:A")
+        If currImp = convFrom And currImp.Offset(0, 1).Value = convFromName Then
+            initAmtUnit = currImp.Offset(0, 2).Value
+            For Each currImpTwo In importedCurrencies.Range("A:A")
+                If currImpTwo = convTo And currImpTwo.Offset(0, 1).Value = convToName Then
+                    convToUnit = currImpTwo.Offset(0, 2).Value
+                    plotVar.Offset(0, 1) = initAmt * (convToUnit / initAmtUnit)
+                    GoTo Reset:
+                End If
+            Next
+        End If
+    Next
+
+Reset:
+
+If plotVar.Offset(1, 0).Value = "" Then
+    Exit For
+End If
+
+Next
+
+'PLOT DATA ON A GRAPH
+
+Sheets("Last 30 Days").Select
+ActiveSheet.ChartObjects("Chart 1").Activate
+ActiveChart.ChartTitle.Select
+ActiveChart.ChartTitle.Text = "Last 30 Days: " & UserForm1.ConvFromBox & " to " & UserForm1.ConvToBox
+
+ErrorReset:
+
+importedCurrencies.Visible = False
+plotData.Visible = False
+Worksheets("Currencies").Select
+Application.ScreenUpdating = True
+
+End Sub
+```
+
+### 9.6. Xử lý ExitButton
+
+```vbnet
+Private Sub ExitBotton_Click()
+Unload UserForm1
+End Sub
+```
+
+### 9.7. Kết quả
+
+Cuối cùng thì, đây là file kết quả: [Currency Converter](currency-converter.xlsm). Còn dưới đây là một ví dụ khi chạy chương trình:
+
+{{< figure src="plot-last-30days.png" >}}

@@ -53,7 +53,7 @@ Bây giờ, tôi vẫn đọc nhưng không đọc nhiều như ngày trước. 
 
 #### Đang đọc:
 
-24. Tinh Môn _(510/?)_
-25. Dạ Mệnh Danh Thuật _(699/?)_
-26. Mink Đường Phố Số 13 _(301/?)_
+24. Tinh Môn _(514/?)_
+25. Dạ Mệnh Danh Thuật _(700/?)_
+26. Mink Đường Phố Số 13 _(302/?)_
 27. Xích Tâm Tuần Thiên _(200/?)_
