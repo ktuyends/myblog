@@ -1,9 +1,9 @@
 ---
-title: "Pypro - Cấu trúc dữ liệu"
+title: "Pypro - Advanced Python"
 subtitle: ""
-slug: python-data-structures
-date: 2022-03-02
-lastmod: 2022-03-02
+slug: python-advanced
+date: 2022-03-06
+lastmod: 2022-03-06
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
@@ -11,7 +11,7 @@ images: []
 tags: ["Programming"]
 categories: []
 series: [Python Programming]
-series_weight: 4
+series_weight: 8
 toc:
   enable: true
 license: ''  
@@ -22,12 +22,16 @@ lightgallery: true
 <!--more-->
 
 
-## 1. Strings
+## 1. Iterators
 
-## 2. Lists
+## 2. Generators
 
-## 3. Tuples
+## 3. Closures
 
-## 4. Dictionary
+## 4. Decorators
 
-## 5. Sets
+## 5. Context manager
+
+## 6. Property
+
+## 7. Regular expression

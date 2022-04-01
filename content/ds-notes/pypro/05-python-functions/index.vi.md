@@ -1,9 +1,9 @@
 ---
-title: "Pypro - Cấu trúc dữ liệu"
+title: "Pypro - Functions"
 subtitle: ""
-slug: python-data-structures
-date: 2022-03-02
-lastmod: 2022-03-02
+slug: python-functions
+date: 2022-03-03
+lastmod: 2022-03-03
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
@@ -11,7 +11,7 @@ images: []
 tags: ["Programming"]
 categories: []
 series: [Python Programming]
-series_weight: 4
+series_weight: 5
 toc:
   enable: true
 license: ''  
@@ -22,12 +22,14 @@ lightgallery: true
 <!--more-->
 
 
-## 1. Strings
+## 1. Functions
 
-## 2. Lists
+## 2. Function parameters
 
-## 3. Tuples
+## 3. First class functions
 
-## 4. Dictionary
+## 4. Scopes
 
-## 5. Sets
+## 5. Module and packages
+
+## 6. Namespaces
