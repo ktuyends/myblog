@@ -11,20 +11,20 @@ images: ["featured.png"]
 tags: ["Blog"]
 toc:
   enable: true
-license: ''  
+license: ""
 hiddenFromHomePage: false
 lightgallery: true
 ---
 
-Nếu một ngày nào đó, bạn phải làm một công việc mà không được hỗ trợ bởi Windows, bạn sẽ làm gì? Dĩ nhiên là phải tìm một hệ điều hành khác thay thế cho Windows rồi. 
+Nếu một ngày nào đó, bạn phải làm một công việc mà không được hỗ trợ bởi Windows, bạn sẽ làm gì? Dĩ nhiên là phải tìm một hệ điều hành khác thay thế cho Windows rồi.
 
-Nhưng đang dùng Windows quen, tự nhiên phải chuyển qua một hệ điều hành lạ hoắc thì không dễ chịu chút nào. Những ngày đầu, chuyển qua dùng Linux (Ubuntu), có khá nhiều vấn đề tôi phải tìm hiểu lại từ đầu như hệ thống thư mục, cài đặt phần mềm, cấu hình,...Và lúc đầu cài đặt Ubuntu, tôi cũng gặp khá nhiều khó khăn.
+Nhưng đang dùng Windows quen, tự nhiên phải chuyển qua một hệ điều hành lạ hoắc thì không dễ chịu chút nào. Những ngày đầu, chuyển qua dùng Linux (Ubuntu), có khá nhiều vấn đề mình phải tìm hiểu lại từ đầu như hệ thống thư mục, cài đặt phần mềm, cấu hình,...Và lúc đầu cài đặt Ubuntu, mình cũng gặp khá nhiều khó khăn.
 
 ## 1. Cài đặt Ubuntu
 
 Có nhiều cách để cài đặt một hệ điều hành. Với Ubuntu bạn có thể cài độc lập một hệ điều hành riêng, cài trên máy ảo hoặc cài song song Dual-Boot với các hệ điều hành khác. Để cài đặt Ubuntu, các bạn có thể tìm thấy rất nhiều hướng dẫn, nhưng trực quan nhất là tìm các Tutorial trên Youtube.
 
-Chọn phương thức cài đặt nào là do nhu cầu của mỗi người. Nếu bạn không cần làm gì liên quan đến Windows nữa thì các bạn có thể cài Ubuntu và xóa Windows. Nếu các bạn chỉ muốn vọc vạch Ubuntu cho biết, thì các bạn nên cài đặt thông qua máy ảo. Còn nếu bạn muốn sử dụng cả 2 hệ điều hành, thì Dual-Boot là lựa chọn dành cho bạn. Về phần tôi, thì tôi chọn Dual-Boot. 
+Chọn phương thức cài đặt nào là do nhu cầu của mỗi người. Nếu bạn không cần làm gì liên quan đến Windows nữa thì các bạn có thể cài Ubuntu và xóa Windows. Nếu các bạn chỉ muốn vọc vạch Ubuntu cho biết, thì các bạn nên cài đặt thông qua máy ảo. Còn nếu bạn muốn sử dụng cả 2 hệ điều hành, thì Dual-Boot là lựa chọn dành cho bạn. Về phần mình, thì mình chọn Dual-Boot.
 
 Để cài đặt Ubuntu các bạn sẽ cần chuẩn bị 2 thứ.
 
@@ -37,15 +37,15 @@ Có 3 việc, các bạn cần xác định trước khi tạo USB và cài đ�
 
 - Xác định định dạng của ổ cứng xem nó là MBR hay GPT để tạo USB cho đúng.
 - Nếu bạn cài Dual-Boot, thì Windows và Ubuntu phải cùng một định dạng thì mới thành công được. Khuyến khích chuyển tất cả về GPT cho dễ cài đặt.
-- Cuối cùng là chuyển đổi Boot của máy tính về định dạng GPT. 
+- Cuối cùng là chuyển đổi Boot của máy tính về định dạng GPT.
 
-Đây là những vấn đề tôi đã gặp phải khi cài đặt Ubuntu trong chế độ Dual-Boot, vì không xác định rõ các định dạng trên, làm tôi phải cài lại Windows 2-3 lần mới tìm ra nguyên nhân.
+Đây là những vấn đề mình đã gặp phải khi cài đặt Ubuntu trong chế độ Dual-Boot, vì không xác định rõ các định dạng trên, làm mình phải cài lại Windows 2-3 lần mới tìm ra nguyên nhân.
 
 ## 2. Một số việc phải làm sau khi cài đặt Ubuntu
 
 ### 2.1. Đồng bộ giờ giữa Ubuntu và Windows
 
-Mỗi khi khởi lại máy tính, tôi phát hiện khi tôi vào Ubuntu or khi tôi vào Windows, giờ bị đổi múi giờ. Để thực hiện đồng bộ, tôi tùy chỉnh trong Ubuntu.
+Mỗi khi khởi lại máy tính, mình phát hiện khi mình vào Ubuntu or khi mình vào Windows, giờ bị đổi múi giờ. Để thực hiện đồng bộ, mình tùy chỉnh trong Ubuntu.
 
 Các bạn mở Terminal lên, gõ câu lệnh sau:
 
@@ -59,9 +59,9 @@ Grub Customize được sử dụng để chỉnh thứ tự Boot trong Menu kh�
 
 ### 2.3. Cài đặt Chrome
 
-Mặc định, hệ điều hành Ubuntu đã có Firefox nhưng nếu bạn quen xài Chrome như tôi, thì tôi nghĩ bạn nên cài đặt nó. Việc cài đặt một số phần mềm trong Ubuntu cũng đơn giản. Bạn chỉ cần vào trang của Chrome và download file cài đặt định dạng `.deb` về mở lên. Click vào Install là nó sẽ tự cài đặt cho bạn.
+Mặc định, hệ điều hành Ubuntu đã có Firefox nhưng nếu bạn quen xài Chrome như mình, thì mình nghĩ bạn nên cài đặt nó. Việc cài đặt một số phần mềm trong Ubuntu cũng đơn giản. Bạn chỉ cần vào trang của Chrome và download file cài đặt định dạng `.deb` về mở lên. Click vào Install là nó sẽ tự cài đặt cho bạn.
 
-### 2.4. Cài đặt trình quản lý gói Synaptic Package Manager 
+### 2.4. Cài đặt trình quản lý gói Synaptic Package Manager
 
 Mở Terminal lên nào:
 
@@ -95,7 +95,7 @@ $ exit
 
 ### 2.6. Cài đặt Wine và Lutris
 
-Wine được sử dụng để chạy một số ứng dụng của Windows. 
+Wine được sử dụng để chạy một số ứng dụng của Windows.
 
 ```shell
 $ sudo dpkg --add-architecture i386
@@ -105,11 +105,11 @@ $ sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ eoan ma
 $ sudo apt update && sudo apt install --install-recommends winehq-stable
 ```
 
-Trước khi cài đặt Lutris, tôi sẽ cài thêm Drive nvidia vì máy tôi sử dụng card này.
+Trước khi cài đặt Lutris, mình sẽ cài thêm Drive nvidia vì máy mình sử dụng card này.
 
 ```shell
 $ sudo add-apt-repository ppa:graphics-drivers/ppa
-$ sudo dpkg --add-architecture i386 
+$ sudo dpkg --add-architecture i386
 $ sudo apt update
 $ sudo apt install nvidia-driver-430 libnvidia-gl-430 libnvidia-gl-430:i386
 $ sudo apt install libvulkan1 libvulkan1:i386
@@ -212,9 +212,9 @@ mkdir ~/.themes
 mkdir ~/.icons
 ```
 
-Themes và shell tải về, giải nén trong thư mục `.themes` còn icon thì được giải nén trong thư mục `.icons`. Mặc định các thư mục này bị ẩn, các bạn phải bật nó lên. 
+Themes và shell tải về, giải nén trong thư mục `.themes` còn icon thì được giải nén trong thư mục `.icons`. Mặc định các thư mục này bị ẩn, các bạn phải bật nó lên.
 
-Trong phần tiếp theo, tôi tổng hợp lại một số phần mềm cơ bản nên cài cho Ubuntu và một số phần mềm khác như MySQL, Rstudio, Anaconda để làm việc với Data.
+Trong phần tiếp theo, mình tổng hợp lại một số phần mềm cơ bản nên cài cho Ubuntu và một số phần mềm khác như MySQL, Rstudio, Anaconda để làm việc với Data.
 
 ## 3. Cài đặt phần mềm
 

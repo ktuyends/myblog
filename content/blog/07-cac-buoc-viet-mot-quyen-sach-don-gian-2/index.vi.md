@@ -2,7 +2,7 @@
 title: "Các bước viết một quyển sách nho nhỏ (phần 2)"
 subtitle: ""
 slug: jupyter-book
-summary: "Trong [bài viết](/blog/01-blog/writing-a-book-with-bookdown/) trước, tôi đã viết về `bookdown`, một packages giúp viết sách sử dụng R Markdown. Nếu bạn là một người hay sử dụng Python, có thể bạn sẽ thích sử dụng Jupyter hơn là R Markdown,..."
+summary: "Trong [bài viết](/blog/01-blog/writing-a-book-with-bookdown/) trước, mình đã viết về `bookdown`, một packages giúp viết sách sử dụng R Markdown. Nếu bạn là một người hay sử dụng Python, có thể bạn sẽ thích sử dụng Jupyter hơn là R Markdown,..."
 date: 2021-10-20
 lastmod: 2021-10-20
 draft: false
@@ -11,12 +11,12 @@ images: ["featured.png"]
 tags: ["Blog"]
 toc:
   enable: true
-license: ''  
+license: ""
 hiddenFromHomePage: false
 lightgallery: true
 ---
 
-Trong [bài viết](/writing-a-book-with-bookdown/) trước, tôi đã viết về `bookdown`, một packages giúp viết sách sử dụng R Markdown. Nếu bạn là một người hay sử dụng Python, có thể bạn sẽ thích sử dụng Jupyter hơn là R Markdown,...Thật may mắn là trong Python chúng ta cũng có một thư viện tương tự như `bookdown`, là `jupyter book`.
+Trong [bài viết](/writing-a-book-with-bookdown/) trước, mình đã viết về `bookdown`, một packages giúp viết sách sử dụng R Markdown. Nếu bạn là một người hay sử dụng Python, có thể bạn sẽ thích sử dụng Jupyter hơn là R Markdown,...Thật may mắn là trong Python chúng ta cũng có một thư viện tương tự như `bookdown`, là `jupyter book`.
 
 Jupyter Book là một dự án mã nguồn mở, vẫn đang trong quá trình xây dựng các tính năng, tuy nhiên với những tính năng hiện tại về cơ bản cũng đủ để chúng ta có thể tạo ra được những quyển sách có hình thức đẹp, dựa trên các files jupyter `.ipynb`.
 
@@ -45,7 +45,7 @@ cd book_name
 jb build .
 ```
 
-### 1.3. Cấu trúc của một quyển sách 
+### 1.3. Cấu trúc của một quyển sách
 
 Sau khi chạy các lệnh trên, một số tập tin và thư mục đã được tạo ra:
 
@@ -70,9 +70,10 @@ Trong đó:
 - `_static/myfile.css`: Tùy chỉnh font, màu sắc,...
 - `requirements.txt`: Thông tin về các thư viện được sử dụng
 - `ref.bib`: Thông tin về tài liệu tham khảo
+
 ### 1.4. Publish
 
-Tôi sử dụng Github để lưu trữ quyển sách của mình, sau đó sử dụng Github pages để publish sách. 
+Mình sử dụng Github để lưu trữ quyển sách của mình, sau đó sử dụng Github pages để publish sách.
 
 Đầu tiên cần tạo Repository trên Github cho quyển sách, sau đó vào thư mục quyển sách ở trên máy tính chạy các lệnh sau:
 
@@ -110,30 +111,30 @@ File `_config.yml` là file cấu hình quyển sách, gồm rất rất nhiều
 
 ```yml
 # Book settings
-title:   # The title of the book
-author:   # The author of the book to be placed in the footer
-logo: ./figures/logo.png  # A path to the book logo
+title: # The title of the book
+author: # The author of the book to be placed in the footer
+logo: ./figures/logo.png # A path to the book logo
 
 # Execute
 execute:
 
 # HTML-specific settings
 html:
-  favicon: ./figures/favicon-32x32.png  # A path to a favicon image
+  favicon: ./figures/favicon-32x32.png # A path to a favicon image
   navbar_footer_text: Visit our <a href="url">GitHub
     Repository</a> <div> This book is powered by <a href="https://jupyterbook.org">Jupyter
-    Book</a> </div>  # Will be displayed underneath the left navigation bar.
-  home_page_in_navbar: false  # Whether to include your home page in the left Navigation Bar
-  use_repository_button: true  # Whether to add a link to your repository button
-  use_issues_button: true  # Whether to add an "open an issue" button
+    Book</a> </div> # Will be displayed underneath the left navigation bar.
+  home_page_in_navbar: false # Whether to include your home page in the left Navigation Bar
+  use_repository_button: true # Whether to add a link to your repository button
+  use_issues_button: true # Whether to add an "open an issue" button
   comments:
     utterances:
-      repo: "github-org/github-repo"  
+      repo: "github-org/github-repo"
 
 # Launch button settings
 repository:
-  url:  # The URL to your book's repository
-  branch: main  # Which branch of the repository should be used when creating links (optional)
+  url: # The URL to your book's repository
+  branch: main # Which branch of the repository should be used when creating links (optional)
 
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
@@ -145,7 +146,7 @@ sphinx:
     bibtex_reference_style: author_year
     html_show_copyright: false
     html_js_files:
-    - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js  
+      - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 parse:
   myst_enable_extensions:
@@ -167,18 +168,18 @@ parts:
     numbered: True
     maxdepth: 2
     chapters:
-    - file: path/to/part1/chapter1
-    - url: https://example.com
-      title: Example website
-    - file: path/to/part1/chapter2
-      sections:
-      - file: path/to/part1/chapter2/section1
+      - file: path/to/part1/chapter1
+      - url: https://example.com
+        title: Example website
+      - file: path/to/part1/chapter2
+        sections:
+          - file: path/to/part1/chapter2/section1
   - caption: Name of Part 2
     chapters:
-    - file: path/to/part2/chapter1
-    - file: path/to/part2/chapter2
-      sections:
-      - file: path/to/part2/chapter2/section1
+      - file: path/to/part2/chapter1
+      - file: path/to/part2/chapter2
+        sections:
+          - file: path/to/part2/chapter2/section1
 ```
 
 Trong đó:
@@ -212,7 +213,7 @@ xgboost=1.3.3
 
 ## 3. Viết bài
 
-Trong phần này, tôi chỉ tóm tắt lại một số nội dung mình hay sử dụng. Chi tiết hơn các bạn có thể tham khảo trong các bài sau:
+Trong phần này, mình chỉ tóm tắt lại một số nội dung mình hay sử dụng. Chi tiết hơn các bạn có thể tham khảo trong các bài sau:
 
 - [Write narrative content](https://jupyterbook.org/content/index.html)
 - [Write executable content](https://jupyterbook.org/content/executable/index.html)
@@ -298,7 +299,7 @@ parse:
     # don't forget to list any other extensions you want enabled,
     # including those that are enabled by default!
     - amsmath
-    - dollarmath    
+    - dollarmath
 ```
 
 ### 3.4. Hình ảnh
@@ -311,10 +312,10 @@ Cú pháp chèn hình ảnh của MyST Markdown:
 
 ````
 ```{image} path/to/img
-:alt: 
-:class: 
-:width: 
-:align: 
+:alt:
+:class:
+:width:
+:align:
 ```
 ````
 
@@ -328,11 +329,11 @@ Figures tương tự như images, nhưng nó bao gồm nhiều thông tin hơn v
 ```{figure} path/to/fig
 ---
 scale:
-width: 
+width:
 height:
 alt:
-align: 
-name: 
+align:
+name:
 ---
 Caption!
 ```
@@ -340,9 +341,9 @@ Caption!
 
 Một số cách tham chiếu:
 
-- ``{ref}`name_text` ``
-- ``{ref}`New Lable <name_text>` ``
-- ``{numref}`name_text` ``
-- ``{numref}`Figure {number}: {name} <name_text>` ``
+- `` {ref}`name_text`  ``
+- `` {ref}`New Lable <name_text>`  ``
+- `` {numref}`name_text`  ``
+- `` {numref}`Figure {number}: {name} <name_text>`  ``
 
 ---

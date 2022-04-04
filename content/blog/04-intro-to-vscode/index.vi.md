@@ -11,7 +11,7 @@ images: ["featured.png"]
 tags: ["Blog"]
 toc:
   enable: true
-license: ''  
+license: ""
 hiddenFromHomePage: false
 lightgallery: true
 ---
@@ -35,21 +35,21 @@ VS Code là một text editor mã nguồn mở được phát triển bởi Micr
 ### 1.2. Làm quen với VS Code
 
 {{< admonition type=notes title="Notes" open=true >}}
-Trong bài này, tôi sẽ không hướng dẫn cách sử dụng VS Code mà chỉ ghi chép lại một vài thứ linh tinh mà tôi cũng không biết phải gọi là gì nữa. Để bắt đầu với VS Code, các bạn có thể xem phần [DOCS](https://code.visualstudio.com/docs), tôi thấy nó khá là dễ hiểu và trực quan.    
+Trong bài này, mình sẽ không hướng dẫn cách sử dụng VS Code mà chỉ ghi chép lại một vài thứ linh tinh mà mình cũng không biết phải gọi là gì nữa. Để bắt đầu với VS Code, các bạn có thể xem phần [DOCS](https://code.visualstudio.com/docs), mình thấy nó khá là dễ hiểu và trực quan.  
 {{< /admonition >}}
 
 **Một số phím tắt hay dùng nhất**
 
-|||
-|-|-|
-|Ctrl + P| Tìm kiếm nhanh các files hoặc icons dựa vào tên|
-|Ctrl + Shift + P| Mở Command Palette|
-|Ctrl + Tab| Di chuyển giữa các file đang mở|
-|Ctrl +B| Đóng mở thanh side bar|
-|Ctrl + `| Mở Terminal|
-|Ctrl + K M| Thay đổi language mode|
-|Ctrl + G| Đi đến một dòng cụ thể|
-|Ctrl + /| Comment|
+|                  |                                                 |
+| ---------------- | ----------------------------------------------- |
+| Ctrl + P         | Tìm kiếm nhanh các files hoặc icons dựa vào tên |
+| Ctrl + Shift + P | Mở Command Palette                              |
+| Ctrl + Tab       | Di chuyển giữa các file đang mở                 |
+| Ctrl +B          | Đóng mở thanh side bar                          |
+| Ctrl + `         | Mở Terminal                                     |
+| Ctrl + K M       | Thay đổi language mode                          |
+| Ctrl + G         | Đi đến một dòng cụ thể                          |
+| Ctrl + /         | Comment                                         |
 
 **Split Editor:**
 
@@ -71,22 +71,22 @@ Chúng ta sử dụng phím tắt: `Ctrl + 1, 2, 3` để di chuyển giữa cá
 
 **Các phím tắt chỉnh sửa code:**
 
-|||
-|----|-|
-|Alt + Click| Thêm một con trỏ vào vị trí chỉ định|
-|Ctrl + Alt + &#8593;| Thêm con trỏ vào vị trí phía trên con trỏ hiện tại|
-|Ctrl + Alt + &#8595;| Thêm con trỏ vào vị trí phía dưới con trỏ hiện tại|
-|Ctrl + L| Bôi đen toàn bộ dòng hiện tại|
-|Ctrl + D| Chọn các từ hoặc cụm từ tiếp theo, giống từ hoặc cụm từ hiện tại và thêm con trỏ phía sau nó|
-|Ctrl + Shift + L| Tương tự Ctrl + D, nhưng nó chọn tất cả các từ hoặc cụm từ giống nhau|
-|Shift + Alt + Click| Column selection|
-|Shift + Alt + &#8593;| Copy line up|
-|Shift + Alt + &#8595;| Copy line down|
-|Alt + Up/Down| Move line up and down|
+|                       |                                                                                              |
+| --------------------- | -------------------------------------------------------------------------------------------- |
+| Alt + Click           | Thêm một con trỏ vào vị trí chỉ định                                                         |
+| Ctrl + Alt + &#8593;  | Thêm con trỏ vào vị trí phía trên con trỏ hiện tại                                           |
+| Ctrl + Alt + &#8595;  | Thêm con trỏ vào vị trí phía dưới con trỏ hiện tại                                           |
+| Ctrl + L              | Bôi đen toàn bộ dòng hiện tại                                                                |
+| Ctrl + D              | Chọn các từ hoặc cụm từ tiếp theo, giống từ hoặc cụm từ hiện tại và thêm con trỏ phía sau nó |
+| Ctrl + Shift + L      | Tương tự Ctrl + D, nhưng nó chọn tất cả các từ hoặc cụm từ giống nhau                        |
+| Shift + Alt + Click   | Column selection                                                                             |
+| Shift + Alt + &#8593; | Copy line up                                                                                 |
+| Shift + Alt + &#8595; | Copy line down                                                                               |
+| Alt + Up/Down         | Move line up and down                                                                        |
 
 ## 2. Lập trình R trong VS Code
 
-**Bước 1: Cài đặt R và các extensions sau** 
+**Bước 1: Cài đặt R và các extensions sau**
 
 - [R](https://www.r-project.org/)
 - [vscode-R](https://marketplace.visualstudio.com/items?itemName=Ikuyadeu.r)
@@ -112,14 +112,14 @@ pip install -U radian
 
 **Bước 4: Chỉnh sửa file cấu hình**
 
-Sử dụng tổ hợp phím: Ctrl + Shift + P và tìm cụm từ: *preferences: Open Settings (JSON)*, sau đó thêm nội dung sau vào file `settings.json`:
+Sử dụng tổ hợp phím: Ctrl + Shift + P và tìm cụm từ: _preferences: Open Settings (JSON)_, sau đó thêm nội dung sau vào file `settings.json`:
 
 ```
 {
     "r.alwaysUseActiveTerminal": true,
     "r.bracketedPaste": true,
     "r.sessionWatcher": true,
-    "r.rterm.windows": "Path_to_radian.exe", 
+    "r.rterm.windows": "Path_to_radian.exe",
 }
 ```
 
@@ -135,9 +135,9 @@ Cuối cùng thì, khởi động lại VS Code và tận hưởng thành quả 
 - [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15)
 - [mssql](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql)
 
-**Bước 2: Kết nối với Database trong SQL Server** 
+**Bước 2: Kết nối với Database trong SQL Server**
 
-Sau khi cài xong extension `mssql`, ta sẽ được kết quả như hình bên dưới. Tiếp theo ta chọn vào `Add Connection` để kết nối VS Code với SQL Server. 
+Sau khi cài xong extension `mssql`, ta sẽ được kết quả như hình bên dưới. Tiếp theo ta chọn vào `Add Connection` để kết nối VS Code với SQL Server.
 
 <p align="center"><img src="con1.png" alt="Add Connection" style="max-width:100%"></p>
 
@@ -151,7 +151,7 @@ Cuối cùng thì nhập Profile name (hiểu đơn giản là đặt tên cho k
 
 **Bước 3: Viết các câu lệnh truy vấn và xem kết quả**
 
-Để thực hiện truy vấn, các bạn click chuột phải vào database và chọn *New Query* hoặc chọn từ Command Palette `(Ctrl + Shift + P)` - *MS SQL: New Query*. Sau đó thì ta có thể viết các câu lệnh, run để xem kết quả và lưu kết quả dưới một trong ba định dạng CSV, JSON, hoặc EXCEL.
+Để thực hiện truy vấn, các bạn click chuột phải vào database và chọn _New Query_ hoặc chọn từ Command Palette `(Ctrl + Shift + P)` - _MS SQL: New Query_. Sau đó thì ta có thể viết các câu lệnh, run để xem kết quả và lưu kết quả dưới một trong ba định dạng CSV, JSON, hoặc EXCEL.
 
 <p align="center"><img src="query1.png" alt="New Query" style="max-width:100%"></p>
 

@@ -2,7 +2,7 @@
 title: "Đôi khi, anh nghĩ đến Uyên"
 slug: doi-khi-anh-nghi-den-uyen
 subtitle: ""
-summary: "Sáng sớm, mưa rơi tí tách tí tách dưới mặt đất, đem toàn bộ căn phòng đều bao phủ bởi một tầng màn mưa bên trong. Trước cửa dưới mái hiên,..."
+summary: "Đêm nay, Hà Nội mưa, mưa rơi tí tách tí tách dưới mặt đất, đem toàn bộ căn phòng đều bao phủ bởi một tầng màn mưa bên trong. Trước cửa dưới mái hiên,..."
 date: 2022-03-20
 lastmod: 2022-03-20
 draft: false
@@ -23,10 +23,7 @@ lightgallery: true
 
 <p style = "text-align: justify">Bỗng dưng, tiếng chú Hường - chú bảo vệ nhà tôi ở đâu đó vọng lại:</p>
 
-- Chưa ngủ à Tuyến?
-- Dạ cháu chưa, mưa to quá cháu không ngủ được. Chú chưa ngủ à?
-- Container của bọn kho Bếp nó vừa về, chú ra mở cho bọn nó cái cửa. Đợi bọn nó xuống hàng xong chắc phải 4h sáng, lúc đó chú mới được ngủ.
-- Mình cười, bảo sao cháu thấy ồn thế. Thế chú ngủ sau nha, cháu rửa mặt xong cũng chuẩn bị đi ngủ đây.
+<p style = "text-align: justify"><i>- Chưa ngủ à Tuyến? <br> - Dạ cháu chưa, mưa to quá cháu không ngủ được. Chú chưa ngủ à? <br> - Container của bọn kho Bếp nó vừa về, chú ra mở cho bọn nó cái cửa. Đợi bọn nó xuống hàng xong chắc phải 4h sáng, lúc đó chú mới được ngủ. <br>- Mình cười, bảo sao cháu thấy ồn thế. Thế chú ngủ sau nha, cháu rửa mặt xong cũng chuẩn bị đi ngủ đây. </i></p>
 
 <p style = "text-align: justify">Trong mấy chú bảo vệ nhà tôi, có lẽ chú Hường là người mà tôi thấy dễ gần nhất. Có nhiều ngày, đi làm hoặc đi đâu đó về muộn, tôi chưa kịp gọi chú mở cửa thì chú đã bật khỏi giường và chạy ra mở cửa cho tôi, còn không quên bồi thêm một câu chọc chứ: <i>Thằng nào đấy nhờ, tưởng đi chơi quên đường về nhà rồi. Hôm nay lại đi chơi với đứa nào.</i> Haizz, cũng không biết tôi còn ở đây được thêm mấy tháng nữa, cũng sắp hết hợp đồng thuê nhà rồi...</p>
 

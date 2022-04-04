@@ -2,7 +2,7 @@
 title: "Các bước viết một quyển sách nho nhỏ"
 subtitle: ""
 slug: writing-a-book-with-bookdown
-summary: "Đọc nhiều sách, có bao giờ bạn nghĩ sẽ có một ngày mình muốn viết một quyển sách của riêng mình chưa. Đã rất nhiều lần, tôi từng có ý nghĩ như vậy. Viết một quyển sách với tôi, đôi khi chỉ đơn giản là..."
+summary: "Đọc nhiều sách, có bao giờ bạn nghĩ sẽ có một ngày mình muốn viết một quyển sách của riêng mình chưa. Đã rất nhiều lần, mình từng có ý nghĩ như vậy. Viết một quyển sách với mình, đôi khi chỉ đơn giản là..."
 date: 2021-10-14
 lastmod: 2021-10-14
 draft: false
@@ -11,14 +11,14 @@ images: ["featured.png"]
 tags: ["Blog"]
 toc:
   enable: true
-license: ''  
+license: ""
 hiddenFromHomePage: false
 lightgallery: true
 ---
 
-Đọc nhiều sách, có bao giờ bạn nghĩ sẽ có một ngày mình muốn viết một quyển sách của riêng mình chưa. Đã rất nhiều lần, tôi từng có ý nghĩ như vậy. Viết một quyển sách với tôi, đôi khi chỉ đơn giản là để tóm tắt lại nội dung từ một hoặc nhiều sách khác vào một quyển để tiện cho việc tra cứu mỗi khi bản thân cần đọc lại.
+Đọc nhiều sách, có bao giờ bạn nghĩ sẽ có một ngày mình muốn viết một quyển sách của riêng mình chưa. Đã rất nhiều lần, mình từng có ý nghĩ như vậy. Viết một quyển sách với mình, đôi khi chỉ đơn giản là để tóm tắt lại nội dung từ một hoặc nhiều sách khác vào một quyển để tiện cho việc tra cứu mỗi khi bản thân cần đọc lại.
 
-Bài viết này cũng như vậy, tôi tóm tắt lại một số nội dung trong quyển sách *bookdown: Authoring Books and Technical Documents with R Markdown* của ([Xie 2016](#ref-bookdown2016)).
+Bài viết này cũng như vậy, mình tóm tắt lại một số nội dung trong quyển sách _bookdown: Authoring Books and Technical Documents with R Markdown_ của ([Xie 2016](#ref-bookdown2016)).
 
 ## 1. Cú pháp Markdown
 
@@ -26,27 +26,27 @@ Bài viết này cũng như vậy, tôi tóm tắt lại một số nội dung t
 
 #### Inline formatting
 
--   In nghiêng: `*text*`
+- In nghiêng: `*text*`
 
--   In đậm: `**text**`
+- In đậm: `**text**`
 
--   Chỉ số trên: `^n^` - ví dụ: Fe<sup>2+</sup>
+- Chỉ số trên: `^n^` - ví dụ: Fe<sup>2+</sup>
 
--   Chỉ số dưới: `~n~` - ví dụ: H<sub>2</sub>SO<sub>4</sub>
+- Chỉ số dưới: `~n~` - ví dụ: H<sub>2</sub>SO<sub>4</sub>
 
--   Inline code: `` `code` ``
+- Inline code: `` `code` ``
 
--   Links: `[Text](link)`
+- Links: `[Text](link)`
 
--   Image: `![Image title](path/to/img)`
+- Image: `![Image title](path/to/img)`
 
--   Footnote: `^[]`. Ví dụ [^1]
+- Footnote: `^[]`. Ví dụ [^1]
 
 #### Block-level elements
 
 Tiêu đề:
 
-``` markdown
+```markdown
 # First-level header
 
 ## Second-level header
@@ -64,15 +64,17 @@ List:
 
 ```markdown
 # Unordered list
+
 - one item
 - one item
 - one item
-    - one item
-    - one item
+  - one item
+  - one item
 ```
 
 ```markdown
-# Ordered list 
+# Ordered list
+
 1. the first item
 2. the second item
 3. the third item
@@ -80,10 +82,10 @@ List:
 
 Blockquotes:
 
-``` markdown
+```markdown
 > "I thoroughly disapprove of duels. If a man should challenge me,
-  I would take him kindly and forgivingly by the hand and lead him
-  to a quiet place and kill him."
+> I would take him kindly and forgivingly by the hand and lead him
+> to a quiet place and kill him."
 >
 > --- Mark Twain
 ```
@@ -98,8 +100,8 @@ Kết quả:
 
 Có 2 trường hợp:
 
--   Chèn công thức bên trong câu: `$math_express$`
--   Chèn công thức ở một dòng riêng biệt: `$$math_express$$`
+- Chèn công thức bên trong câu: `$math_express$`
+- Chèn công thức ở một dòng riêng biệt: `$$math_express$$`
 
 Ví dụ:
 
@@ -119,29 +121,29 @@ Mặc dù markdown cơ bản hỗ trợ kha khá công việc soạn thảo củ
 
 Ví dụ:
 
-``` latex
-\begin{equation} 
+```latex
+\begin{equation}
   f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
   (\#eq:binom)
-\end{equation} 
+\end{equation}
 ```
 
 #### Tiêu đề đặc biệt
 
 Tiêu đề `PART` có thể hiểu đơn giản là để tách nội dung của quyển sách thành các phần riêng biệt. Còn `APPENDIX` là phần phụ lục.
 
-``` markdown
-# (PART) Part I {-} 
+```markdown
+# (PART) Part I {-}
 
 # Chapter One
 
 # Chapter Two
 
-# (PART) Part II {-} 
+# (PART) Part II {-}
 
 # Chapter Three
 
-# (APPENDIX) Appendix {-} 
+# (APPENDIX) Appendix {-}
 
 # Appendix A
 
@@ -162,20 +164,20 @@ Một số ngôn ngữ cơ bản được hỗ trợ như R, SQL, Python,…
 
 Một số tùy chọn:
 
--   `include`: Có hiển thị code và kết quả không
--   `eval`: Có thực thi code hay không
--   `echo`: Có hiển thị code hay không
--   `results`: Có hiển thị output hay không
--   `collapse`: Có merge code hay không
--   `cache`
--   `fig.width, fig.height, fig.align, fig.cap`
--   `out.width, out.height`
+- `include`: Có hiển thị code và kết quả không
+- `eval`: Có thực thi code hay không
+- `echo`: Có hiển thị code hay không
+- `results`: Có hiển thị output hay không
+- `collapse`: Có merge code hay không
+- `cache`
+- `fig.width, fig.height, fig.align, fig.cap`
+- `out.width, out.height`
 
 ### 1.4. Citations
 
 Để sử dụng trích dẫn tài liệu tham khảo trong bài viết, ta cần có file `.bib` chứa thông tin về các tài liệu tham khảo. Sau đó ta cần chỉnh sửa YAML trong tài liệu R Markdown hoặc trong phần output của bookdown
 
-``` markdown
+```markdown
 ---
 bibliography: ["file_1.bib", "file_2.bib"]
 biblio-style: "apalike"
@@ -191,7 +193,7 @@ link-citations: true
 
 Trước tiên, ta cần cài đặt `bookdown`:
 
-``` r
+```r
 # stable version on CRAN
 install.packages("bookdown")
 
@@ -201,7 +203,7 @@ remotes::install_github('rstudio/bookdown')
 
 Để build được sách ở định dạng Bootstrap, ta cần cài đặt thêm package `downlit`
 
-``` r
+```r
 # Cài đặt package downlit
 install.packages("downlit")
 ```
@@ -218,15 +220,15 @@ Khi đó, một quyển sách đơn giản được tạo ra bởi RStudio. Đ�
 
 Một quyển sách được tạo ra bởi `bookdown` sẽ gồm nhiều files:
 
--   `index.Rmd` là file bắt buộc phải có
--   `_bookdown.yml` và `_output.yml` là các file tùy chỉnh cấu trúc sách
--   `style.css` định dạng các thành phần ở định dạng HTML
--   `.bib` chứa thông tin về tài liệu tham khảo
--   Các file `.Rmd` còn lại là nội dung của từng chương
+- `index.Rmd` là file bắt buộc phải có
+- `_bookdown.yml` và `_output.yml` là các file tùy chỉnh cấu trúc sách
+- `style.css` định dạng các thành phần ở định dạng HTML
+- `.bib` chứa thông tin về tài liệu tham khảo
+- Các file `.Rmd` còn lại là nội dung của từng chương
 
 Tùy chỉnh YAML trong file `index.Rmd`, thay đổi một số thông tin về tên quyển sách, tác giả của quyển sách,…:
 
-``` markdown
+```markdown
 ---
 title: "A Minimal Book Example"
 author: "Jane Doe"
@@ -247,20 +249,20 @@ csl: chicago-fullnote-bibliography.csl
 
 Tùy chỉnh file `_output.yml`, thay đổi thông tin về font, màu sắc, repository lưu trữ quyển sách…:
 
-``` yml
+```yml
 bookdown::bs4_book:
   css: style.css
   theme:
-    primary: "#0d6efd"   
-    base_font: 
+    primary: "#0d6efd"
+    base_font:
       google: Sen
     heading_font:
       google:
         family: Bitter
         wght: 200
     code_font:
-      google: 
-        # arguments to sass::font_google() 
+      google:
+        # arguments to sass::font_google()
         family: DM Mono
         local: false
   repo:
@@ -272,10 +274,10 @@ bookdown::bs4_book:
 
 Cấu trúc của một chương sách:
 
-``` markdown
-#   A chapter
+```markdown
+# A chapter
 
-##  A section
+## A section
 
 ### A subsection
 ```
@@ -284,7 +286,7 @@ Mỗi chương nằm trong một file, được bắt đầu bởi tiêu đề (
 
 Tùy chỉnh file `_bookdown.yml`, sắp xếp thứ tự các chương sách:
 
-``` yml
+```yml
 book_filename: "test"
 new_session: true
 before_chapter_script: _common.R
@@ -292,18 +294,14 @@ delete_merged_file: true
 language:
   ui:
     chapter_name: "Chapter "
-rmd_files: [
-  "index.Rmd",
-  "chapter_1.Rmd",
-  "chapter_2.Rmd",
-  ]
+rmd_files: ["index.Rmd", "chapter_1.Rmd", "chapter_2.Rmd"]
 ```
 
 ### 2.3. Hosting bookdown using Github Pages
 
 Đầu tiên, ta cần sửa file `_bookdown.yml` bằng cách thêm dòng sau:
 
-``` yml
+```yml
 output_dir: "docs"
 ```
 
@@ -319,7 +317,7 @@ Khi đó quyển sách của chúng ta sẽ có địa chỉ là: `http(s)://<us
 
 <div id="ref-bookdown2016" class="csl-entry">
 
-Xie, Yihui. 2016. *Bookdown: Authoring Books and Technical Documents with R Markdown*. Boca Raton, Florida: Chapman; Hall/CRC. <https://bookdown.org/yihui/bookdown>.
+Xie, Yihui. 2016. _Bookdown: Authoring Books and Technical Documents with R Markdown_. Boca Raton, Florida: Chapman; Hall/CRC. <https://bookdown.org/yihui/bookdown>.
 
 </div>
 

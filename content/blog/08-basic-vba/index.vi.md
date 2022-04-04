@@ -18,7 +18,7 @@ lightgallery: true
 
 VBA là viết tắt của Visual Basic Application, ta có thể hiểu nó như là một ứng dụng lập trình cơ bản trong _Microsoft Office_. VBA thường được sử dụng trong việc tự động hóa các tác vụ Excel hoặc xây dựng các hàm mở rộng khi Excel không có.
 
-Về bài viết này, thì đây không phải là một bài viết về lập trình VBA. Bài này chỉ mang tính vọc vạch, tò mò của tôi về VBA nên tôi mới nghịch thử mà thôi.
+Về bài viết này, thì đây không phải là một bài viết về lập trình VBA. Bài viết này chỉ mang tính vọc vạch, tò mò của mình về VBA nên mình mới nghịch chơi chơi thôi.
 
 <!--more-->
 

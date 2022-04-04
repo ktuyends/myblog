@@ -6,7 +6,11 @@ comment:
   enable: false
 ---
 
-{{< showcase title="Tuổi 28, và ..." summary="" image="/20-tuoi-28/featured.JPG" link="/20-tuoi-28" >}}
+{{< showcase title="Mình phải sống như màu hè năm ấy" summary="" image="/22-tuoi-28/featured.JPG" link="/22-tuoi-28" >}}
+
+{{< showcase title="Đã lâu, không cầm bút" summary="" image="/21-da-lau-khong-cam-but/featured.JPG" link="/21-da-lau-khong-cam-but" >}}
+
+{{< showcase title="Những ngày cuối cùng ở Đông Mỹ" summary="" image="/20-tam-biet-dong-my/featured.JPG" link="/20-tam-biet-dong-my" >}}
 
 {{< showcase title="Đôi khi, anh nghĩ đến Xù" summary="Đêm nay, Hà Nội mưa, mưa rơi tí tách tí tách dưới mặt đất, đem toàn bộ căn phòng đều bao phủ bởi một tầng màn mưa bên trong. Trước cửa..." image="/19-doi-khi-anh-nghi-den-em/featured.jpg" link="/19-doi-khi-anh-nghi-den-em" >}}
 

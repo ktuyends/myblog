@@ -1,22 +1,22 @@
 ---
 title: Truy vấn SQL Server trong Jupyter Notebooks
 slug: jupyter-notebooks-for-sql-server
-subtitle: ''
-summary: Khi sử dụng Python, có đôi lúc chúng ta sẽ cần lấy dữ liệu từ Database vào Python. Trong bài viết này, tôi sử dụng thư viện `pyodbc` và `ipython-sql` để kết nối và tương tác với SQL Server.
-date: '2021-10-09'
-lastmod: '2021-10-09'
+subtitle: ""
+summary: Khi sử dụng Python, có đôi lúc chúng ta sẽ cần lấy dữ liệu từ Database vào Python. Trong bài viết này, mình sử dụng thư viện `pyodbc` và `ipython-sql` để kết nối và tương tác với SQL Server.
+date: "2021-10-09"
+lastmod: "2021-10-09"
 draft: false
 authors: ["Tuyen Kieu"]
 images: ["featured.png"]
 tags: ["Blog"]
 toc:
   enable: true
-license: ''  
+license: ""
 hiddenFromHomePage: false
 lightgallery: true
 ---
 
-Khi sử dụng Python, có đôi lúc chúng ta sẽ cần lấy dữ liệu từ Database vào Python. Trong bài viết này, tôi sử dụng thư viện `pyodbc` để kết nối với database, `ipython-sql` để tương tác với SQL Server trong Jupyter. 
+Khi sử dụng Python, có đôi lúc chúng ta sẽ cần lấy dữ liệu từ Database vào Python. Trong bài viết này, mình sử dụng thư viện `pyodbc` để kết nối với database, `ipython-sql` để tương tác với SQL Server trong Jupyter.
 
 ## 1. Cài đặt và kết nối
 
@@ -33,7 +33,6 @@ conda install pyodbc
 ```
 
 Sau khi cài đặt `pyodbc`, ta import thư viện vào Python và kiểm tra xem có những giao thức nào hiện có để kết nối với database:
-
 
 ```python
 import pyodbc
@@ -53,25 +52,25 @@ pyodbc.drivers()
  'ODBC Driver 17 for SQL Server']
 ```
 
-Ồ có khá nhiều drivers, cơ mà tôi cũng không hiểu rõ lắm về những drivers này. Trong bài viết này, tôi sẽ sử dụng `ODBC Driver 17 for SQL Server`. 
+Ồ có khá nhiều drivers, cơ mà mình cũng không hiểu rõ lắm về những drivers này. Trong bài viết này, mình sẽ sử dụng `ODBC Driver 17 for SQL Server`.
 
 ### 1.2. Kết nối với database
 
 Về cơ bản, ta có cú pháp sau:
 
 ```python
-conx = pyodbc.connect('DRIVER={SQL Server};' 
-                      'SERVER=TestServer;' 
-                      'Database=TestDatabase;' 
+conx = pyodbc.connect('DRIVER={SQL Server};'
+                      'SERVER=TestServer;'
+                      'Database=TestDatabase;'
                       'UID=UserID; PWD=Password;')
 ```
 
 Nếu các bạn sử dụng Windows Authentication, thì chúng ta cần sửa đổi lại cú pháp một chút:
 
 ```python
-conx = pyodbc.connect('DRIVER={SQL Server};' 
-                      'SERVER=TestServer;' 
-                      'Database=TestDatabase;' 
+conx = pyodbc.connect('DRIVER={SQL Server};'
+                      'SERVER=TestServer;'
+                      'Database=TestDatabase;'
                       'TRUSTED_CONNECTION=yes')
 ```
 
@@ -88,7 +87,6 @@ SELECT @@SERVERNAME
 ```
 
 Cuối cùng ta có kết quả như sau:
-
 
 ```python
 conn1 = pyodbc.connect("DRIVER={ODBC Driver 17 for SQL Server};"
@@ -123,15 +121,14 @@ conx.close()
 
 Ví dụ:
 
-
 ```python
 # Khởi tạo con trỏ
 cursor = conn1.cursor()
 
 # Query
 query = """
-SELECT TOP 10 Name, CreditRating 
-FROM Purchasing.Vendor 
+SELECT TOP 10 Name, CreditRating
+FROM Purchasing.Vendor
 WHERE CreditRating < 3
 """
 
@@ -148,11 +145,10 @@ print(data)
 ```
 [('Australia Bike Retailer', 1), ('Allenson Cycles', 2), ('Advanced Bicycles', 1), ('Trikes, Inc.', 2), ('Morgan Bike Accessories', 1), ('Cycling Master', 1), ('Chicago Rent-All', 2), ('Greenwood Athletic Company', 1), ('Compete Enterprises, Inc', 1), ('International', 1)]
 ```
-    
+
 ### 1.4. Thực hiện truy vấn sử dụng `pandas`
 
 Như các bạn thấy, kết quả hiển thị như trên có vẻ không thuận tiện lắm cho việc xử lý dữ liệu. Vì vậy, chúng ta nên chuyển đổi nó thành DataFrame bằng cách sử dụng thư viện `pandas`:
-
 
 ```python
 # import pandas
@@ -178,6 +174,7 @@ data
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -253,7 +250,6 @@ conda install ipython-sql
 
 Sau khi cài đặt, ta chạy câu lệnh dưới để bắt đầu:
 
-
 ```python
 %load_ext sql
 ```
@@ -274,7 +270,6 @@ mssql+pyodbc://user@server:port/DatabaseName?trusted_connection=yes&driver=Drive
 
 Kết quả:
 
-
 ```python
 %sql mssql+pyodbc://ktuyends@KTUYEN-PC\DSSQL2019/AdventureWorks2019?trusted_connection=yes&driver=ODBC+Driver+17+for+SQL+Server
 ```
@@ -293,7 +288,6 @@ Ta có một số trường hợp như sau:
 
 Ví dụ:
 
-
 ```python
 %sql SELECT TOP 5 Name, CreditRating FROM Purchasing.Vendor
 ```
@@ -301,7 +295,7 @@ Ví dụ:
 ```
  * mssql+pyodbc://ktuyends@KTUYEN-PC\DSSQL2019/AdventureWorks2019?driver=ODBC+Driver+17+for+SQL+Server&trusted_connection=yes
  Done.
-```    
+```
 
 <table>
     <thead>
@@ -334,19 +328,18 @@ Ví dụ:
     </tbody>
 </table>
 
-
 ```sql
 %%sql
 
-SELECT TOP 7 Name, CreditRating 
-FROM Purchasing.Vendor 
+SELECT TOP 7 Name, CreditRating
+FROM Purchasing.Vendor
 WHERE CreditRating < 10
 ```
 
 ```
  * mssql+pyodbc://ktuyends@KTUYEN-PC\DSSQL2019/AdventureWorks2019?driver=ODBC+Driver+17+for+SQL+Server&trusted_connection=yes
 Done.
-``` 
+```
 
 <table>
     <thead>
@@ -390,8 +383,8 @@ Done.
 ```python
 # tạo biến query_var
 query_var = """
-SELECT TOP 5 Name, CreditRating 
-FROM Purchasing.Vendor 
+SELECT TOP 5 Name, CreditRating
+FROM Purchasing.Vendor
 WHERE CreditRating < 10
 """
 
@@ -403,7 +396,7 @@ data
 ```
  * mssql+pyodbc://ktuyends@KTUYEN-PC\DSSQL2019/AdventureWorks2019?driver=ODBC+Driver+17+for+SQL+Server&trusted_connection=yes
 Done.
-```    
+```
 
 <table>
     <thead>
@@ -436,4 +429,4 @@ Done.
     </tbody>
 </table>
 
-Bài này đến đây là kết thúc, dù sao mục đích ban đầu của tôi cũng chỉ là thử nghiệm. Còn khá nhiều vấn đề cần khám phá, có lẽ sau này tôi sẽ đi sâu hơn.
+Bài này đến đây là kết thúc, dù sao mục đích ban đầu của mình cũng chỉ là thử nghiệm. Còn khá nhiều vấn đề cần khám phá, có lẽ sau này mình sẽ đi sâu hơn.
