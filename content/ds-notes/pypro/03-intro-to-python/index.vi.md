@@ -443,9 +443,9 @@ else: # Có thể có hoặc không
 
 ### 4.6. break, continue và pass
 
-- break: thoát khỏi vòng lặp
-- continue: thoát khỏi lượt lặp hiện tại, chuyển sang lượt lặp tiếp theo
-- pass: Không thực thi gì hết, chỉ mang ý nghĩa giữ chỗ
+- break: thoát khỏi vòng lặp trong cùng chứa nó.
+- continue: thoát khỏi lượt lặp hiện tại, chuyển sang lượt lặp tiếp theo.
+- pass: Không thực thi gì hết, chỉ mang ý nghĩa giữ chỗ.
 
 > Nếu sử dụng câu lệnh `try-finally` bên trong vòng lặp, thì `finally` luôn luôn thực thi, dù cho vòng lặp gặp phải break hoặc continue.
 
@@ -470,3 +470,31 @@ assert <expression>
 
 Khi gặp câu lệnh `assert`, Python sẽ đánh giá biểu thức logic đi kèm. Nếu biểu thức trả về `True` thì câu lệnh sẽ kết thúc và không có gì xảy ra, ngược lại nếu biểu thức trả về `False` thì một ngoại lệ _(exception)_ sẽ được trả về.
 
+
+## 5. Input và output
+
+### 5.1. Câu lệnh input
+
+Câu lệnh `input()` được sử dụng để yêu cầu người dùng nhập dữ liệu, và kết quả trả về có kiểu string.
+
+```python
+# Ví dụ 1:
+my_age = input("Nhập số tuổi của bạn: ")
+
+# Ví dụ 2: Nhập nhiều giá trị, mỗi giá trị cách nhau bởi dấu cách
+my_var = input(">>").split()
+
+# Ví dụ 3: Nhập nhiều lần
+my_var = [input(">>") for i in range(3)]
+```
+
+### 5.2. Hàm print
+
+Cú pháp tổng quát:
+
+```python
+# object: Các đối tượng để in ra màn hình
+# sep: ký tự ngăn cách giữa các đối tượng được in ra nếu có nhiều đối tượng
+# end: Ký tự kết thúc
+print ( *objects , sep=' ', end='\n', file=sys.stdout, flush=False )
+```
