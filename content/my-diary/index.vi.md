@@ -6,13 +6,13 @@ comment:
   enable: false
 ---
 
-{{< showcase title="Mình phải sống như màu hè năm ấy" summary="" image="/22-tuoi-28/featured.JPG" link="/22-tuoi-28" >}}
+<!-- {{< showcase title="Đã lâu, không cầm bút" summary="" image="/21-da-lau-khong-cam-but/featured.JPG" link="/21-da-lau-khong-cam-but" >}} -->
 
-{{< showcase title="Đã lâu, không cầm bút" summary="" image="/21-da-lau-khong-cam-but/featured.JPG" link="/21-da-lau-khong-cam-but" >}}
+<!-- {{< showcase title="Mình phải sống như màu hè năm ấy" summary="" image="/22-tuoi-28/featured.JPG" link="/22-tuoi-28" >}} -->
 
-{{< showcase title="Những ngày cuối cùng ở Đông Mỹ" summary="" image="/20-tam-biet-dong-my/featured.JPG" link="/20-tam-biet-dong-my" >}}
+{{< showcase title="Những ngày cuối cùng ở Vũ Lăng" summary="Cuối cùng thì nơi này cũng sẽ trở thành quá khứ, mình sẽ đến một nơi mới, gặp những con người mới và lại bắt đầu một cuộc sống mới..." image="/20-tam-biet-vu-lang/featured.JPG" link="/20-tam-biet-vu-lang" >}}
 
-{{< showcase title="Đôi khi, anh nghĩ đến Xù" summary="Đêm nay, Hà Nội mưa, mưa rơi tí tách tí tách dưới mặt đất, đem toàn bộ căn phòng đều bao phủ bởi một tầng màn mưa bên trong. Trước cửa..." image="/19-doi-khi-anh-nghi-den-em/featured.jpg" link="/19-doi-khi-anh-nghi-den-em" >}}
+{{< showcase title="Đôi khi, anh nghĩ đến em" summary="Đêm nay, Hà Nội mưa, mưa rơi tí tách tí tách dưới mặt đất, đem toàn bộ căn phòng đều bao phủ bởi một tầng màn mưa bên trong. Trước cửa..." image="/19-doi-khi-anh-nghi-den-em/featured.jpg" link="/19-doi-khi-anh-nghi-den-em" >}}
 
 {{< showcase title="Tạm biệt 2021, chào 2022!" summary="Một năm qua của các bạn thế nào, đã làm được hết những điều mình mong muốn chưa, và còn gì tiếc nuối nữa hay không..." image="/18-tan-man-ngay-dau-nam/cuoi-nam.jpg" link="/18-tan-man-ngay-dau-nam" >}}
 

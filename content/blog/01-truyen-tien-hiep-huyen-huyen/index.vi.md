@@ -50,11 +50,11 @@ lightgallery: true
 21. Ta Có Một Thân Bị Động Kỹ _(810/?)_
 22. Vạn Cổ Thần Đế _(3480/?)_
 23. Cửu Tinh Bá Thể Quyết _(4764/?)_
-24. Tinh Môn _(541 - kết thúc phần 1)_
-25. Dạ Mệnh Danh Thuật _(714 - xong quyển 4)_
 
 #### Đang đọc:
 
-26. Mink Đường Phố Số 13 _(319/?)_
-27. Xích Tâm Tuần Thiên _(339 - xong quyển 2)_
+24. Tinh Môn _(548)_
+25. Dạ Mệnh Danh Thuật _(724)_
+26. Mink Đường Phố Số 13 _(326)_
+27. Xích Tâm Tuần Thiên _(360)_
 28. Trạch Nhật Phi Thăng _(Bộ truyện cuối cùng mình theo dõi)_

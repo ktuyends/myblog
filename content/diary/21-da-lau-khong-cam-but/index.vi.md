@@ -3,8 +3,8 @@ title: "Đã lâu, không cầm bút"
 slug: da-lau-khong-cam-but
 subtitle: ""
 summary: ""
-date: 2022-04-26
-lastmod: 2022-04-26
+date: 2022-07-15
+lastmod: 2022-07-15
 draft: false
 authors: ["Tuyen Kieu"]
 images: ["featured.JPG"]
@@ -15,4 +15,5 @@ toc:
 license: ""
 hiddenFromHomePage: false
 lightgallery: true
+draft: true
 ---
