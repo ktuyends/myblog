@@ -44,3 +44,7 @@ lightgallery: true
 <p style = "text-align: justify">Tôi chưa bao giờ nghĩ, mình sẽ viết một bài về nơi này dài như vậy. Có lẽ, ở một nơi quá lâu nên cũng có chút tình cảm chăng. Nơi này có rất nhiều con người thân thiện. Có anh chị giặt đồ vui tính, mỗi lần tôi đến đều tươi cười: <i>Tuyến à em, cứ để đồ ở cửa cho chị.</i> Anh chị bán bún đậu hàng bên thì: <i>Nay đổi qua ăn thử mắm tôm đi, suốt ngày ăn nước mắm không chán à.</i> Có cô bé bán nem nướng, mỗi lần thấy tôi lại hét lên: <i>Ah cái anh ăn cơm gà không ăn tương ớt này.</i> Anh chị bán giò chả thì:<i> Lâu lắm mới thấy mặt, tuần này có về quê không em.</i> Nơi này có anh cắt tóc đẹp trai, hay trêu mình:<i> Thế hôm nay lại có chuyện gì buồn mà đi cắt tóc hả em</i>...Haizz, mọi người có thể đừng nhớ mình như vậy được không, ngại quá.</p>
 
 <p style = "text-align: justify">Bạn tôi hay bảo, tìm chỗ khác đi, vào phố cho gần để đi tập cùng nó. Tôi cũng bảo với nó là tôi chán chỗ này lắm rồi, cũng muốn vào gần phố chứ. Ấy vậy mà, chả hiểu sao, giờ sắp đi lại có chút không nỡ, mỗi lần chuyển nhà cảm xúc đều vậy sao. Cuối cùng thì nơi này cũng sẽ trở thành quá khứ, mình sẽ đến một nơi mới, gặp những con người mới và lại bắt đầu một cuộc sống mới...</p>
+
+---
+
+<p style = "text-align: justify">P/s: Một bài nhật ký khá là nhạt nhẽo.</p>
