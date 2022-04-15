@@ -37,3 +37,36 @@ lightgallery: true
 - Một tài khoản mới
 - Kiếm tiền
 - Con đường nào cho tương lai
+
+## 2. Timeline
+
+**First time**:
+
+- [ ] 14/04-15/04: Python
+- [ ] 16/04-17/04: Excel
+- [ ] 18/04-19/04: Data fundamental
+- [ ] 19/04-20/05: Tableau
+
+**21/04-10/05**:
+
+- [ ] Math
+- [ ] Python for data analysis
+- [ ] English
+
+**12/05-30/07**:
+
+- [ ] Business Intelligence
+- [ ] Power BI
+- [ ] English
+
+**01/08 - 30/08**:
+
+- [ ] SQL
+- [ ] English
+- [ ] Business Analytics
+
+**01/09-30/01**:
+
+- [ ] English
+- [ ] Ôn tập tools: Excel, SQL, Power BI, Python
+- [ ] Làm Projects

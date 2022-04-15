@@ -54,7 +54,8 @@ lightgallery: true
 
 #### Đang đọc:
 
-25. Tinh Môn _(548)_
-26. Dạ Mệnh Danh Thuật _(724)_
-27. Mink Đường Phố Số 13 _(326)_
-28. Trạch Nhật Phi Thăng _(Bộ truyện cuối cùng mình theo dõi)_
+25. Tinh Môn _(553)_
+26. Dạ Mệnh Danh Thuật _(730)_
+27. Mink Đường Phố Số 13 _(331)_
+28. Thâm Không Bỉ Ngạn _(315)_
+29. Trạch Nhật Phi Thăng _(Bộ truyện cuối cùng mình theo dõi)_

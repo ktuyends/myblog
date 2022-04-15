@@ -26,12 +26,8 @@ lightgallery: true
 
 ## 2. Generators
 
-## 3. Closures
+## 3. Context manager
 
-## 4. Decorators
+## 4. Property
 
-## 5. Context manager
-
-## 6. Property
-
-## 7. Regular expression
+## 5. Regular expression
