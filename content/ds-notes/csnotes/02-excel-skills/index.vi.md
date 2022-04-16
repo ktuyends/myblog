@@ -1,17 +1,17 @@
 ---
-title: "DA Tools - Excel notes"
+title: "CS Notes - Data analysis with Excel"
 subtitle: ""
 slug: excel-notes
-date: 2022-02-24
-lastmod: 2022-02-24
+date: 2022-02-25
+lastmod: 2022-02-25
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
 images: []
-tags: ["DA Tools"]
+tags: ["CS Notes"]
 categories: []
-series: [Data Analysis Tools]
-series_weight: 1
+series: [Course Notes]
+series_weight: 2
 toc:
   enable: true
 license: ""

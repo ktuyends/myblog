@@ -1,17 +1,17 @@
 ---
-title: "DA Tools - SQL for data analysis"
+title: "SQL Notes - Làm quen với SQL Server"
 subtitle: ""
-slug: sql-for-data-analysis
+slug: sql-server
 date: 2022-02-26
 lastmod: 2022-02-26
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
 images: []
-tags: ["DA Tools"]
+tags: ["SQL for DA"]
 categories: []
-series: [Data Analysis Tools]
-series_weight: 3
+series: [SQL for Data Analysis]
+series_weight: 1
 toc:
   enable: true
 license: ''  
@@ -216,5 +216,3 @@ Vì bài viết này được thực hiện trên *Jupyter Notebook* và hệ qu
 # Connect
 %sql mssql+pyodbc://ktuyends@KTUYEN-PC\DSSQL2019/Parch?trusted_connection=yes&driver=ODBC+Driver+17+for+SQL+Server
 ```
-
-## 4. SQL cơ bản
