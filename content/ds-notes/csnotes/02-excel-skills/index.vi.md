@@ -1,5 +1,5 @@
 ---
-title: "CS Notes - Data analysis with Excel"
+title: "CS Notes - Excel cơ bản"
 subtitle: ""
 slug: excel-notes
 date: 2022-02-25
@@ -61,7 +61,7 @@ Flash Fill cho phép chúng ta tách dữ liệu trong một cột thành nhiề
 - Hàm text: _UPPER(), LOWER(), PROPER(), LEFT(), RIGHT(), MID()_
 - Hàm nối: _CONCATENATE()_
 - Hàm thời gian: _NOW(), TODAY(), DATE(), TIME()_
-- Hàm tham chiếu: _VLOOKUP(), INDEX(array, row, col), MATCH(lookup_value, array, type)_
+- Hàm tham chiếu: _VLOOKUP(), INDEX(array, row, col), MATCH(lookup_value, array, type), INDIRECT()_
 
 ### 1.6. Quick analysis
 
@@ -84,9 +84,9 @@ Tables trong Excel là một đối tượng đặc biệt được đặt tên 
 Tham chiếu đến dữ liệu trong Tables:
 
 - _tbl_name[#All]_: Tham chiếu đến toàn bộ bảng bao gồm header, data, total.
-- _tbl_name[#Header]_: Tham chiếu đến toàn bộ tên cột.
+- _tbl_name[#Headers]_: Tham chiếu đến toàn bộ tên cột.
 - _tbl_name[#Data]_: Tham chiếu đến toàn phần data của bảng.
-- _tbl_name[#Total]_: Tham chiếu đến hàng total nếu nó tồn tại.
+- _tbl_name[#Totals]_: Tham chiếu đến hàng total nếu nó tồn tại.
 
 Tham chiếu đến dữ liệu trong một hàng hoặc cột của Table:
 
