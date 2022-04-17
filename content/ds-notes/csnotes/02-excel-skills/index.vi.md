@@ -81,11 +81,38 @@ Tables trong Excel là một đối tượng đặc biệt được đặt tên 
 
 {{< figure src="tables.png" width=75% >}}
 
-Một số cách tham chiếu đến dữ liệu trong Tables:
+Tham chiếu đến dữ liệu trong Tables:
 
-{{< figure src="tables-ref.png" width=75% >}}
+- _tbl_name[#All]_: Tham chiếu đến toàn bộ bảng bao gồm header, data, total.
+- _tbl_name[#Header]_: Tham chiếu đến toàn bộ tên cột.
+- _tbl_name[#Data]_: Tham chiếu đến toàn phần data của bảng.
+- _tbl_name[#Total]_: Tham chiếu đến hàng total nếu nó tồn tại.
 
-### 1.9. Một số tính năng khác
+Tham chiếu đến dữ liệu trong một hàng hoặc cột của Table:
+
+- _tbl_name[[#All], [Column2]]_: Tham chiếu đến toàn bộ dữ liệu trong một cột.
+- _tbl_name[Column2]_: Tham chiếu đến phần data trong cột Column2.
+- _tbl_Table1[@Column2]_: Tham chiếu đến giá trị tương ứng trong Column2 mà cùng dòng với ActiveCell.
+- _tbl_Table1[@]_: Tham chiếu đến toàn bộ hàng hiện tại trong Column2 mà cùng dòng với ActiveCell.
+
+### 1.9. Làm việc với mảng
+
+Spill Range là một tính năng mới của Excel, ta có thể hiểu đơn giản là nó sẽ trả về nhiều kết quả trên một vùng mà chỉ cần thông qua một công thức. Công thức này còn được gọi là công thức mảng động.
+
+{{< figure src="array.png" width=75% >}}
+
+Một số hàm mảng động:
+
+- _FILTER()_: Lọc dữ liệu thỏa mãn một điều kiện nào đó.
+- _SORT()_: Sắp xếp các giá trị của một mảng.
+- _SORTBY()_: Sắp xếp các giá trị của một mảng dựa vào một mảng khác.
+- _UNIQUE()_: Trả về các giá trị duy nhất trong một mảng.
+- _RANDARRAY()_: Một mảng các số ngẫu nhiên.
+- _SEQUENCE()_: Tạo một mảng các số tăng dần.
+- _XLOOKUP()_: Hàm tham chiếu.
+- _XMATCH()_: Hàm tham chiếu.
+
+### 1.10. Một số tính năng khác
 
 - Sort and Filter
 - Conditional Formatting
@@ -94,4 +121,71 @@ Một số cách tham chiếu đến dữ liệu trong Tables:
 - PivotChart
 - Shapes
 
-## 2. Getting Data
+## 2. Power Query
+
+{{< figure src="excel-process.png" width=75% >}}
+
+### 2.1. Get & Transform Data
+
+Trước khi đi vào phân tích dữ liệu, chúng ta cần phải load data vào Excel. Như trước đây, chúng ta thường sẽ vào Menu _File -> Open_ thì bây giờ, ta làm quen với các công cụ tiên tiến hơn như _Get & Transform Data_:
+
+{{< figure src="get-data.png" width=75% >}}
+
+Ví dụ, để đọc một file CSV, ta chọn _From Text/CSV_:
+
+{{< figure src="get-csv.png" width=85% >}}
+
+Như các bạn thấy, một bảng mới hiện ra, cung cấp cho chúng ta một số thông tin:
+
+- _Delimiter_: Ký tự phân tách giữa các cột.
+- _Data Type Detection_: Kiểu dữ liệu trong các cột được xác định dựa trên 200 hàng đầu tiên.
+- _Transform Data_: Đưa chúng ta vào giao diện của Power Query để thực hiện các thao tác biến đổi dữ liệu.
+- _Load_: Nếu các bạn cảm thấy chưa cần chỉnh sửa thì chúng ta chọn _Load_ để nhập dữ liệu vào trong Excel. Khi chọn _Load_ cửa sổ _Import data_ được bật ra và cung cấp cho chúng ta một số lựa chọn.
+
+{{< figure src="close.png" width=60% >}}
+
+Ở đây, chúng ta có hai hướng chính:
+
+- Hướng thứ nhất, lưu trữ dữ liệu vào một vùng trong Excel dưới dạng bảng như Tables,...
+- Hướng thứ hai, không lưu trữ dữ liệu mà chỉ tạo kết nối với dữ liệu thông qua _Only Create Connection_.
+
+Ở phía dưới cùng của cửa sổ, có một hộp tick _Add this data to the Data Model_, tùy chọn này được sử dụng khi chúng ta làm việc với nhiều bảng và cần các kết nối giữa các bảng với nhau.
+
+Sau khi load data, đây là kết quả của chúng ta:
+
+{{< figure src="./load-result.png" width=85% >}}
+
+Khi bạn nhìn vào khu vực _Queries & Connections_, và cảm thấy không thích tên Query được tạo ra tự động bởi Excel. Bạn click chuột phải vào Query chọn _Rename_ và đổi tên cho nó.
+
+### 2.2. Nhập dữ liệu từ một thư mục
+
+Giả sử chúng ta có một thư mục gồm rất nhiều files, và các files có cấu trúc giống nhau (nghĩa là trong các bảng, các cột có cùng tên với nhau). Với Power Query, chúng ta có thể đọc và merge tất cả các files này với nhau. Để làm điều đó, ta chọn _Get Data -> From File -> From Folder..._
+
+{{< figure src="./get-folder.png" width=85% >}}
+
+Chọn _Combine & Transform Data_:
+
+{{< figure src="./get-folder2.png" width=85% >}}
+
+Bây giờ, ta phải chọn một bảng để làm mẫu cho các files, cuối cùng ta có kết quả như sau:
+
+{{< figure src="./get-folder3.png" width=100% >}}
+
+Các bạn chọn _Close & Load to_ để lưu lại kết quả.
+
+### 2.3. Nhập dữ liệu từ website
+
+Để nhập dữ liệu từ website, ta chọn _Get From Web_ và nhập đường link của trang web cần lấy dữ liệu: [Federal Reserve](https://www.federalreserve.gov/releases/h10/Hist/dat00_ca.htm)
+
+{{< figure src="./get-from-web.png" width=80% >}}
+
+### 2.4. Một số thao tác với Power Query
+
+- Xóa các cột không cần thiết.
+- Lọc dữ liệu.
+- Đổi tên cột.
+- Xác định kiểu dữ liệu của từng cột.
+- Thêm cột.
+- Append và merge.
+- Biến đổi và làm sạch dữ liệu.
+- Pivot và unpivot.

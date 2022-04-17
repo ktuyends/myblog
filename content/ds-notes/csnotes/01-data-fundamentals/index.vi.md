@@ -20,3 +20,11 @@ lightgallery: true
 ---
 
 <!--more-->
+
+## 1. Core data concepts
+
+## 2. Relational data
+
+## 3. Non-relational data
+
+## 4. Analytics workload
