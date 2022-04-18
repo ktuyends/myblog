@@ -42,9 +42,9 @@ lightgallery: true
 
 **First time**:
 
-- [ ] 14/04-15/04: Python
-- [ ] 16/04-17/04: Excel
-- [ ] 18/04-19/04: Data fundamental
+- [x] 16/04-17/04: Excel
+- [ ] 18/04-19/04: Database management
+- [ ] 19/04-19/04: Python
 - [ ] 19/04-20/05: Tableau
 
 **21/04-10/05**:

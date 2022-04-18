@@ -1,5 +1,5 @@
 ---
-title: "CS Notes - Excel cơ bản"
+title: "ETB - Excel cơ bản"
 subtitle: ""
 slug: excel-notes
 date: 2022-02-25
@@ -8,10 +8,10 @@ draft: false
 authors: ["Tuyen Kieu"]
 description: ""
 images: []
-tags: ["CS Notes"]
+tags: ["Excel"]
 categories: []
-series: [Course Notes]
-series_weight: 2
+series: [Excel - Tableau]
+series_weight: 1
 toc:
   enable: true
 license: ""

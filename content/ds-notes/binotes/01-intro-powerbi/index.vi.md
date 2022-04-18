@@ -17,6 +17,7 @@ toc:
 license: ""
 hiddenFromHomePage: false
 lightgallery: true
+draft: true
 ---
 
 <!--more-->
