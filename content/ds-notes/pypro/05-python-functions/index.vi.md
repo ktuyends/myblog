@@ -202,13 +202,27 @@ print(add(x = 2, y = 3, z = 4))
 
 ## 3. Higher-order functions
 
+Một hàm nhận một hàm khác làm đối số, hoặc trả về một hàm được gọi là _higher-order functions_.
+
+### 3.1. Map
+
+### 3.2. Filter
+
+### 3.3. Reduce
+
+### 3.4. Partial functions
+
+
 
 ## 4. Scopes
+
+### 4.1. Global
+
+### 4.2. Local
+
+### 4.3. Nonlocal
 
 ## 5. Closures
 
 ## 6. Decorators
 
-## 7. Module and packages
-
-## 8. Namespaces

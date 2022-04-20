@@ -11,14 +11,14 @@ images: ["featured.jpg"]
 tags: ["My Diary"]
 toc:
   enable: false
-license: ''  
+license: ""
 hiddenFromHomePage: false
 lightgallery: true
 ---
 
 <p style = "text-align: justify">Hà Nội 25/07/2017...</p>
 
-<p style = "text-align: justify">0h sáng, bỗng dưng cảm thấy mệt mỏi, một nỗi buồn man mác không thể gọi tên. Chẳng muốn làm gì, đi ra rồi lại đi vào, thời tiết mấy ngày này thật là khó chịu...</p>
+<p style = "text-align: justify">2h sáng, bỗng dưng cảm thấy mệt mỏi, một nỗi buồn man mác không thể gọi tên. Chẳng muốn làm gì, đi ra rồi lại đi vào, thời tiết mấy ngày này thật là khó chịu...</p>
 
 <p style = "text-align: justify">Hà Nội nay thật buồn, buồn chẳng biết vì sao mình buồn. Phải chăng, do bản nhạc đang nghe mang giai điệu buồn, do hôm nay không ra tập mới của bộ phim đang xem dở, do học mà không vào, do chưa ra được trường hay do áp lực cuộc sống...</p>
 

@@ -3,8 +3,8 @@ title: "Những ngày cuối cùng ở Vũ Lăng"
 slug: tam-biet-vu-lang
 subtitle: ""
 summary: "Cuối cùng thì nơi này cũng sẽ trở thành quá khứ, mình sẽ đến một nơi mới, gặp những con người mới và lại bắt đầu một cuộc sống mới."
-date: 2022-04-11
-lastmod: 2022-04-11
+date: 2022-04-20
+lastmod: 2022-04-20
 draft: false
 authors: ["Tuyen Kieu"]
 images: ["featured.JPG"]
@@ -17,7 +17,7 @@ hiddenFromHomePage: false
 lightgallery: true
 ---
 
-<p style = "text-align: justify">Hà Nội, 11/04/2022</p>
+<p style = "text-align: justify">Hà Nội, 20/04/2022</p>
 
 <p style = "text-align: justify">Không biết vì sao, hôm nay cảm giác không được tốt cho lắm, tiết trời cả ngày xám xịt, không có nổi một chút ánh nắng, nghe đài dự báo lại sắp có gió mùa về. Thời tiết mùa này sáng nắng, chiều mưa chẳng thể nào dự đoán được. Viết đến đây tự dưng tôi nhớ đến một câu nói: <i>Phụ nữ cũng giống như thời tiết, rất dễ thay đổi. Còn đàn ông lại giống như dự báo thời tiết, đều không đáng tin cậy. Haha.</i> Tôi cảm giác mùa này như khắc tinh của mình, cả người không còn chút sức nào, thế rồi tôi lăn ra bàn ngủ lúc nào không hay, lúc tỉnh dậy trời đã sắp tối. Mở cửa phòng, định đi mua chút đồ ăn thì có tiếng vọng lại:</p>
 
