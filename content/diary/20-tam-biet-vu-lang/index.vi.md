@@ -52,7 +52,3 @@ lightgallery: true
 <p style = "text-align: justify">Haizz, mọi người có thể đừng nhớ mình như vậy được không, ngại quá. Nhiều lúc tôi không hiểu sao mình thảo mai đến vậy.</p>
 
 <p style = "text-align: justify">Bạn tôi hay bảo, tìm chỗ khác đi, vào phố cho gần để đi tập Gym cùng nó. Tôi cũng bảo với nó là tôi chán chỗ này lắm rồi, cũng muốn vào gần phố chứ. Ấy vậy mà, chả hiểu sao, giờ sắp đi lại có chút không nỡ, mỗi lần chuyển nhà cảm xúc đều như vậy. Cuối cùng thì nơi này cũng sẽ trở thành quá khứ, mình sẽ đến một nơi mới, gặp những con người mới và lại bắt đầu một câu chuyện mới...</p>
-
----
-
-<p style = "text-align: justify">P/s: Một bài nhật ký khá là nhạt nhẽo. Cảm giác viết càng ngày càng xuống tay...</p>
