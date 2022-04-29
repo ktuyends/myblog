@@ -51,11 +51,11 @@ lightgallery: true
 22. Vạn Cổ Thần Đế _(3480/?)_
 23. Cửu Tinh Bá Thể Quyết _(4764/?)_
 24. Xích Tâm Tuần Thiên _(360 - xong quyển 2)_
+25. Dạ Mệnh Danh Thuật _(745/?)_
+26. Mink Đường Phố Số 13 _(347/?)_
 
 #### Đang đọc:
 
-25. Tinh Môn _(560)_
-26. Dạ Mệnh Danh Thuật _(740)_
-27. Mink Đường Phố Số 13 _(340)_
-28. Thâm Không Bỉ Ngạn _(400)_
+27. Tinh Môn _(573)_
+28. Thâm Không Bỉ Ngạn _(608)_
 29. Trạch Nhật Phi Thăng _(Bộ truyện cuối cùng mình theo dõi)_
