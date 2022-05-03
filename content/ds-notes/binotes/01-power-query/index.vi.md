@@ -11,7 +11,7 @@ images: []
 tags: ["BI"]
 categories: []
 series: [Business Intelligence]
-series_weight: 2
+series_weight: 1
 toc:
   enable: true
 license: ""
@@ -20,3 +20,21 @@ lightgallery: true
 ---
 
 <!--more-->
+
+## 1. Getting data
+
+## 2. Data exploration
+
+## 3. Reshaping
+
+## 4. Combining queries
+
+## 5. Optimizing PQ performance
+
+## 6. M Language
+
+## 7. Add Columns
+
+## 8. Dataflows
+
+## 9. Query diagnostics

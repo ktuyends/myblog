@@ -11,7 +11,7 @@ images: ["featured.jpg"]
 tags: ["My Diary"]
 toc:
   enable: false
-license: ''  
+license: ""
 hiddenFromHomePage: false
 lightgallery: true
 ---
@@ -24,7 +24,7 @@ lightgallery: true
 
 <p style = "text-align: justify">Người ta thường bảo, càng trưởng thành, càng cô đơn. Không biết, bạn nghĩ thế nào. Nhưng tôi nghĩ, nó đúng với mình. Mấy năm qua, tôi đi nhiều, trải nghiệm cũng nhiều, đủ để biết mình muốn gì và nên làm gì tiếp theo. Tôi không còn lang thang vào game hay nhập hố thêm bộ truyện nào nữa. Tôi cũng ít lên facebook trò chuyện với mọi người. Chắc sẽ bị bọn nó bảo: "Dạo này mày chảnh cún thế". Haizz, lớn rồi, đâu thể cứ mãi như trẻ con được.</p>
 
-<p style = "text-align: justify">Ai cũng có một thời tuổi trẻ, cái thời ngây ngô dùng sinh mệnh để đo độ dài của thời gian, viết nên những câu chuyện của riêng mình. Dù kết quả có thế nào đi chăng nữa, thì tôi nghĩ mọi chuyện xảy ra, đều có lý do và đều đúng thời điểm.</p>
+<p style = "text-align: justify">Ai cũng có một thời tuổi trẻ, cái thời ngây ngô dùng sinh mệnh để đo độ dài của thời gian, viết lên những câu chuyện của riêng mình. Dù kết quả có thế nào đi chăng nữa, thì tôi nghĩ mọi chuyện xảy ra, đều có lý do và đều đúng thời điểm.</p>
 
 <p style = "text-align: justify">Bỗng dưng, tôi nhớ đến một câu chuyện vui thế này. Hồi tôi học lớp 7, tôi bắt đầu giải đề toán thi vào cấp 3 rồi. Thế là, ảo tưởng, cho rằng toán cấp 3 nó cũng đơn giản thôi. Tôi qua nhà hàng xóm, trộm mấy quyển toán lớp 11, lớp 12 về đọc thử. Cuối cùng, cũng phải từ bỏ cái ý định này, vì không hiểu gì hết. Nghĩ lại, thấy mình thật ngây ngô mà.</p>
 
