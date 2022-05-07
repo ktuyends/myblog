@@ -19,14 +19,12 @@ lightgallery: true
 
 ## 1. Một số việc muốn làm
 
+- Mua vali
 - Xây dựng lại tủ quần áo
-- Mua thắt lưng
 - Vòng cổ
 - Nước hoa
-- Tủ giày
-- Combo skinc
-- Mua vali
-- Jump rope
+- Dung dịch VS
+- Tủ giày (Dr, sneaker trắng, thể thao)
 - Trekking
 - Nhảy dù
 - Đi HCM
@@ -42,10 +40,10 @@ lightgallery: true
 
 **First time**:
 
-- [x] 16/04-17/04: Excel
-- [ ] 18/04-19/04: Database management
-- [ ] 19/04-19/04: Python
-- [ ] 19/04-20/05: Tableau
+- [x] Excel
+- [x] Database management
+- [ ] Python
+- [ ] SQL
 
 **21/04-10/05**:
 
@@ -57,11 +55,11 @@ lightgallery: true
 
 - [ ] Business Intelligence
 - [ ] Power BI
+- [ ] Tableau
 - [ ] English
 
 **01/08 - 30/08**:
 
-- [ ] SQL
 - [ ] English
 - [ ] Business Analytics
 

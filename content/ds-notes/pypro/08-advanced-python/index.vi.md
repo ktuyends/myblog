@@ -26,8 +26,4 @@ lightgallery: true
 
 ## 2. Generators
 
-## 3. Context manager
-
-## 4. Property
-
-## 5. Regular expression
+## 3. Regular expression
