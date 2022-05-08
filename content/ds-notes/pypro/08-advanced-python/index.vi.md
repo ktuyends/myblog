@@ -22,8 +22,10 @@ lightgallery: true
 <!--more-->
 
 
-## 1. Iterators
+## 1. Exceptions
 
-## 2. Generators
+## 2. Iterators
 
-## 3. Regular expression
+## 3. Generators
+
+## 4. Regular expression
