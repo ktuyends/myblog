@@ -299,3 +299,217 @@ dir_path.rmdir()
 dir_path = Path('/tmp/img')
 shutil.rmtree(dir_path)
 ```
+
+## 5. Exceptions
+
+### 5.1. Exception là gì?
+
+Exception hiểu đơn giản thì nó là các ngoại lệ, khi chương trình gặp phải một lỗi nào đó, nó sẽ dừng lại và đưa ra các ngoại lệ kèm theo thông báo về lỗi mà chúng ta gặp phải. Ví dụ:
+
+
+
+```python
+# Lỗi chia cho số 0: ZeroDivisionError
+10 / 0
+```
+
+
+    ---------------------------------------------------------------------------
+
+    ZeroDivisionError                         Traceback (most recent call last)
+
+    ~\AppData\Local\Temp/ipykernel_11688/2762118699.py in <module>
+          1 # Lỗi chia cho số 0: ZeroDivisionError
+    ----> 2 10 / 0
+    
+
+    ZeroDivisionError: division by zero
+
+
+### 5.2. Ví dụ đơn giản
+
+Đầu tiên, chúng ta sẽ làm quen với câu lệnh `try-except`. Với câu lệnh này, chúng ta đặt những đoạn code mà có khả năng gặp phải lỗi khi chạy vào mệnh dề `try`, và các phản hồi khi gặp lỗi vào mệnh đề `except`. Nếu các đoạn code trong mệnh đề `try` chạy bình thường, các câu lệnh trong mệnh đề `except` sẽ không cần chạy, ngược lại nếu chương trình gặp lỗi nó dừng lại và chuyển đến chạy các câu lệnh trong mệnh đề `except`.
+
+
+```python
+# Hàm tính diện tích
+def calcArea(radius):
+    pi = 3.1416    
+    radius = float(radius)
+    area = pi * radius ** 2
+    return area
+
+# Xử lý với try-except
+for radius in [5, "a", 4, 8, "b", 0]: 
+    try: 
+        area = calcArea(radius)
+        print(f"Area for radius {radius} = {area}\n")
+    except Exception as e:
+        print(f"Something is wrong with {radius}\n")
+```
+
+    Area for radius 5 = 78.53999999999999
+    
+    Something is wrong with a
+    
+    Area for radius 4 = 50.2656
+    
+    Area for radius 8 = 201.0624
+    
+    Something is wrong with b
+    
+    Area for radius 0 = 0.0
+    
+    
+
+### 5.3. Mở rộng cú pháp
+
+Trong phần này, ta sẽ mở rộng `try-except` thành `try-except-else-finally`:
+
+- _else_: Các câu lệnh trong mệnh đề này sẽ được thực thi nếu không có exception.
+- _finally_: Các câu lệnh trong mệnh đề này luôn luôn được thực thi.
+
+
+```python
+from datetime import datetime
+
+for radius in [5, "a", 4, 8, "b", 0]: 
+    try: 
+        area = calcArea(radius)
+        
+    except Exception as e:
+        area = None
+        print(f"Something is wrong for {radius}.")
+        
+    else: 
+        print(f"calcArea() ran successfully for {radius}")
+        
+    finally:
+        now = datetime.now()
+        print(f"Area for input {radius} = {area} \ncalcArea() run completed on {now}\n")
+```
+
+    calcArea() ran successfully for 5
+    Area for input 5 = 78.53999999999999 
+    calcArea() run completed on 2022-05-08 14:14:29.569058
+    
+    Something is wrong for a.
+    Area for input a = None 
+    calcArea() run completed on 2022-05-08 14:14:29.570032
+    
+    calcArea() ran successfully for 4
+    Area for input 4 = 50.2656 
+    calcArea() run completed on 2022-05-08 14:14:29.570032
+    
+    calcArea() ran successfully for 8
+    Area for input 8 = 201.0624 
+    calcArea() run completed on 2022-05-08 14:14:29.570032
+    
+    Something is wrong for b.
+    Area for input b = None 
+    calcArea() run completed on 2022-05-08 14:14:29.570032
+    
+    calcArea() ran successfully for 0
+    Area for input 0 = 0.0 
+    calcArea() run completed on 2022-05-08 14:14:29.570032
+    
+    
+
+### 5.4. Một số loại exceptions
+
+Chúng ta bắt đầu với một ví dụ về cách except một ngoại lệ cụ thể:
+
+```python
+# Xem lại câu lệnh
+except Exception as e:
+    # Loại exception
+    type(e).__name__
+
+    # Thông báo lỗi
+    print(e)
+````
+
+Tùy chỉnh lại chương trình trên:
+
+```python
+# Hàm đánh giá input
+def validate_input(value):
+    try: 
+        value = float(value)
+        return True
+    except: return False
+
+from datetime import datetime
+for radius in [5, "a", 4, 8, "b", 0]: 
+    try: 
+        area = calcArea(radius)
+        
+    except ValueError:
+        print("Input data is not numeric type.")
+        while not validate_input(radius):
+            radius = input("Please input a numeric value: ")
+        area = calcArea(radius)
+        
+    except Exception as e:
+        area = None
+        error_type = type(e).__name__
+        print(f"Area couldn't be calculated for {radius}.")
+        print(f"Error type: {error_type} \nError msg: {e}.")
+        
+    else: 
+        print(f"calcArea() ran successfully for {radius}")
+        
+    finally:
+        now = datetime.now()
+        print(f"Area for input {radius} = {area} \ncalcArea() run completed on {now}\n")
+```
+
+Một số loại exceptions trong Python:
+
+```
+BaseException
+ +-- SystemExit
+ +-- KeyboardInterrupt
+ +-- GeneratorExit
+ +-- Exception
+      +-- StopIteration
+      +-- StopAsyncIteration
+      +-- ArithmeticError
+      |    +-- FloatingPointError
+      |    +-- OverflowError
+      |    +-- ZeroDivisionError
+      +-- AssertionError
+      +-- AttributeError
+      +-- BufferError
+      +-- EOFError
+      +-- ImportError
+      |    +-- ModuleNotFoundError
+      +-- LookupError
+```
+
+### 5.5. Định nghĩa exceptions
+
+Chúng ta hoàn toàn có thể xây dựng các exceptions theo suy nghĩ của mình, bằng cách tạo ra các class kế thừa từ class Exception:
+
+```python
+class Above50Error(Exception):
+    def __init__(self, value):            
+        Exception.__init__(self)
+        self.value = value
+        
+    def __str__(self):
+        return f"Input {self.value} is larger than 50 inches"
+```
+
+Để đưa ra exception tự định nghĩa, ta phải sử dụng từ khóa `raise exception_name`
+
+```python
+def calcArea(radius):
+    pi = 3.1416
+    radius = float(radius)
+    if radius > 50:
+        raise Above50Error(radius)
+    else: 
+        area = pi * radius ** 2
+    return area
+```

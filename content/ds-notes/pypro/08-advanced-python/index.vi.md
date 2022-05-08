@@ -20,11 +20,7 @@ lightgallery: true
 ---
 
 <!--more-->
-
-
-## 1. Exceptions
-
-## 2. Iterators
+## 1. Iterators
 
 ## 3. Generators
 
