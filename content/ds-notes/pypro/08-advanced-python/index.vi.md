@@ -380,6 +380,3 @@ for w in s:
     our
     iterator
     
-
-
-## 4. Regular expression

@@ -743,3 +743,89 @@ for (person, price) in meal_data:
     total[person] += price
     individual_bill[person].append(price)
 ````
+
+## 6. Regular expression
+
+### 6.1. Ví dụ làm quen
+
+Giả sử ta có một chuỗi như sau và ta muốn lấy ra các số bên trong dãy này:
+
+```python
+text = 'ABC 123 XYZ 456 @&! 100'
+```
+
+
+```python
+# Text
+text = 'ABC 123 XYZ 456 @&! 100'
+
+# Chúng ta cần module re để làm việc với regex
+import re
+
+# Tạo pattern 3 chữ số
+pattern = re.compile(r'\d\d\d')
+
+# Khớp pattern với text trả về match object
+# search chỉ trả về kết quả đầu tiên tìm được
+matches = pattern.search(text)
+print(matches)
+print(matches.group())
+```
+
+    <re.Match object; span=(4, 7), match='123'>
+    123
+    
+
+
+```python
+# Tìm kiếm tất cả các kết quả khớp được
+# finditer trả về một iterator
+matches_all = pattern.finditer(text)
+
+for item in matches_all:
+    print(item)
+    print(item.group())
+```
+
+    <re.Match object; span=(4, 7), match='123'>
+    123
+    <re.Match object; span=(12, 15), match='456'>
+    456
+    <re.Match object; span=(20, 23), match='100'>
+    100
+    
+
+Như ta thấy, về cơ bản khi làm việc với RegEx gồm 2 bước:
+
+- Bước 1: tạo pattern với hàm `re.compile(r'...')`
+- Bước 2: khớp pattern với text bằng hàm `pattern.search()` hoặc `pattern.finditer()`
+- Bước 3: Lọc kết quả với hàm `matches.group()`
+
+### 6.2. Patterns
+
+Trước khi đi vào ý nghĩa của các ký tự đặc biệt, có một trang web có thể giúp chúng ta kiểm tra xem pattern có khớp với những gì chúng ta mong đợi hay không: [Regex101](https://regex101.com/)
+
+| Ký tự | Ý nghĩa |
+|:-:|-|
+| \d | Một số bất kỳ từ `0-9`|
+| \D | Ngược lại với `\d` |
+| \w | Một ký tự bất kỳ bao gồm (`0-9a-zA-Z` và ký tự gạch dưới `_`) |
+| \W | Ngược lại với `\w` |
+| \s | Một ký tự khoảng trắng, ví dụ như space, tab, newline |
+| \S | Ngược lại với `\s` |
+ . | Biểu diễn bất kỳ ký tự nào ngoài trừ ký tự xuống dòng |
+
+| Ký tự | Ý nghĩa |
+|:-:|-|
+| () | 	Biểu diễn một nhóm |
+| + | Lặp lại 1 hoặc nhiều lần |
+| * | Lặp lại 0 đến nhiều lần |
+| ? | Tùy chọn có hoặc không có mẫu phía trước |
+| {n, m} | Số lần lặp lại tối thiểu là n tối đa là m |
+| [] | Tập hợp ký tự. Phù hợp nếu có bất kỳ ký tự nào trong dấu `[]`, không cần tuân theo thứ tự |
+| [^ ] | Tập hợp ký tự phủ định. Phù hợp nếu không có ký tự nào trong `[]` |
+| [.] | Dấu `.` trong trường hợp này không có ý nghĩa đặc biệt |
+| \| | Biểu diễn thay thế, phép toán or |
+| \ | 	Biểu diễn ký tự đặc biệt `[ ] ( ) { } . * + ? ^ $ \` | |
+| ^ | Điểm bắt đầu của dòng |
+| $ | Điểm kết thúc của dòng |
