@@ -55,7 +55,7 @@ lightgallery: true
 
 #### Đang đọc:
 
-26. Tinh Môn _(600)_
-27. Thâm Không Bỉ Ngạn _(Quyển 2 - 165)_
+26. Tinh Môn _(607)_
+27. Thâm Không Bỉ Ngạn _(Quyển 2 - 169)_
 28. Trạch Nhật Phi Thăng _(60)_
-29. Xích Tâm Tuần Thiên _(Quyển 3 - 62)_
+29. Xích Tâm Tuần Thiên _(Quyển 3 - 82)_

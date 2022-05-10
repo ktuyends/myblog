@@ -118,9 +118,9 @@ Khóa ngoại có thể có giá trị NULL, ngược lại khóa chính thì kh
 Giá trị Null là giá trị bị thiếu trong một hàng, ta có thể hiểu đó là một giá trị không xác định. 
 
 
-## 3. Tạo bảng
+## 3. Tạo bảng với SQL Server
 
-Việc cần làm đầu tiên trước khi tạo bảng, bạn cần phải xác định xem hệ quản trị CSDL mình đang dùng là gì, vì mỗi DBMS _(Database Management System_) sẽ có một số khác biệt nhỏ về cú pháp khi tạo bảng. Mình thì hiện đang sử dụng SQL Server phiên bản Developer.
+Việc cần làm đầu tiên trước khi tạo bảng, bạn cần phải xác định xem hệ quản trị CSDL mình đang dùng là gì, vì mỗi DBMS _(Database Management System_) sẽ có một số khác biệt nhỏ về cú pháp khi tạo bảng. Trong phần này, ta sẽ đi tìm hiểu về cách tạo bảng với SQL Server. 
 
 ### 3.1. Tạo database
 
@@ -220,13 +220,169 @@ FROM source_tables
 WHERE conditions;
 ```
 
+## 4. Làm quen với PostgreSQL
+
+### 4.1. Cài đặt
+
+Trước khi làm việc với PostgreSQL, ta cần cài đặt một số phần mềm:
+
+- [PostgreSQL](https://www.postgresql.org/download/)
+- PgAdmin (Cài đặt được lựa chọn trong quá trình cài PostgreSQL)
+
+Sau khi cài đặt, ta bật PgAdmin để tương tác với database:
+
+{{< figure src="./postgresql.png" width=80% >}}
+
+### 4.2. Tạo database
+
+Để tạo database, ta click chuột phải vào _Databases -> Create -> Database_ và nhập tên database:
+
+{{< figure src="./postgre-database.png" width=60% >}}
+
+### 4.3. Tạo table
+
+Để tạo bảng, ta click chuột phải vào _database_name -> Schemas -> Schema_name -> Tables_ và chọn _Create Table_.
+
+{{< figure src="./postgresql-create-table.png" width=80% >}}
+
+### 4.4. Query Tool
+
+Để viết các truy vấn trong CSDL, click chuột phải vào database muốn thực hiện truy vấn và chọn _Query Tool_:
+
+{{< figure src="./query-tool.png" width=80% >}}
+
+### 4.5. PostgreSQL và Pandas
+
+Có nhiều cách để sử dụng PostgreSQL trong môi trường Python. Với những người làm Data Analytics, bạn có thể sử dụng Pandas để đọc các lệnh truy vấn và kết quả được lưu trữ dưới dạng _DataFrame_, hoặc các bạn có thể sử dụng _Jupyter Magic_ để chạy trực tiếp các truy vấn.
+
+Trong phần này, chúng ta sẽ đi tìm hiểu cách để kết nối đến PostgreSQL database từ Python, và thực hiện một số thao tác truy vấn bằng Pandas. Trước tiên ta cần cài đặt một số module:
+
+```python
+conda install pandas       # Đọc truy vấn
+conda install ipython-sql  # Hỗ trợ sql trên jupyter
+conda install sqlalchemy   # Để làm việc với SQL
+conda install psycopg2     # Kết nối với PostgreSQL
+```
+
+Tiếp theo, ta cần phải xác định một số thông tin của database (click chuột phải vào _PostgreSQL 14 -> Properties -> Connection_ để lấy các thông tin như bên dưới).
+
+```python
+hostname = 'localhost'
+database = 'parch'
+username = 'postgres'
+pwd = 'admin' # password
+port_id = '5432'
+```
+
+**Kết nối Python với PostgreSQL**
 
 
-## 4. Câu lệnh SELECT
 
-## 5. Joins & Unions
+```python
+# import module
+from sqlalchemy import create_engine
 
-## 6. Aggregations
+# Connection: dialect+driver://username:password@host:port/database
+conn = create_engine('postgresql://postgres:admin@localhost:5432/parch')
+
+```
+
+**Thực hiện truy vấn với _Pandas_**
+
+
+```python
+# import module
+import pandas as pd
+
+# pd.read_sql(query, conn)
+data = pd.read_sql('SELECT * FROM public.region', conn)
+data
+```
+
+       id       name
+    0   1  Northeast
+    1   2    Midwest
+    2   3  Southeast
+    3   4       West
+    
+
+### 4.6. PostgreSQL và Jupyter
+
+Về cơ bản cú pháp cũng tương tự như khi sử dụng Pandas:
+
+
+```python
+# load_ext để sử dụng jupyter magic
+%load_ext sql
+
+# Connect
+%sql postgresql://postgres:admin@localhost:5432/parch
+```
+
+
+
+
+    'Connected: postgres@parch'
+
+
+
+Một số cách sử dụng _Jupyter Magic_ để thực hiện truy vấn:
+
+- Sử dụng `%sql` nếu các câu lệnh truy vấn nằm trên cùng 1 dòng.
+- Sử dụng `%%sql` nếu các câu lệnh truy vấn nằm trên nhiều dòng.
+- Sử dụng `%sql $query_var` với `query_var` là biến string gồm nhiều câu lệnh truy vấn.
+
+Ví dụ:
+
+
+```sql
+%%sql
+
+SELECT *
+FROM public.region
+```
+
+     * postgresql://postgres:***@localhost:5432/parch
+    4 rows affected.
+    
+
+
+
+
+<table>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Northeast</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Midwest</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Southeast</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>West</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+
+## 5. Câu lệnh SELECT
+
+## 6. Joins & Unions
 
 ## 7. Subqueries
 
@@ -236,4 +392,7 @@ WHERE conditions;
 
 ## 10. CTEs & View
 
+## 11. Recursive Queries
+
+## 12. Stored Procedure
 
