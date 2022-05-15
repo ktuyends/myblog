@@ -326,6 +326,37 @@ FROM table1;
 
 Khi gặp giá trị **NULL, DISTINCT** sẽ giữ lại một giá trị **NULL**, các giá trị còn lại sẽ bị xóa.
 
+### 5.4. PIVOT trong SQL Server
+
+Cú pháp:
+
+```sql
+-- PIVOT
+SELECT <non-pivoted column>,  
+    [first pivoted column] AS <column name>,  
+    [second pivoted column] AS <column name>,  
+    ...  
+    [last pivoted column] AS <column name>  
+FROM  
+    (<SELECT query that produces the data>)   
+    AS <alias for the source query>  
+PIVOT  
+(  
+    <aggregation function>(<column being aggregated>)  
+FOR   
+[<column that contains the values that will become column headers>]   
+    IN ( [first pivoted column], [second pivoted column],  
+    ... [last pivoted column])  
+) AS <alias for the pivot table>  
+<optional ORDER BY clause>;
+```
+
+Ví dụ:
+
+{{< figure src="./pivot.png">}}
+
+{{< figure src="./unpivot.png">}}
+
 ## 6. Xử lý dữ liệu Date
 
 ### 6.1. DATE_PART và EXTRACT
@@ -534,6 +565,211 @@ WHERE NOT EXISTS (
 
 ## 9. Temporary Tables
 
+### 9.1. Mệnh đề WITH
 
+WITH hay đôi khi còn được gọi với cái tên khác là _CTE (Command Table Expression)_. Hiểu đơn giản thì nó cho phép ta lưu kết quả của một câu lệnh truy vấn dưới một cái tên tạm thời mà ta có thể sử dụng lại trong các câu lệnh truy vấn khác.
+
+Cú pháp:
+
+```sql
+-- [(column_name [,...])]: Phần này có thể có hoặc không
+-- Nếu không đặt tên cho các cột thì nó sử dụng tên cột từ kết quả truy vấn
+WITH expression_name[(column_name [,...])]
+AS
+    (CTE_definition)
+
+-- Ví dụ minh họa
+-- Bước 1: Định nghĩa CTE với with
+WITH cte_sales_amounts (staff, sales, year) AS (
+    SELECT    
+        first_name + ' ' + last_name, 
+        SUM(quantity * list_price * (1 - discount)),
+        YEAR(order_date)
+    FROM    
+        sales.orders o
+    INNER JOIN sales.order_items i ON i.order_id = o.order_id
+    INNER JOIN sales.staffs s ON s.staff_id = o.staff_id
+    GROUP BY 
+        first_name + ' ' + last_name,
+        year(order_date)
+)
+
+-- Sử dụng CTE trong một truy vấn khác
+SELECT
+    staff, 
+    sales
+FROM 
+    cte_sales_amounts
+WHERE
+    year = 2018;
+```
+
+### 9.2. Sử dụng nhiều CTE trong một truy vấn
+
+Chúng ta có thể sử dụng nhiều CTE như ví dụ này:
+
+```sql
+WITH cte_category_counts (
+    category_id, 
+    category_name, 
+    product_count
+)
+AS (
+    SELECT 
+        c.category_id, 
+        c.category_name, 
+        COUNT(p.product_id)
+    FROM 
+        production.products p
+        INNER JOIN production.categories c 
+            ON c.category_id = p.category_id
+    GROUP BY 
+        c.category_id, 
+        c.category_name
+),
+cte_category_sales(category_id, sales) AS (
+    SELECT    
+        p.category_id, 
+        SUM(i.quantity * i.list_price * (1 - i.discount))
+    FROM    
+        sales.order_items i
+        INNER JOIN production.products p 
+            ON p.product_id = i.product_id
+        INNER JOIN sales.orders o 
+            ON o.order_id = i.order_id
+    WHERE order_status = 4 -- completed
+    GROUP BY 
+        p.category_id
+) 
+```
+
+```sql
+SELECT 
+    c.category_id, 
+    c.category_name, 
+    c.product_count, 
+    s.sales
+FROM
+    cte_category_counts c
+    INNER JOIN cte_category_sales s 
+        ON s.category_id = c.category_id
+ORDER BY 
+    c.category_name;
+```
+
+### 9.3. CTE đệ quy
+
+Cú pháp:
+
+```sql
+-- Cú pháp gồm 3 phần
+-- Phần 1 - Query cơ bản
+-- Phần 2 - Query đệ quy gọi CTE
+-- Phần 3 - Điều kiện kết thúc đệ quy
+WITH RECURSIVE cte_name AS(
+    CTE_query_definition -- non-recursive term
+    UNION ALL
+    CTE_query definion  -- recursive term
+) SELECT * FROM cte_name;
+```
+
+```sql
+-- Ví dụ:
+WITH RECURSIVE managers AS (
+        SELECT id, name, manager_id, job, 1 AS level
+        FROM employees
+        WHERE id = 7 -- Alice, the VP
+        UNION ALL
+        SELECT e.id, e.name, e.manager_id, e.job, managers.level + 1 AS level
+        FROM employees e
+        JOIN managers ON e.manager_id = managers.id
+)
+
+SELECT * FROM managers;
+```
 
 ## 10. Window Functions
+
+{{< figure src="./window-functions.webp" width=85% >}}
+
+### 10.1. Cú pháp
+
+Windows Functions là các hàm được sử dụng để thực hiện các phép toán trên các dòng liên quan với dòng hiện tại. Khác với các hàm Aggregate sẽ thực hiện tính toán trên tất cả các dòng thì với _Window Functions_ nó sẽ thực hiện trên một nhóm giới hạn các hàng và trả về kết quả cho từng hàng trong nhóm đó. 
+
+```sql
+Windows Functions () OVER (
+[PARTITION BY partition_expression, ... ]
+ORDER BY sort_expression [ASC | DESC], ...)
+```
+
+Giải thích:
+
+- **OVER()**: Chỉ định hàm mà chúng ta sử dụng là một hàm _Window Funtions_.
+- **PARTITION BY**: Dùng để nhóm các hàng có liên quan với nhau thành một Partition sau đó thực hiện tính toán trên Partition này. Nếu không có `PARTITION BY` thì _Windows Functions_ sẽ áp dụng trên tất cả các hàng.
+- **ORDER BY**: Sắp xếp các giá trị trong mỗi Partition.
+
+**Ví dụ:**
+
+Giả sử ta có một bảng như sau:
+
+{{< figure src="./films-schema.svg" >}}
+
+{{< figure src="./films-input-rows.svg" >}}
+
+Bây giờ, với mỗi film, ta cần tính điểm trung bình của tất cả các film, trong từng nằm:
+
+```sql
+SELECT f.id, f.release_year, f.rating,
+ AVG(rating) OVER (PARTITION BY release_year) AS year_avg
+FROM films f ORDER BY release_year, rating;
+```
+
+**Minh họa:**
+
+{{< figure src="./partitioning.svg" >}}
+
+### 10.2. Các hàm thường sử dụng
+
+|Aggregate Functions| Ý nghĩa |
+|:-:|-|
+| AVG() | Trả về giá trị trung bình |
+| MIN() | Trả về giá trị nhỏ nhất |
+| MAX() | Trả về giá trị lớn nhất |
+| SUM() | Tính tổng các giá trị|
+| COUNT() | Đếm các giá trị |
+
+
+|Ranking Functions| Ý nghĩa |
+|:-:|-|
+|RANK()|Xếp hạng các giá trị theo thứ tự tăng dần nhưng sẽ trả về thứ hạng giống nhau với các giá trị giống nhau và bỏ qua thứ hạng đó. Ví dụ: 1, 2, 2, 4,...|
+|DENSE_RANK()| 	Xếp hạng các giá trị theo thứ tự tăng dần nhưng sẽ trả về thứ hạng giống nhau với các giá trị giống nhau và không bỏ qua thứ hạng đó. Ví dụ 1, 2, 2, 3,...|
+|ROW_NUMBER()| Xếp hạng các giá trị trong từng partition theo thứ tự tăng dần mà không quan tâm đến giá trị giống nhau. Ví dụ: 1, 2, 3, 4,...|
+|NTILE(n)| Chia các hàng thành n nhóm, và đánh số cho từng nhóm. |
+|PERCENT_RANK()| (RANK() - 1) / (Total Rows - 1)|
+|CUME_DIST()| RowNo / (ToTal Rows) |
+
+
+
+|Analytic Functions| Ý nghĩa |
+|:-:|-|
+|FIRST_VALUE()| Lấy giá trị đầu trong từng Partition.|
+|LAST_VALUE()| Lấy giá trị cuối trong từng Partition. |
+|NTH_VALUE(expr, n)| Lấy giá trị thứ n trong từng Partition.|
+
+### 10.3. Hàm LAG và LEAD
+
+Cú pháp:
+
+```sql
+-- LAG
+LAG(expression, offset = 1)
+```
+
+{{< figure src="./lag.png" >}}
+
+```sql
+-- LEAD
+LEAD(expression, offset = 1)
+```
+
+{{< figure src="./lead.png" >}}
