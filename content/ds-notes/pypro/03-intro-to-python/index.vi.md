@@ -380,7 +380,7 @@ if <dieu_kien>:
     # Thực thi câu lệnh
 else:
     # Nếu điều kiện trả về False
-    # Thự thi câu lệnh
+    # Thực thi câu lệnh
 ```
 
 ```python
