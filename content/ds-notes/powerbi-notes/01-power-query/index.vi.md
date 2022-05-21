@@ -1,5 +1,5 @@
 ---
-title: "BI - Làm quen với Power Query"
+title: "PBI - Làm quen với Power Query"
 subtitle: ""
 slug: intro-to-powerquery
 date: 2022-05-17
@@ -10,7 +10,7 @@ description: ""
 images: []
 tags: ["BI"]
 categories: []
-series: [Business Intelligence]
+series: [Power BI]
 series_weight: 1
 toc:
   enable: true

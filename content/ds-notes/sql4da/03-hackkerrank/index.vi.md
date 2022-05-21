@@ -770,12 +770,136 @@ WHERE M.Rn = 1
 ```
 {{< /admonition >}}
 
+## 8. SQL Advanced Test
 
-## 8. Certificate
+{{< admonition type=success title="1. Weather Analysis" open=false >}}
+```sql
+SELECT DATEPART(month, record_date) AS Month
+     , max(data_value) AS Max_value
+     , min(data_value) AS Min_value
+     , FORMAT(AVG(CAST((CASE WHEN data_type = 'avg' THEN data_value END) AS FLOAT)), 'N0') AS Avg_value
+FROM temperature_records
+GROUP BY DATEPART(month, record_date)
+ORDER BY DATEPART(month, record_date)
+```
+{{< /admonition >}}
+
+{{< admonition type=success title="2. Crypto Market Algorithms Report" open=false >}}
+```sql
+SELECT algorithm
+     , [1] AS transactions_Q1
+     , [2] AS transactions_Q2
+     , [3] AS transactions_Q3
+     , [4] AS transactions_Q4
+FROM
+(
+SELECT C.algorithm
+     , DATEPART(quarter, T.dt) As quarter_2020
+     , T.volume
+FROM transactions T
+JOIN coins C ON T.coin_code = C.code
+WHERE DATEPART(year, dt) = 2020
+) AS P
+PIVOT
+(
+    SUM(volume) FOR quarter_2020 IN ([1], [2], [3], [4])
+) AS PivotTable
+```
+{{< /admonition >}}
+
+{{< admonition type=success title="3. Winners Chart" open=false >}}
+```sql
+WITH first_table AS
+(
+SELECT event_id
+     , participant_name
+     , MAX(score) as score
+FROM scoretable
+GROUP BY event_id, participant_name
+),
+rank_score AS
+(
+SELECT event_id
+     , participant_name
+     , score
+     , DENSE_RANK() OVER(PARTITION BY event_id
+                                ORDER BY score DESC) AS rank
+FROM first_table
+),
+
+data_table AS
+(
+SELECT event_id
+     , participant_name
+     , MIN(rank) as final_rank
+FROM rank_score
+WHERE rank in (1, 2, 3)
+GROUP BY event_id, participant_name
+ORDER BY event_id, final_rank, participant_name OFFSET 0 ROWS
+)
+
+SELECT event_id
+     , [1] AS first
+     , [2] AS second
+     , [3] AS third
+FROM
+(
+SELECT event_id, final_rank, STRING_AGG(participant_name, ',') AS concat_name
+FROM data_table
+GROUP BY event_id, final_rank
+) AS PivotData
+PIVOT
+(
+    MAX(concat_name) FOR final_rank in ([1], [2], [3])
+) AS PivotTable
+```
+{{< /admonition >}}
+
+{{< admonition type=success title="4. Weekend Hours Worked" open=false >}}
+```sql
+WITH filter_data AS
+(
+SELECT emp_id
+     , timestamp
+     , CONVERT(DATE, timestamp) as date
+     , CASE WHEN DATEPART(hour, timestamp) <= 12
+            THEN 'start_day' ELSE 'end_day' END AS filter
+FROM attendance
+WHERE DATEPART(weekday, timestamp) in (1, 7)
+),
+start_date AS
+(
+SELECT emp_id
+     , date
+     , timestamp AS start_time
+FROM filter_data
+WHERE filter = 'start_day'
+),
+end_date AS
+(
+SELECT emp_id
+     , date
+     , timestamp AS end_time
+FROM filter_data
+WHERE filter = 'end_day'
+)
+
+SELECT S.emp_id
+     , SUM(DATEDIFF(minute, S.start_time, E.end_time)/60) AS work_hourse
+FROM start_date S, end_date E
+WHERE S.emp_id = E.emp_id AND S.date = E.date
+GROUP BY S.emp_id
+ORDER BY work_hourse
+```
+{{< /admonition >}}
+
+## 9. Certificate
 
 Sau khi luyện tập xong, các bạn có thể làm thử bài test để lấy chứng chỉ của [HackerRank](https://www.hackerrank.com/skills-verification). Còn đây là kết quả của mình:
 
 {{< figure src="./hackerrank-basic.png" width=80% >}}
 
 {{< figure src="./hackerrank-intermediate.png" width=80% >}}
+
+{{< figure src="./hackerrank-advanced.png" width=80% >}}
 
