@@ -1,10 +1,10 @@
 ---
-title: "Tuổi 28, mình phải sống như mùa hè năm ấy"
-slug: tuoi-28
+title: "Tuổi 28, Trầm!"
+slug: tuoi-28-tram-lang
 subtitle: ""
 summary: ""
-date: 2022-05-12
-lastmod: 2022-05-12
+date: 2022-05-22
+lastmod: 2022-05-22
 draft: false
 authors: ["Tuyen Kieu"]
 images: ["featured.JPG"]
@@ -15,5 +15,6 @@ toc:
 license: ""
 hiddenFromHomePage: false
 lightgallery: true
-draft: true
 ---
+
+Hà Nội, 22/05/2022

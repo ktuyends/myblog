@@ -150,7 +150,7 @@ Sau khi đổi profiling dựa vào tất cả các hàng, một lỗi đã xu�
 
 Ồ hóa ra là có giá trị `480b` bị lỗi. Chúng ta quay lại bảng profiling, click chuột phải và chọn _Replace Error_ để thay đổi giá trị mới cho giá trị bị lỗi.
 
-Tùy chọn data profiling tiếp theo là **_Column distribution_** và **_Column distribution_**:
+Tùy chọn data profiling tiếp theo là **_Column distribution_** và **_Column profile_**:
 
 {{< figure src="./02-data-exploration/data-profilling4.png" >}}
 
@@ -159,3 +159,18 @@ Tùy chọn data profiling tiếp theo là **_Column distribution_** và **_Colu
 ## 4. Combining queries
 
 ## 5. Optimizing queries
+
+## 10. Tóm tắt
+
+Tóm tắt lại, một số bước chúng ta có thể làm với Power Query như sau:
+
+- Nạp dữ liệu vào Power Query (Get data):
+  - _Một file_
+  - _Một folder_
+  - _Một database_
+  - _Một website_
+- Lựa chọn và xóa các cột không cần thiết (Manage Column).
+- Kiểm tra chất lượng từng cột dữ liệu (View tab):
+  - _Column quality_
+  - _Column distribution_
+  - _Column profile_
