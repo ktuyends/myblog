@@ -8,8 +8,8 @@ lastmod: 2021-12-08
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
-images: []
-tags: ["SQL", "SQL Server"]
+images: ["featured.png"]
+tags: ["Blog", "SQL", "SQL Server"]
 categories: []
 toc:
   enable: true

@@ -8,8 +8,8 @@ lastmod: 2022-05-15
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
-images: []
-tags: ["Programming"]
+images: ["featured.png"]
+tags: ["Blog", "Programming"]
 categories: []
 toc:
   enable: true

@@ -49,13 +49,13 @@ lightgallery: true
 20. Nhất Kiếm Độc Tôn _(1975/?)_
 21. Ta Có Một Thân Bị Động Kỹ _(810/?)_
 22. Vạn Cổ Thần Đế _(3480/?)_
-23. Cửu Tinh Bá Thể Quyết _(4764/?)_
+23. Cửu Tinh Bá Thể Quyết _(4800/?)_
 24. Mink Đường Phố Số 13 _(347/?)_
 25. Tinh Môn _(626/626)_
 
 #### Đang đọc:
 
-26. Dạ Mệnh Danh Thuật _(745)_
-27. Thâm Không Bỉ Ngạn _(Quyển 2 - 191)_
+26. Dạ Mệnh Danh Thuật _(751)_
+27. Thâm Không Bỉ Ngạn _(746)_
 28. Trạch Nhật Phi Thăng _(60)_
 29. Xích Tâm Tuần Thiên _(Quyển 3 - 114)_

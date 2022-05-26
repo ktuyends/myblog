@@ -8,7 +8,7 @@ comment:
 
 <!-- {{< showcase title="Đã lâu, không cầm bút" summary="" image="/21-da-lau-khong-cam-but/featured.JPG" link="/21-da-lau-khong-cam-but" >}} -->
 
-<!-- {{< showcase title="Mình phải sống như màu hè năm ấy" summary="" image="/22-tuoi-28/featured.JPG" link="/22-tuoi-28" >}} -->
+{{< showcase title="Tuổi 28 - Trầm" summary="Một mình trong khuya vắng, đối diện với chính lòng mình, có biết bao nỗi niềm cứ ào ạt đổ về, có cảm xúc tưởng chừng đã lãng quên bỗng dưng..." image="/21-tuoi-28/featured.JPG" link="/21-tuoi-28" >}}
 
 {{< showcase title="Những ngày cuối cùng ở Vũ Lăng" summary="Cuối cùng thì nơi này cũng sẽ trở thành quá khứ, mình sẽ đến một nơi mới, gặp những con người mới và lại bắt đầu một cuộc sống mới..." image="/20-tam-biet-vu-lang/featured.JPG" link="/20-tam-biet-vu-lang" >}}
 

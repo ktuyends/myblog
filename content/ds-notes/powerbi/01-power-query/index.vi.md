@@ -8,9 +8,9 @@ draft: false
 authors: ["Tuyen Kieu"]
 description: ""
 images: []
-tags: ["BI"]
+tags: ["BI", "Power BI"]
 categories: []
-series: [Power BI]
+series: [Power BI Notes]
 series_weight: 1
 toc:
   enable: true
