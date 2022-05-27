@@ -56,6 +56,6 @@ lightgallery: true
 #### Đang đọc:
 
 26. Dạ Mệnh Danh Thuật _(751)_
-27. Thâm Không Bỉ Ngạn _(746)_
+27. Thâm Không Bỉ Ngạn _(750)_
 28. Trạch Nhật Phi Thăng _(60)_
-29. Xích Tâm Tuần Thiên _(Quyển 3 - 114)_
+29. Xích Tâm Tuần Thiên _(Quyển 3 - end)_
