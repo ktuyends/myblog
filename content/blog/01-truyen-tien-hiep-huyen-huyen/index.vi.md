@@ -9,7 +9,7 @@ draft: false
 authors: ["Tuyen Kieu"]
 images: ["featured.jpg"]
 featuredImage: "featured.jpg"
-tags: ["Something"]
+tags: ["Blog", "Something"]
 toc:
   enable: false
 license: ""
@@ -55,7 +55,7 @@ lightgallery: true
 
 #### Đang đọc:
 
-26. Dạ Mệnh Danh Thuật _(751)_
+26. Dạ Mệnh Danh Thuật _(755)_
 27. Thâm Không Bỉ Ngạn _(750)_
 28. Trạch Nhật Phi Thăng _(60)_
-29. Xích Tâm Tuần Thiên _(Quyển 3 - end)_
+29. Xích Tâm Tuần Thiên _(Quyển 4 - 80)_

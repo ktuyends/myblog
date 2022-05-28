@@ -1,7 +1,7 @@
 ---
-title: "Pyda - Python environment"
+title: "PySci - Python environment"
 subtitle: ""
-slug: pyda-python-environment
+slug: pysci-python-environment
 date: 2022-05-16
 lastmod: 2022-05-16
 draft: false
@@ -10,7 +10,7 @@ description: ""
 images: []
 tags: ["Python for DA"]
 categories: []
-series: [Python for Data Analysis]
+series: [Python Scientific Libraries]
 series_weight: 1
 toc:
   enable: true

@@ -97,7 +97,17 @@ Pivot hiểu đơn giản thì nó được sử dụng để tạo ra một b�
 
 ### 5.2. Data analytics
 
-_**Data Analytics**_ là một quá trình sử dụng các công cụ bao gồm thu thập, xử lý, phân tích thống kê, mô hình hóa và khám phá dữ liệu trong **quá khứ** để tìm ra các insights có giá trị hỗ trợ cho các **quyết định** trong tương lai.
+{{< figure src="./data-analytics.png" width=60% >}}
+
+_**Data Analytics**_ là một quá trình sử dụng các công cụ bao gồm thu thập, xử lý, phân tích thống kê, mô hình hóa và khám phá dữ liệu trong **quá khứ** để tìm ra các insights có giá trị hỗ trợ cho các **quyết định** trong tương lai. Đây là một lĩnh vực rộng lớn, mỗi tổ chức, mỗi phòng ban có thể có các kỳ vọng, mục đích sử dụng và tên gọi khác nhau đối với ngành này. Nhưng nói chung, công việc sẽ xoay quanh một số nhiệm vụ sau:
+
+**Domain knowledge**: Đặt ra các vấn đề trong kinh doanh và xác định dữ liệu có liên quan đến vấn đề đó.
+
+**Technicals knowledge**: Thu thập, biến đổi, làm sạch, tổng hợp và phân tích dữ liệu bằng các kỹ thuật như _querying, statistics, data modeling,..._
+
+**Communication skills**: Trình bày kết quả phân tích bằng các kỹ thuật như _data visualization_ và _storytelling_.
+
+**Machine learning**: Xây dựng các mô hình học máy và phát triển các sản phẩm dữ liệu.
 
 ## 6. Kiểu dữ liệu trong thống kê
 
@@ -173,4 +183,16 @@ Thang đo, đối với một biến được gọi là **thang đo thứ bậc*
 
 Thang đo, đối với một biến là **thang đo khoảng** nếu dữ liệu có tất cả các thuộc tính của **thang đo thứ bậc** và khoảng cách giữa các giá trị được thể hiện dưới dạng đơn vị đo lường cố định có ý nghĩa. Ví dụ ba học sinh với điểm _(SAT)_ là 620, 550 và 470 có thể được xếp hạng theo thứ tự từ thành tích tốt nhất đến kém nhất. Ngoài ra chênh lệch giữa các điểm số cũng có ý nghĩa.
 
-Thang đo, đối với một biến là **thang đo tỷ lệ** nếu dữ liệu có tất cả các đặc tính của **thang đo khoảng** và tỷ lệ của hai giá trị có ý nghĩa. Ví dụ các biến như khoảng cách, chiều cao, trọng lượng, thời gian,...Thang đo này đòi hỏi một giá trị `0` đúng nghĩa, nghĩa là tại giá trị `0` không có gì tồn tại trong biến. Ví dụ chi phí của một ô tô, một giá trị `0` cho chi phí cho biết ô tô này là miễn phí.
+Thang đo, đối với một biến là **thang đo tỷ lệ** nếu dữ liệu có tất cả các đặc tính của **thang đo khoảng** và tỷ lệ của hai giá trị có ý nghĩa. Ví dụ các biến như khoảng cách, chiều cao, trọng lượng, thời gian,...Thang đo này đòi hỏi một giá trị $0$ đúng nghĩa, nghĩa là tại giá trị $0$ không có gì tồn tại trong biến. Ví dụ chi phí của một ô tô, một giá trị $0$ cho chi phí cho biết ô tô này là miễn phí.
+
+## 8. Các thành kiến trong phân tích dữ liệu
+
+Giả sử, bạn là một nhà phân tích sản phẩm _(product analyst)_ và bạn đang có ý tưởng về một sản phẩm mà bạn cho là rất tuyệt vời. Sau đó, bạn bắt tay vào phân tích và thử nghiệm với hy vọng kết quả có vẻ tốt nhưng điều ngược lại xảy ra, nó không ổn cho lắm. Bạn tự hỏi, có lẽ không phải lỗi ở sản phẩm mà ở các khâu khác ví dụ như marketing hoặc hoạt động bán hàng. Đây là một ví dụ về thiên kiến nhận thức _(cognitive biases)_ khi ra quyết định _(decision making)_ vì biết đâu, vấn đề lại nằm ở phía bạn, có thể do một sai sót nào đó trong quá trình phân tích đã dẫn đến kết quả không mong muốn.
+
+Trong phân tích dữ liệu, có ba lỗi chúng ta có thể sẽ mắc phải khi ra quyết định, dĩ nhiên ngoài ba lỗi này ra còn rất nhiều lỗi khác mà các bạn có thể tìm hiểu thêm khi nghiên cứu về **_Decision Making_**.
+
+**Confirmation Bias** _(Thiên kiến xác nhận)_: Lỗi này xảy ra khi chúng ta chỉ chấp nhận những kết quả hoặc những dữ liệu mà mang lại kết quả phân tích củng cố niềm tin của chúng ta, mà bỏ qua những kết quả phản bác lại niềm tin của chúng ta.
+
+**Overconfidence** _(Quá tự tin)_: Lỗi này thường xảy ra khi chúng ta có xu hướng cho rằng các phân tích, dự báo của chúng ta chính xác hơn thực tế hoặc quá tin tưởng vào độ chính xác của các dự báo và sau đó đưa ra quyết định dựa trên những dự báo này mà bỏ qua những rủi ro có thể gặp phải.
+
+**Overfitting**: Lỗi này thường gặp trong _machine learning_, khi mà mô hình chúng ta tìm được dự báo quá chính xác với bộ dữ liệu trong quá khứ _(training data)_. Việc này có thể dẫn đến các dự báo không chính xác trong tương lai khi có thêm dữ liệu được thêm vào bộ dữ liệu hiện tại.

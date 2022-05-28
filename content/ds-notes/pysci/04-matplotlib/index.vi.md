@@ -1,17 +1,17 @@
 ---
-title: "Pyda - Numpy and Pandas"
+title: "PySci - Matplotlib"
 subtitle: ""
-slug: pyda-01-numpy-and-pandas
-date: 2022-05-20
-lastmod: 2022-05-20
+slug: pysci-03-matplotlib
+date: 2022-05-24
+lastmod: 2022-05-24
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
 images: []
 tags: ["Python for DA"]
 categories: []
-series: [Python for Data Analysis]
-series_weight: 2
+series: [Python Scientific Libraries]
+series_weight: 4
 toc:
   enable: true
 license: ''  
