@@ -153,21 +153,351 @@ Lưu ý, nếu Power Query lấy dữ liệu từ các files bên ngoài, nó ch
 
 ## 2. Data transformations
 
-## 3. Shaping data
+Phần này, chúng ta sẽ đi lướt nhanh qua một số thao tác biến đổi dữ liệu được xây dựng sẵn trong thanh Ribbon của Power Query. Nội dung mình tổng hợp từ một số bài viết trong series của [Excel Off The Grid](https://exceloffthegrid.com/power-query-basic-transformations/) và một số video trên Channel [My Online Training Hub](https://www.youtube.com/playlist?list=PLmd91OWgLVSKnVrL0YxdOH61MAiqlFHac).
 
-## 4. Consolidate
+### 2.1. Home Tab
 
-## 5. Data blending
+{{< figure src="./02-transformation/Manage-Columns-Section.png"  >}}
 
-## 6. M Language
+**Manage Columns**: Chứa một số tùy chọn làm giảm số cột không cần thiết.
 
-## 7. Data quality
+- _Choose Columns:_ Chọn các cột để giữ lại trong phần _Preview_, xóa các cột còn lại.
+- _Go To Column:_ Chọn một cột cụ thể.
+- _Remove Columns:_ Xóa các cột được lựa chọn.
+- _Remove Other Columns:_ Xóa các cột không được lựa chọn.
+
+{{< figure src="./02-transformation/Reduce-Rows-Section.png" >}}
+
+**Reduce Rows**: Chứa một số tùy chọn làm giảm các dòng không cần thiết.
+
+- _Keep Top Rows_: Giữ lại m dòng đầu tiên, m là số dòng bạn nhập vào khi cửa sổ hiện lên.
+- _Keep Bottom Rows_: Giữ lại m dòng cuối cùng.
+- _Keep Range of Rows_: Giữ lại n dòng tính từ dòng thứ m.
+- _Remove Top Rows_: Xóa m dòng đầu tiên.
+- _Remove Bottom Rows_: Xóa m dòng cuối cùng.
+- _Remove Alternate Rows_: Xóa m dòng, giữ lại n dòng, sau đó lặp lại quy luật trên.
+- _Keep Duplicates_: Lấy ra các giá trị bị lặp lại.
+- _Keep Errors_: Lấy ra các giá trị bị lỗi.
+- _Remove Duplicates_: Xóa các dòng bị lặp lại, chỉ giữ lại dòng đầu tiên.
+- _Remove Blank Rows_: Xóa các dòng trống.
+- _Remove Errors_: Xóa các dòng có giá trị lỗi.
+
+### 2.2. Transform Tab
+
+{{< figure src="./02-transformation/use-first-row-as-headers.png" >}}
+
+**Group By**: Tổng hợp dữ liệu.
+
+**Use First Row as Headers**: Sử dụng hàng đầu tiên làm tên cột.
+
+**Use Headers as First Row**: Chuyển tên cột thành hàng đầu tiên trong bảng dữ liệu.
+
+**Transpose**: Chuyển vị.
+
+**Reverse Rows**: Sắp xếp các dòng theo thứ tự ngược lại.
+
+**Count Rows**: Đếm số dòng dữ liệu.
+
+{{< figure src="./02-transformation/Any-Column-Section.png" >}}
+
+**Data Type**: Chuyển đổi kiểu dữ liệu của cột hiện tại.
+
+**Detect Data Type**: Xác định và đổi kiểu dữ liệu của những cột được lựa chọn. Có thể sử dụng tùy chọn `Ctrl + A` để chọn toàn bộ các cột sau đó sử dụng tùy chọn này để đổi kiểu dữ liệu.
+
+**Rename**: Đổi tên cột (biến, thuộc tính) của cột hiện tại.
+
+**Replace Values**: Thay thế một giá trị cũ bằng giá trị mới trong một cột.
+
+**Replace Errors**: Tương tự như _Replace Values_, nhưng giá trị bị thay thế là các giá trị lỗi.
+
+**Fill Up / Down**: Lấp đầy các giá trị trong các ô missing values bằng giá trị của ô bên trên hoặc bên dưới trong cùng một cột.
+
+**Move**: Di chuyển vị trí của các cột dữ liệu.
+
+**Pivot Column**: Hoặc là tương tự như PivotTable trong Excel, hoặc là chuyển đổi định dạng bảng từ stacked sang unstacked.
+
+**Unpivot Columns**: Chuyển đổi định dạng bảng từ unstacked sang stacked.
+
+{{< figure src="./02-transformation/Text-Column-Section.png" >}}
+
+**Split Column:** Tách một cột thành nhiều cột dựa vào một số đặc điểm nhận biết.
+
+**Format:** Một số thao tác chuyển đổi các ký tự, loại bỏ khoảng trắng,...
+
+**Merge Columns:** Gộp hai cột thành một cột.
+
+**Extract:** Tạo ra một cột mới, với các giá trị là một chuỗi con được xác định dựa trên một pattern nào đó của cột ban đầu.
+
+{{< figure src="./02-transformation/Number-Column-Section.png" >}}
+
+**Statistics**: Một số thông tin thống kê mô tả.
+
+**Standard**: Một số phép toán cộng, trừ, nhân, chia thêm một giá trị vào một cột.
+
+**Rounding**: Làm tròn số.
+
+**Information**: Kiểm tra xem một giá trị ở dạng chẵn, lẻ, âm, dương hay giá trị $0$.
+
+**Scientific and Trigonometry**: Một số hàm giải tích và lượng giác.
+
+{{< figure src="./02-transformation/Date-Time-Column.png" >}}
+
+**Date & Time Column**: chứa một số lựa chọn xử lý kiểu dữ liệu _date, time, datetime_.
+
+### 2.3. Custom Column
+
+Hầu hết các thao tác biến đổi và xử lý dữ liệu cơ bản đã được Power Query hỗ trợ. Nhưng đôi khi, có những vấn đề khó, đòi hỏi chúng ta phải tạo ra những cột mới để xử lý. Khi đó ta sẽ sử dụng _Custom Column_. Lưu ý Power Query sử dụng ngôn ngữ M, nên các hàm đôi khi sẽ không giống với Excel.
+
+Được rồi, để bắt đầu tạo một cột mới ta vào _Add Column -> Custom Column_
+
+{{< figure src="./02-transformation/Custom-Column-Window.png" width=70% >}}
+
+Nhìn vào hình, ta có một số khu vực như:
+
+1. **New column name**: Tên của cột mới được tạo ra.
+2. **Available columns**: Tên của các cột trong bảng dữ liệu hiện tại.
+3. **Formula**: Biểu thức tính toán.
+4. **Error check**: Kiểm tra xem biểu thức có bị lỗi hay không.
+
+**Một số phép toán cơ bản**
+
+```
+= [Column 1] + [Column 2]       // Phép cộng
+= [Column 1] - [Column 2]       // Phép trừ
+= [Column 1] * [Column 2]       // Phép nhân
+= [Column 1] / [Column 2]       // Phép chia
+= [Column 1] & [Column 2]       // Phép nối
+= Number.Power(number, power)   // Số mũ
+= [Column 1] = [Column 2]       // So sánh ngang bằng
+```
+
+**Hàm chuyển đổi kiểu dữ liệu**
+
+- _Text.From_ – Chuyển đổi kiểu dữ liệu thành kiểu text.
+- _Date.From_ – Chuyển đổi kiểu dữ liệu thành kiểu date.
+- _Number.From_ – Chuyển đổi kiểu dữ liệu thành kiểu number.
+- _Logical.From_ – Chuyển đổi các số thành `True` hoặc `False`.
+- _Date.ToText_ – Chuyển đổi kiểu dữ liệu date thành kiểu text.
+- _Date.FromText_ – Chuyển đổi kiểu dữ liệu text thành kiểu date.
+- _Number.ToText_ – Chuyển đổi kiểu dữ liệu number thành kiểu text.
+- _Number.FromText_ – Chuyển đổi kiểu dữ liệu text thành number.
+- _Logical.FromText_ – Chuyển đổi giá trị `True` hoặc `False` ở dạng text thành Boolean.
+- _Logical.ToText_ – Ngược lại với _Logical.FromText_.
+
+**Lưu ý**: các công thức áp dụng cho từng hàng trong bảng dữ liệu, M áp dụng chỉ số bắt đầu là `0` và phân biệt giữa ký tự in hoa và in thường.
+
+### 2.4. Conditional Column
+
+Với _Conditional Column_, chúng ta có thể sử dụng các điều kiện trong biểu thức của mình để tạo ra các giá trị mới.
+
+{{< figure src="./02-transformation/Add-Column-Conditional-Column.png" width=70% >}}
+
+{{< figure src="./02-transformation/Conditional-Column-with-settings.png" width=70% >}}
+
+Ngoài ra ta có thể sử dụng M Code bên trong _Custom Column_:
+
+```
+if <dieu_kien> then <gia_tri>
+else if <dieu_kien> then <gia_tri>
+...
+else <gia_tri>
+```
+
+Trong trường hợp bạn muốn kết hợp nhiều điều kiện, có thể sử dụng `and/or/not`.
+
+Bây giờ, giả sử biểu thức của chúng ta trả về lỗi trên một số dòng và ta muốn thay thế giá trị lỗi này bởi một giá trị nào đó, thì ta có thể sử dụng mệnh đề `try...otherwise`:
+
+```
+try <biểu thức> otherwise <giá trị thay thế nếu biểu thức trả về lỗi>
+```
+
+### 2.5. Parameters
+
+Giả sử, ta có một bảng như sau:
+
+{{< figure src="./02-transformation/parameters.png" width=70% >}}
+
+Bây giờ, chúng ta sẽ chọn _Keep Top Rows_ để lấy 2 dòng đầu tiên trong bảng:
+
+{{< figure src="./02-transformation/parameters2.png" width=70% >}}
+
+Như bạn thấy, có một công thức M Code như này:
+
+```
+= Table.FirstN(Source,2)
+```
+
+Power Query đã sử dụng một hàm được gọi là `Table.FirstN` với hai tham số:
+
+- _Table_: Tên của bảng hoặc truy vấn tương ứng.
+- _countOrCondition_: Số dòng mà bạn muốn lấy, trong ví dụ trên là 2.
+
+Bạn cũng có thể xem thông tin về một hàm bằng cách nhập tên hàm trong ô formula:
+
+{{< figure src="./02-transformation/parameters3.png" width=100% >}}
+
+Quay lại với nội dung của phần này, chúng ta hoàn toàn có thể thay thế giá trị `2` ở trên bằng một tham số mà khi ta thay đổi giá trị của tham số thì truy vấn cũng thay đổi theo.
+
+Để tạo một tham số, ta vào _Manage Parameters -> New Parameter_, nhập tên tham số và các giá trị tương ứng, sau đó click vào OK để hoàn tất.
+
+{{< figure src="./02-transformation/parameters4.png" width=60% >}}
+
+Đến đây, bạn có thể thay tham số vào trong hàm `Table.FirstN` như sau:
+
+```
+= Table.FirstN(Source, Parameter1)
+```
+
+Bạn thử thay đổi giá trị của tham số, sau đó quay trở lại query để xem kết quả.
+
+Trên thực tế, ta cũng có thể sử dụng Query như một tham số nếu query đó có kiểu dữ liệu tương ứng với kiểu dữ liệu của tham số trong hàm. Ví dụ, mình click chuột phải vào một ô và chọn _Drill Down_ để lấy ra giá trị bên trong ô đó.
+
+{{< figure src="./02-transformation/parameters5.png" width=70% >}}
+
+Bây giờ, ta thay đổi tên của Query vào trong hàm `Table.FirstN`
+
+```
+= Table.FirstN(Source, Query_Param)
+```
+
+### 2.6. Custom Funtion
+
+Giả sử chúng ta có 3 file dữ liệu như sau:
+
+{{< figure src="./02-transformation/custom-function.png" width=90% >}}
+
+Đây là dữ liệu bán hàng theo từng tháng, dĩ nhiên là bên trong các file có cấu trúc giống nhau nhưng sẽ khác nhau về mặt giá trị. Bây giờ chúng ta muốn viết một hàm với input là tên của tập dữ liệu và output là một bảng dữ liệu đã được xử lý. Khi đó, thay vì phải xử lý từng tập dữ liệu, chúng ta chỉ cần áp dụng hàm này với tập dữ liệu mà ta muốn xử lý là xong.
+
+{{< figure src="./02-transformation/custom-function2.png" width=80% >}}
+
+Trước khi đi tạo một hàm, chúng ta cần import một tập liệu để làm mẫu và thực hiện các thao tác biến đổi để có được một tập dữ liệu tốt:
+
+{{< figure src="./02-transformation/custom-function3.png" width=90% >}}
+
+Có hai cách để tạo một function trong Power Query.
+
+**Cách thứ nhất**: ta sẽ tạo một query duplicate của query và đặt tên nó là `ManualFunc`, sau đó bật _Advanced Editor_ lên để chỉnh sửa M Code:
+
+{{< image src="./02-transformation/custom-function4.png" width=100% >}}
+
+Như các bạn thấy, ta cần tạo một hàm, với một tham số thay thế cho đường link dẫn đến tên tệp mà mình đã bôi đậm trong hình. Cú pháp để tạo một hàm:
+
+```
+(Variable as Data Type, Variable as Data Type) as Data Type =>
+
+(Output Expression)
+```
+
+Bây giờ, ta sửa lại đoạn M code và click vào OK để hoàn tất:
+
+{{< image src="./02-transformation/custom-function5.png" width=100% >}}
+
+Kết quả:
+
+{{< figure src="./02-transformation/custom-function6.png" width=50% >}}
+
+Bây giờ, ta sẽ áp dụng hàm này cho từng bảng một. Đầu tiên ta import folder chứa cả 3 file dữ liệu:
+
+{{< figure src="./02-transformation/custom-function7.png" width=70% >}}
+
+Tiếp theo, ta vào _Add Column -> Invoke Custom Function_ để tạo cột dữ liệu mới:
+
+{{< figure src="./02-transformation/custom-function8.png" width=70% >}}
+
+**Cách thứ hai:** Chúng ta sẽ xây dựng một function bắt đầu từ đây:
+
+{{< figure src="./02-transformation/custom-function7.png" width=70% >}}
+
+**Bước 1:** Ta cần chọn một file để làm mẫu bằng cách click chuột phải vào file đó và chọn _As a New Query_ và đổi tên query mới tạo thành _Sample File Binary_:
+
+{{< figure src="./02-transformation/custom-function9.png" width=70% >}}
+
+**Bước 2:** Tạo một parameter tham chiếu đến file mẫu trên.
+
+{{< figure src="./02-transformation/custom-function10.png" width=50% >}}
+
+**Bước 3:** Tạo một query đặt tên là _Transform Sample File_ sử dụng tham số trên
+
+```
+= #"Sample File Parameter"
+```
+
+**Bước 4:** Click chuột phải vào _Transform Sample File_, chọn _Create function_ và đặt tên cho function của chúng ta là _Transform File Function_
+
+**Bước 5:** Quay trở lại thực hiện các thao tác biến đổi trên _Transform Sample File_ để có được một bảng dữ liệu ưng ý, function đã tạo sẽ tự động thêm các bước mà chúng ta chỉnh sửa vào.
+
+Kết quả:
+
+{{< figure src="./02-transformation/custom-function11.png" width=70% >}}
+
+Về cách áp dụng hàm mới tạo thì tương tự như phần trên.
+
+## 3. Combine or Append
+
+Dữ liệu, không phải lúc nào cũng ở trong một files duy nhất. Đôi lúc, chúng ta cần phải tìm cách tập hợp dữ liệu trong nhiều files vào một file. Tùy vào cấu trúc của các files dữ liệu mà chúng ta có hai cách để làm điều này:
+
+- Combine hoặc Append với các files có cấu trúc giống nhau.
+- Merge với các files có một mối quan hệ nhất định ví dụ giống như CSDL quan hệ.
+
+Trong phần này, ta sẽ đi tìm hiểu về **Combine** và **Append** query, còn về _Merge_ ta sẽ tìm hiểu ở phần tiếp theo.
+
+Giả sử ta có bốn bảng dữ liệu như sau, các bảng có cấu trúc giống nhau (tên cột giống nhau, kiểu dữ liệu của các cột giống nhau):
+
+{{< figure src="./03-combind-query/append-query.png" >}}
+
+Để kết hợp dữ liệu của các bảng với nhau, ta vào _Home -> Append Queries -> Append Queries as New_
+
+{{< figure src="./03-combind-query/Append-Queries-as-New.png" >}}
+
+Bạn có thể chọn hai bảng để Append:
+
+{{< figure src="./03-combind-query/basic-append.png" width=70% >}}
+
+Hoặc chọn nhiều bảng để Append:
+
+{{< figure src="./03-combind-query/more-append.png" width=70% >}}
+
+Sau khi chọn xong, các bạn click vào OK để hoàn tất.
+
+**Lưu ý**: Power Query kết hợp các bảng dữ liệu với nhau dựa vào tên cột. Nếu tên cột khác nhau thì với mỗi tên cột nó sẽ tạo ra một cột mới.
+
+## 4. Merge
+
+{{< figure src="./04-merge/Home-Merge-Queries.png" >}}
+
+Chúng ta có thể nghĩ về cách hoạt động của Merge tương tự như sử dụng VLOOKUP trong Excel để tìm kiếm giá trị, hoặc phép JOIN trong SQL để merge nhiều bảng với nhau.
+
+Giả sử ta có ba bảng dữ liệu như sau và đã được load vào Power Query:
+
+{{< figure src="./04-merge/Power-Query-Merge-Source-Data.png" >}}
+
+Để Merge bảng Sales với bảng Customers, ta vào _Home -> Merge Queries -> Merge Queries as New_
+
+{{< figure src="./04-merge/Merge-Window-Options.png" width=80% >}}
+
+Chúng ta thực hiện theo 3 bước sau:
+
+- Bước 1: Chọn bảng dữ liệu ở **_(1)_** và **_(2)_**.
+- Bước 2: Chọn cột dữ liệu thể hiện sự liên kết giữa hai bảng ở _**(3)**_.
+- Bước 3: Chọn kiểu merge.
+
+Trong Power Query hỗ trợ 6 kiểu merge dữ liệu cơ bản:
+
+{{< figure src="./04-merge/join-type.webp" width=80% >}}
+
+Trong ví dụ này, mình chọn _Left Outer_:
+
+{{< figure src="./04-merge/left-outer.png" width=80% >}}
+
+Cuối cùng, ta click vào icon ở cột Customers để chọn các cột từ bảng Customers muốn thêm vào bảng Sales.
+
+## 5. Data quality
 
 Trong thế giới của những người làm việc với dữ liệu có một câu nói thế này: _"Garbage in, garbage out. (GIGO)"_, hiểu nôm na thì các insights bạn tìm kiếm được từ dữ liệu chỉ thực sự tốt khi dữ liệu đầu vào được đảm bảo chất lượng. Vậy một bộ dữ liệu như thế nào mới là dữ liệu tốt?
 
 Không có định nghĩa cụ thể về dữ liệu tốt, nhưng có một số tiêu chí được sử dụng để đánh giá chất lượng của bộ dữ liệu. Một bộ dữ liệu được gọi là tốt nếu thỏa mãn các tiêu chí sau:
 
-{{< figure src="./07-data-quality/data_quality.webp" width=80% >}}
+{{< figure src="./05-data-quality/data_quality.webp" width=80% >}}
 
 **Validity** _(Tính hợp lệ)_: Một tập dữ liệu cần tuân phải theo một số quy tắc, ràng buộc đã đặt ra. Ví dụ:
 
@@ -192,7 +522,7 @@ Không có định nghĩa cụ thể về dữ liệu tốt, nhưng có một s�
 
 **Uniformity** _(Tính đồng nhất)_: Sự đồng nhất về đơn vị đo lường trên toàn bộ hệ thống.
 
-## 8. Data cleaning
+## 6. Data cleaning
 
 Đôi khi, dữ liệu được sử dụng để phân tích có thể không mang lại kết quả mong muốn. Một trong những nguyên nhân gây ra là do dữ liệu của bạn chưa được tốt. Trong phần này, mình giới thiệu một cách tiếp cận gồm ba bước để có một tập dữ liệu tốt.
 
@@ -202,11 +532,11 @@ Không có định nghĩa cụ thể về dữ liệu tốt, nhưng có một s�
 
 Để minh họa, giả sử ta có một tập dữ liệu như sau (Ví dụ và hình ảnh trong phần này được lấy từ sách _Tableau Prep: Up & Running_ của _Carl Allchin_):
 
-{{< figure src="./08-data-cleaning/data-cleaning.png" >}}
+{{< figure src="./06-data-cleaning/data-cleaning.png" >}}
 
-### 8.1. Tìm hiểu về tập dữ liệu
+### 6.1. Tìm hiểu về tập dữ liệu
 
-{{< figure src="./08-data-cleaning/understanding-dataset.png" width=79% >}}
+{{< figure src="./06-data-cleaning/understanding-dataset.png" width=79% >}}
 
 | Phân tích                                          | Ví dụ                                                                                                                                              |
 | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -218,7 +548,7 @@ Không có định nghĩa cụ thể về dữ liệu tốt, nhưng có một s�
 | Số lượng quan sát có đúng như kỳ vọng?             | Trong ví dụ này chúng ta có 6 quan sát.                                                                                                            |
 | Các quy tắc khác?                                  | Lewisham nên là một giá trị duy nhất thay vì tách thành hai.                                                                                       |
 
-### 8.2. Tidy data
+### 6.2. Tidy data
 
 Trước khi đi xác định trạng thái mong muốn, ta cần phải hiểu một tập dữ liệu như thế nào được gọi là đúng chuẩn. Thì mình sẽ sử dụng khái niệm _"Tidy data"_ của _Hadley Wickham_. Hiểu nôm na thì thế này:
 
@@ -230,37 +560,37 @@ Về cơ bản ta có thể hiểu đơn giản là trong một bảng thì vớ
 
 Minh họa:
 
-{{< figure src="./08-data-cleaning/tidy-1.png" width=80% >}}
+{{< figure src="./06-data-cleaning/tidy-1.png" width=80% >}}
 
 Tập dữ liệu bên dưới không thỏa mãn điều kiện thứ nhất, khi `cases` và `population` nằm trong một cột. Nó nên được tách thành hai cột riêng biệt.
 
-{{< figure src="./08-data-cleaning/tidy-5.png" width=80% >}}
+{{< figure src="./06-data-cleaning/tidy-5.png" width=80% >}}
 
 Tập dữ liệu tiếp theo không thỏa mãn điều kiện thứ ba, vì nó đã gộp giá trị của `cases` và `population` vào cùng một ô.
 
-{{< figure src="./08-data-cleaning/tidy-6.png" width=80% >}}
+{{< figure src="./06-data-cleaning/tidy-6.png" width=80% >}}
 
 Cuối cùng là một ví dụ không thỏa mãn điều kiện thứ nhất và thứ hai: Biến thời gian không nằm trong một cột, và quan sát về một đối tượng bị tách thành hai bảng.
 
-{{< figure src="./08-data-cleaning/tidy-7.png" width=80% >}}
+{{< figure src="./06-data-cleaning/tidy-7.png" width=80% >}}
 
 Một số ví dụ khác về cách trình bày dữ liệu không tốt _(click vào ảnh để xem rõ hơn)_:
 
-{{< image src="./08-data-cleaning/tidy-8.png" caption="[Nguồn: Miles McBain](https://medium.com/@miles.mcbain/tidying-the-australian-same-sex-marriage-postal-survey-data-with-r-5d35cea07962)" >}}
+{{< image src="./06-data-cleaning/tidy-8.png" caption="[Nguồn: Miles McBain](https://medium.com/@miles.mcbain/tidying-the-australian-same-sex-marriage-postal-survey-data-with-r-5d35cea07962)" >}}
 
-{{< image src="./08-data-cleaning/tidy-9.png" caption="[Nguồn: Sharla Gelfand](https://sharlagelfand.netlify.app/posts/tidying-toronto-open-data/)" >}}
+{{< image src="./06-data-cleaning/tidy-9.png" caption="[Nguồn: Sharla Gelfand](https://sharlagelfand.netlify.app/posts/tidying-toronto-open-data/)" >}}
 
-### 8.3. Xác định trạng thái mong muốn
+### 6.3. Xác định trạng thái mong muốn
 
 Quay trở lại với ví dụ ban đầu, sau khi đã hiểu các khái niệm về _"Tidy data"_, chúng ta có thể phác thảo ra một tập dữ liệu mong muốn như sau:
 
-{{< figure src="./08-data-cleaning/dataset-expect.png" width=80% >}}
+{{< figure src="./06-data-cleaning/dataset-expect.png" width=80% >}}
 
-{{< figure src="./08-data-cleaning/dataset-expect2.png" width=80% >}}
+{{< figure src="./06-data-cleaning/dataset-expect2.png" width=80% >}}
 
-### 8.4. Các bước làm sạch
+### 6.4. Các bước làm sạch
 
-{{< figure src="./08-data-cleaning/data-cleaning-process.png" width=80% >}}
+{{< figure src="./06-data-cleaning/data-cleaning-process.png" width=80% >}}
 
 Đầu tiên, hãy nhìn vào các cột dữ liệu:
 
@@ -275,17 +605,15 @@ Tiếp theo, ta nhìn vào các quan sát:
 - Các giá trị trong các ô có chính xác không (các lỗi về chính tả, _dirty data_).
 - Có giá trị _missing value_ và _outliers_ không.
 
-## 9. Dirty data
+## 7. Dirty data
 
-## 10. Missing values
+## 8. Missing values
 
-## 11. Outliers
+## 9. Outliers
 
-## 12. Tổng hợp
+**Tóm lại**, khi chuẩn bị dữ liệu chúng ta sẽ gặp bốn vấn đề cơ bản sau:
 
-Tóm lại, khi chuẩn bị dữ liệu chúng ta sẽ gặp bốn vấn đề cơ bản sau:
-
-{{< figure src="./12-summary/data-issue.png" width=50% >}}
+{{< figure src="./06-data-cleaning/data-issue.png" width=50% >}}
 
 Check list công việc để có được một tập dữ liệu tốt:
 
@@ -314,3 +642,5 @@ Check list công việc để có được một tập dữ liệu tốt:
 |                 | Joins                                                    |
 |                 | Fuzzy matching                                           |
 |                 | Spatial matching                                         |
+
+## 10. Consolidate
