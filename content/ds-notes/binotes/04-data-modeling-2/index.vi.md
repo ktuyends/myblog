@@ -1,5 +1,5 @@
 ---
-title: "Day 4 - Data modeling"
+title: "Day 4 - Data modeling (part 2)"
 subtitle: ""
 slug: 03-data-modeling
 date: 2022-06-05

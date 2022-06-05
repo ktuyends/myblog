@@ -1,20 +1,20 @@
 ---
-title: "PySci - Beautiful Soup"
+title: "Day 3 - Data modeling (part 1)"
 subtitle: ""
-slug: pysci-04-beautiful-soup
+slug: 03-data-preparation-for-data-modeling
 date: 2022-05-28
 lastmod: 2022-05-28
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
 images: []
-tags: ["Python for DA"]
+tags: ["BI"]
 categories: []
-series: [Python Scientific Libraries]
-series_weight: 5
+series: [BI Course Notes]
+series_weight: 3
 toc:
   enable: true
-license: ''  
+license: ""
 hiddenFromHomePage: false
 lightgallery: true
 ---
