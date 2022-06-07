@@ -6,7 +6,7 @@ comment:
   enable: false
 ---
 
-<!-- {{< showcase title="Đã lâu, không cầm bút" summary="" image="/21-da-lau-khong-cam-but/featured.JPG" link="/21-da-lau-khong-cam-but" >}} -->
+{{< showcase title="Mình phải sống như mùa hè năm ấy" summary="Đôi khi chúng ta không hiểu vì sao chuyện lại xảy ra như thế. Chúng ta cố gắng tìm lý do trong vô vọng. Tôi cũng từng như thế. Hay hỏi tại sao, rồi..." image="/22-minh-phai-song-nhu-mua-he-nam-ay/featured.jpg" link="/22-minh-phai-song-nhu-mua-he-nam-ay" >}}
 
 {{< showcase title="Tuổi 28 - Trầm" summary="Một mình trong khuya vắng, đối diện với chính lòng mình, có biết bao nỗi niềm cứ ào ạt đổ về, có cảm xúc tưởng chừng đã lãng quên bỗng dưng..." image="/21-tuoi-28/featured.JPG" link="/21-tuoi-28" >}}
 

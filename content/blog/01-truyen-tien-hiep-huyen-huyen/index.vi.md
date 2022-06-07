@@ -56,5 +56,5 @@ lightgallery: true
 #### Đang đọc:
 
 26. Thâm Không Bỉ Ngạn _(762)_
-27. Xích Tâm Tuần Thiên _(1050)_
+27. Xích Tâm Tuần Thiên _(1200)_
 28. Dạ Mệnh Danh Thuật _(751)_

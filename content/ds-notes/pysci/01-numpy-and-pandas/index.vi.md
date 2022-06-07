@@ -1,7 +1,7 @@
 ---
-title: "Pypro - numpy"
+title: "Pysci - Numpy and Pandas"
 subtitle: ""
-slug: python-numpy
+slug: python-numpy-and-pandas
 date: 2022-06-07
 lastmod: 2022-06-07
 draft: false
@@ -10,8 +10,8 @@ description: ""
 images: []
 tags: ["Programming"]
 categories: []
-series: [Python Programming]
-series_weight: 10
+series: [Python Scientific Libraries]
+series_weight: 1
 toc:
   enable: true
 license: ''  
