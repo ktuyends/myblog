@@ -1,17 +1,17 @@
 ---
-title: "SQL Notes - StrataScratch"
+title: "Pysci - Intro to Pandas"
 subtitle: ""
-slug: sql-stratascratch
-date: 2022-05-15
-lastmod: 2022-05-15
+slug: python-pandas
+date: 2022-06-10
+lastmod: 2022-06-10
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
 images: []
-tags: ["SQL", "SQL for DA"]
+tags: ["Programming"]
 categories: []
-series: [SQL for Data Analysis]
-series_weight: 5
+series: [Python Scientific Libraries]
+series_weight: 2
 toc:
   enable: true
 license: ''  
