@@ -1,23 +1,22 @@
 ---
-title: "Math - Thống kê"
+title: "Day 5 - Data modeling (advanced)"
 subtitle: ""
-slug: statistics
-date: 2022-01-15
-lastmod: 2022-01-15
+slug: 05-advanced-data-modeling
+date: 2022-06-05
+lastmod: 2022-06-05
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
 images: []
-tags: ["Mathematics"]
+tags: ["BI"]
 categories: []
-series: [Mathematical Topics]
+series: [BI Course Notes]
 series_weight: 5
 toc:
   enable: true
-license: ''  
+license: ""
 hiddenFromHomePage: false
 lightgallery: true
-draft: true
 ---
 
 <!--more-->

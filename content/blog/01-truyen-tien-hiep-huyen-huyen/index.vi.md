@@ -50,11 +50,12 @@ lightgallery: true
 21. Ta Có Một Thân Bị Động Kỹ _(810/?)_
 22. Vạn Cổ Thần Đế _(3480/?)_
 23. Cửu Tinh Bá Thể Quyết _(4800/?)_
-24. Mink Đường Phố Số 13 _(347/?)_
-25. Tinh Môn _(626/626)_
+24. Mink Đường Phố Số 13 _(350/?)_
+25. Dạ Mệnh Danh Thuật _(750/?)_
+26. Tinh Môn _(626/626)_
 
 #### Đang đọc:
 
-26. Thâm Không Bỉ Ngạn _(762)_
-27. Xích Tâm Tuần Thiên _(1200)_
-28. Dạ Mệnh Danh Thuật _(751)_
+27. Thâm Không Bỉ Ngạn _(762)_
+28. Xích Tâm Tuần Thiên _(1400)_
+29. Trạch Nhật Phi Thăng _(60)_

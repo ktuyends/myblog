@@ -1,9 +1,9 @@
 ---
-title: "Day 4 - Data modeling (part 2)"
+title: "Day 6 - Business statistics"
 subtitle: ""
-slug: 03-data-modeling
-date: 2022-06-05
-lastmod: 2022-06-05
+slug: 06-business-statistics
+date: 2022-06-14
+lastmod: 2022-06-14
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
@@ -11,7 +11,7 @@ images: []
 tags: ["BI"]
 categories: []
 series: [BI Course Notes]
-series_weight: 4
+series_weight: 6
 toc:
   enable: true
 license: ""

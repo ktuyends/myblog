@@ -42,6 +42,8 @@ import numpy as np
 
 Array trong Python là kiểu dữ liệu chứa nhiều phần tử, trong đó các phần tử có cùng kiểu dữ liệu với nhau. Hai loại mảng được sử dụng nhiều nhất là vector và ma trận, ngoài ra còn có mảng ba chiều, mảng nhiều chiều,...
 
+{{< figure src="./numpy-vector-matrix-3d-matrix.width-1200.jpg" width=80% >}}
+
 ### 1.1. Vector
 
 Để tạo một vector đơn giản nhất là chuyển đổi một list các giá trị có cùng kiểu dữ liệu thành mảng, sử dụng `np.array()`
@@ -170,6 +172,8 @@ v1.reshape((1, 3))
 
 ### 1.3. Indexing và slicing
 
+{{< figure src="./numpy-indexing-arrays.width-1200.jpg" width=80% >}}
+
 Nếu các bạn đã từng học về các cấu trúc dữ liệu cơ bản trong Python như list, tuple, string,...thì về cơ bản indexing và slicing cho từng chiều trong mảng cũng tương tự như vậy.
 
 ```python
@@ -278,6 +282,25 @@ Trong phần trước, chúng ta đã tìm hiểu một số loại mảng phổ
 - **size**: Tổng số phần tử trong một mảng.
 - **dtype**: Kiểu dữ liệu của các phần tử trong mảng.
 
+Ví dụ:
+
+
+```python
+vector = np.arange(5)
+print("Vector shape:", vector.shape)
+
+matrix = np.ones([3, 2])
+print("Matrix shape:", matrix.shape)
+
+tensor = np.zeros([2, 3, 3])
+print("Tensor shape:", tensor.shape)
+```
+
+    Vector shape: (5,)
+    Matrix shape: (3, 2)
+    Tensor shape: (2, 3, 3)
+    
+
 ### 2.2. Slicing
 
 Slicing, hiểu đơn giản là từ một mảng ban đầu ta lấy ra một số phần tử nào đó dựa vào vị trí của nó, hoặc cũng có thể hiểu là việc ta tạo ra các mảng con từ mảng ban đầu. Minh họa
@@ -340,33 +363,41 @@ Reshape, là một phương thức giúp chúng ta thay đổi cấu trúc của
 
 Ví dụ:
 
+
 ```python
-v = array([0,1,2,3,4,5])
-M = v.reshape(2,3)
+arr = np.arange(1, 10)
+print(arr, '\n')
 
-M.shape # returns (2,3)
+# Reshape to 3x3 matrix
+arr = arr.reshape(3, 3)
+print(arr, '\n')
 
-M[0,0] = 10 # now v[0] is 10
+# Reshape back to the original size
+arr = arr.reshape(9)
+print(arr)
 ```
+
+    [1 2 3 4 5 6 7 8 9] 
+    
+    [[1 2 3]
+     [4 5 6]
+     [7 8 9]] 
+    
+    [1 2 3 4 5 6 7 8 9]
+    
 
 Đôi khi, chúng ta chỉ cần chỉ định một tham số trong `(m, n)`, tham số còn lại Numpy sẽ tự động xác định bằng cách đặt nó là `-1`. Ví dụ:
 
 
-
-
 ```python
-v = np.array([1, 2, 3, 4, 5, 6, 7, 8])
-M = v.reshape(2, -1)
-M
+arr = np.arange(1, 10).reshape(3, -1)
+print(arr)
 ```
 
-
-
-
-    array([[1, 2, 3, 4],
-           [5, 6, 7, 8]])
-
-
+    [[1 2 3]
+     [4 5 6]
+     [7 8 9]]
+    
 
 Ma trận chuyển vị:
 
@@ -465,7 +496,7 @@ print(b)
 print(b.base)
 ```
 
-    [10 10]
+    [2 3]
     None
     
 
@@ -532,7 +563,7 @@ Chúng ta không thể sử dụng các toán tử như `and, or, not` với m�
 |Toán tử logic| Toán tử thay thế|
 |:-:|:-:|
 | A and B| A & B|
-|A or B | A | B |
+|A or B | A \| B |
 | not A | ~ A |
 
 ## 7. Indexing
