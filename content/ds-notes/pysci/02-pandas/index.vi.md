@@ -486,7 +486,7 @@ pd.notnull(s3)
 
 ## 2. DataFrames
 
-{{< figure src="./dataframe.png" >}}
+{{< figure src="./pandas-structures-annotated.png" >}}
 
 Có nhiều cách để nghĩ về DataFrames. Bạn có thể nghĩ DataFrames giống như các bảng dữ liệu trong Excel hoặc database. Nó cũng gần giống với một dictionary với key là tên biến, cột, còn giá trị là một series.
 
