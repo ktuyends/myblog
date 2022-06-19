@@ -1,7 +1,7 @@
 ---
-title: "Day 3 - Data modeling (basic)"
+title: "Day 3 - Data modeling (theory)"
 subtitle: ""
-slug: 03-basic-data-modeling
+slug: 03-data-modeling-theory
 date: 2022-05-26
 lastmod: 2022-05-26
 draft: false
@@ -23,41 +23,19 @@ lightgallery: true
 
 {{< figure src="./Report_Development_Process.png" >}}
 
-## 1. Data Model
-
-### 1.1. Khái niệm
+## 1. Data Model là gì?
 
 Data Model trong Power BI hiểu đơn giản thì nó là một tập hợp của các bảng _(table)_ được liên kết với nhau theo một mối quan hệ (relationships) dựa trên các keys trong bảng. Chúng ta có thể hình dung mỗi một bảng sẽ thể hiện một vấn đề nào đó. Ví dụ các vấn đề như sales, products, customers...
 
-Data model là một khung nền tảng bắt buộc phải có trước khi bắt tay vào phân tích dữ liệu. Tùy thuộc vào chất lượng của data model mà sẽ hưởng nhiều hay ít đến hiệu quả của các reports, visualizations và dashboards.
-
-### 1.2. Các bước xây dựng data model
-
-**Chuẩn bị dữ liệu:**
-
-- Bước 1: Import và transform data
-- Bước 2: Merge và append các table để giảm số lượng các bảng trong Data model.
-- Bước 3: Đổi tên các bảng và columns để thân thiện hơn với người dùng.
-- Bước 4: Xóa các columns không sử dụng đến.
-- Bước 5: Chuyển đổi kiểu dữ liệu và các định dạng về dạng chuẩn.
-
-**Tạo data model:**
-
-- Bước 6: Xác định và tạo mối liên kết giữa các bảng.
-
-**Bổ sung thêm thêm thông tin cho data model:**
-
-- Bước 7: Tạo cấu trúc phân cấp (hierarchies)
-- Bước 8: Tạo các bảng, cột và measures
-- Bước 9: Ẩn các cột dữ liệu chỉ mang ý nghĩa liên kết giữa các bảng hoặc làm trung gian cho các tính toán mà không có nhiều ý nghĩa về mặt phân tích. ví dụ như các cột `id`.
+Data model là một khung nền tảng bắt buộc phải có trước khi bắt tay vào phân tích dữ liệu. Tùy thuộc vào chất lượng của data model mà sẽ ảnh hưởng nhiều hay ít đến hiệu quả của các reports, visualizations và dashboards.
 
 ## 2. Data model components
 
 ### 2.1. Fact and dim tables
 
-Giả sử trong database có 100 bảng dữ liệu, thì ta không thể nào hoặc nếu có thể thì cũng không nên tạo một cái data model với 100 bảng, liệu một data model như vậy nó có hợp lý hay không. Chúng ta nên cố gắng xây dựng một cái data model đơn giản, sắp xếp dễ hiểu với ít bảng nhưng vẫn phải đảm bảo đủ các thông tin cần thiết. Vậy dựa vào đâu để xác định bảng nào là bảng nên đưa vào data model và bảng nào thì không?
+Giả sử trong database có 100 bảng dữ liệu, thì ta không thể nào hoặc nếu có thể thì cũng không nên tạo một cái data model với 100 bảng, liệu một data model như vậy nó có hợp lý hay không. Chúng ta nên cố gắng xây dựng một data model đơn giản, các bảng được sắp xếp dễ hiểu với số lượng tối thiểu nhưng vẫn phải đảm bảo đầy đủ các thông tin cần thiết. Vậy dựa vào đâu để xác định bảng nào là bảng nên đưa vào data model và bảng nào thì không?
 
-Đầu tiên, chúng ta cần đi xác định **dữ liệu transactions**. Đây là những dữ liệu có tính chất thay đổi thường xuyên theo thời gian, ví dụ như thay đổi theo ngày, theo giờ, theo tuần,...thì với những dữ liệu này, người ta chỉ lưu trữ những thông tin định danh cơ bản ví dụ như id của một đối tượng,...và các con số mang tính chất tính toán liên quan đến đối tượng được định danh đó.
+Đầu tiên, chúng ta cần đi xác định các **dữ liệu transactions**. Đây là những dữ liệu có tính chất thay đổi thường xuyên theo thời gian, ví dụ như thay đổi theo ngày, theo giờ, theo tuần,...thì với những dữ liệu này, người ta chỉ lưu trữ những thông tin định danh cơ bản ví dụ như id của một đối tượng,...và các con số mang tính chất tính toán liên quan đến đối tượng được định danh đó.
 
 Với dữ liệu transactions người ta sẽ không lưu trữ các thông tin chi tiết về một đối tượng. Vậy khi muốn biết các thông tin chi tiết đó ta phải tìm ở đâu? Thì thông thường ta sẽ phải lấy thông tin ở các bảng dữ liệu khác để bổ sung thêm thông tin cho bảng transactions.
 
@@ -129,34 +107,23 @@ Relationships trong data models đôi khi người ta còn hiểu nó là một 
 
 Hierarchies, là những dữ liệu có tính chất phân cấp. Ví dụ như thời gian thì có thể phân cấp như: _năm > quý > tháng > tuần > ngày_.
 
-## 3. Làm quen với Power BI
+## 3. Các bước xây dựng data model
 
-Power BI không chỉ là một công cụ làm báo cáo mà mọi người vẫn hay sử dụng để xây dựng các reports đẹp mắt. Nó còn là một nền tảng cung cấp một loạt các tính năng từ chuẩn bị dữ liệu _(data preparing)_ đến mô hình hóa dữ liệu _(data modeling)_ và trực quan hóa dữ liệu _(data visualizations)_.
+### 3.1. Chuẩn bị dữ liệu
 
-{{< figure src="./data-process.jpg" width=80% >}}
+- Bước 1: Import và transform data
+- Bước 2: Merge và append các table để giảm số lượng các bảng trong data model.
+- Bước 3: Đổi tên các bảng và columns để thân thiện hơn với người dùng.
+- Bước 4: Xóa các columns không sử dụng đến.
+- Bước 5: Chuyển đổi kiểu dữ liệu và formats dữ liệu của từng columns về dạng chuẩn.
 
-Đây cũng là một trong những hệ sinh thái phân tích dữ liệu được xây dựng rất tốt, mang lại cho người dùng khả năng đóng góp vào quy trình phân tích dữ liệu của tổ chức theo nhiều cách. Từ chia sẻ bộ dữ liệu _(datasets)_, làm các reports và tạo các dashboards đến sử dụng các thiết bị di động để thêm một số nhận xét vào reports, đặt các câu hỏi và gửi chúng đến cho những người dùng có liên quan.
+### 3.2. Tạo data model
 
-Tất cả những điều này chỉ mang lại kết quả phân tích tốt khi chúng ta thực hiện các bước chính xác trong việc xây dựng hệ sinh thái Power BI. Một báo cáo đẹp không có ý nghĩa gì nếu nó hiển thị số liệu kinh doanh không chính xác hoặc nếu báo cáo quá chậm để hiển thị sẽ ảnh hưởng đến những người có nhu cầu sử dụng nó.
+- Bước 6: Xác định và tạo mối liên kết giữa các bảng.
+- Bước 7: Xác định filter direction giữa các bảng.
 
-Một trong những khía cạnh quan trọng nhất của việc xây dựng hệ sinh thái Power BI là có một bộ dữ liệu tốt. Trong các tình huống thực tế, bạn thường phải lấy được dữ liệu từ các nguồn khác nhau và import nó vào Power BI. Sau đó, bạn cần đưa ra một data model được thiết kế tốt để đảm bảo nó luôn đại diện cho các dữ liệu hỗ trợ cho các mục đích phân tích, xây dựng reports, dashboards và cuối cùng là storytelling.
+### 3.3. Bổ sung thêm thêm thông tin cho data model
 
-{{< figure src="./power-bi-layer.jpg" >}}
-
-Trong Power BI, chúng ta có ba giao diện chính. Thứ nhất là **Power Query layer**, trong layer này, bạn sẽ lấy dữ liệu từ các nguồn khác nhau, biến đổi và làm sạch dữ liệu đó và load nó vào Data Model.
-
-{{< figure src="./power-query-layer.jpg" >}}
-
-**Data Model layer** gồm _data view_ và _model view_. Sau khi chúng ta hoàn thành việc chuẩn bị dữ liệu trong Power Query layer, chúng ta sẽ tải dữ liệu vào Data Model layer. Với chế độ _Data View_, chúng ta có thể thấy dữ liệu cơ bản của mình sau khi nó đã được biến đổi. Và tùy thuộc vào chế độ kết nối, dữ liệu có thể được hiển thị hoặc không.
-
-{{< figure src="./data-view.jpg" caption="_Data view; storage mode: Import_" >}}
-
-{{< figure src="./data-view2.jpg" caption="_Data view; storage mode: DirectQuery_" >}}
-
-Như tên gọi của nó, trong _Model View_ chúng ta có một tập hợp các bảng và các liên kết giữa chúng.
-
-{{< figure src="./model-view.jpg" caption="_Model view_" >}}
-
-Điểm đến cuối cùng trong quy trình phân tích dữ liệu của chúng ta là **Data Visualization layer** _(Report view)_, đây là nơi chúng ta có thể thỏa sức sáng tạo với các biểu đồ và phân tích của mình.
-
-{{< figure src="./report-view.jpg" >}}
+- Bước 8: Tạo cấu trúc phân cấp (hierarchies)
+- Bước 9: Tạo các bảng, cột và measures
+- Bước 10: Ẩn các cột dữ liệu chỉ mang ý nghĩa liên kết giữa các bảng hoặc làm trung gian cho các tính toán mà không có nhiều ý nghĩa về mặt phân tích. ví dụ như các cột `id`.

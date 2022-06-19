@@ -56,6 +56,5 @@ lightgallery: true
 
 #### Đang đọc:
 
-27. Thâm Không Bỉ Ngạn _(762)_
-28. Xích Tâm Tuần Thiên _(1400)_
-29. Trạch Nhật Phi Thăng _(60)_
+27. Thâm Không Bỉ Ngạn _(810)_
+28. Xích Tâm Tuần Thiên _(1670)_
