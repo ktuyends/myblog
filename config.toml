@@ -57,11 +57,11 @@ buildFuture = true
         title = ""
         weight = 2
       [[languages.vi.menu.main]]
-        identifier = "categories"
+        identifier = "projects"
         pre = ""
         post = ""
         name = "Projects"
-        url = "/categories/"
+        url = "/Projects/"
         title = ""
         weight = 3
       [[languages.vi.menu.main]]
