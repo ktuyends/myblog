@@ -94,22 +94,54 @@ Cardinality, là một thuộc tính của relationships và trong Power BI thì
 - One-to-many
 - Many-to-many _(Many-to-one + one-to-many)_
 
-### 2.5. Cross filter direction
+### 2.5. Filter direction
 
 {{< figure src="./cross-filter-direction.png" width=70% >}}
 
-Relationships trong data models đôi khi người ta còn hiểu nó là một bộ lọc _(filter)_ từ bảng này qua bảng khác thì trong Power BI, bộ lọc _filter_ được chia làm hai loại:
+Filter direction dịch ra có nghĩa là hướng lọc, thì trong Data model chúng ta thường sẽ bắt đầu từ bảng Dim, sau đó đi theo chiều của mũi tên để lọc hoặc lấy thêm các dữ liệu, thông tin bổ sung cần thiết. Trong Power BI, có hai loại _filter direction_:
 
-- Bộ lọc một chiều _(single direction)_: Với trường hợp này, chúng ta chỉ có thể lấy dữ liệu từ bảng khác theo chiều của mũi tên mà không thể làm ngược lại được. Với mối quan hệ _one-to-many_ luôn luôn là một chiều từ _one -> many_.
+- Bộ lọc một chiều _(single direction)_: Với trường hợp này, chúng ta chỉ có thể lấy dữ liệu từ các bảng khác theo chiều của mũi tên mà không thể làm ngược lại được. Với mối quan hệ _one-to-many_ luôn luôn là một chiều từ _one -> many_.
 - Bộ lọc hai chiều _(both)_: Ngược lại với một chiều, chúng ta có thể lọc dữ liệu được ở cả hai chiều.
 
 ### 2.6. Hierarchies
 
 Hierarchies, là những dữ liệu có tính chất phân cấp. Ví dụ như thời gian thì có thể phân cấp như: _năm > quý > tháng > tuần > ngày_.
 
-## 3. Các bước xây dựng data model
+## 3. Làm quen với Power BI
 
-### 3.1. Chuẩn bị dữ liệu
+Power BI không chỉ là một công cụ làm báo cáo mà mọi người vẫn hay sử dụng để xây dựng các reports đẹp mắt. Nó còn là một nền tảng cung cấp một loạt các tính năng từ chuẩn bị dữ liệu _(data preparing)_ đến mô hình hóa dữ liệu _(data modeling)_ và trực quan hóa dữ liệu _(data visualizations)_.
+
+{{< figure src="./data-process.jpg" width=80% >}}
+
+Đây cũng là một trong những hệ sinh thái phân tích dữ liệu được xây dựng rất tốt, mang lại cho người dùng khả năng đóng góp vào quy trình phân tích dữ liệu của tổ chức theo nhiều cách. Từ chia sẻ bộ dữ liệu _(datasets)_, làm các reports và tạo các dashboards đến sử dụng các thiết bị di động để thêm một số nhận xét vào reports, đặt các câu hỏi và gửi chúng đến cho những người dùng có liên quan.
+
+Tất cả những điều này chỉ mang lại kết quả phân tích tốt khi chúng ta thực hiện các bước chính xác trong việc xây dựng hệ sinh thái Power BI. Một báo cáo đẹp không có ý nghĩa gì nếu nó hiển thị số liệu kinh doanh không chính xác hoặc nếu báo cáo quá chậm để hiển thị sẽ ảnh hưởng đến những người có nhu cầu sử dụng nó.
+
+Một trong những khía cạnh quan trọng nhất của việc xây dựng hệ sinh thái Power BI là có một bộ dữ liệu tốt. Trong các tình huống thực tế, bạn thường phải lấy được dữ liệu từ các nguồn khác nhau và import nó vào Power BI. Sau đó, bạn cần đưa ra một data model được thiết kế tốt để đảm bảo nó luôn đại diện cho các dữ liệu hỗ trợ cho các mục đích phân tích, xây dựng reports, dashboards và cuối cùng là storytelling.
+
+{{< figure src="./power-bi-layer.jpg" >}}
+
+Trong Power BI, chúng ta có ba giao diện chính. Thứ nhất là **Power Query layer**, trong layer này, bạn sẽ lấy dữ liệu từ các nguồn khác nhau, biến đổi và làm sạch dữ liệu đó và load nó vào Data Model.
+
+{{< figure src="./power-query-layer.jpg" >}}
+
+**Data Model layer** gồm _data view_ và _model view_. Sau khi chúng ta hoàn thành việc chuẩn bị dữ liệu trong Power Query layer, chúng ta sẽ tải dữ liệu vào Data Model layer. Với chế độ _Data View_, chúng ta có thể thấy dữ liệu cơ bản của mình sau khi nó đã được biến đổi. Và tùy thuộc vào chế độ kết nối, dữ liệu có thể được hiển thị hoặc không.
+
+{{< figure src="./data-view.jpg" caption="_Data view; storage mode: Import_" >}}
+
+{{< figure src="./data-view2.jpg" caption="_Data view; storage mode: DirectQuery_" >}}
+
+Như tên gọi của nó, trong _Model View_ chúng ta có một tập hợp các bảng và các liên kết giữa chúng.
+
+{{< figure src="./model-view.jpg" caption="_Model view_" >}}
+
+Điểm đến cuối cùng trong quy trình phân tích dữ liệu của chúng ta là **Data Visualization layer** _(Report view)_, đây là nơi chúng ta có thể thỏa sức sáng tạo với các biểu đồ và phân tích của mình.
+
+{{< figure src="./report-view.jpg" >}}
+
+## 4. Các bước tạo data model
+
+**Chuẩn bị dữ liệu**
 
 - Bước 1: Import và transform data
 - Bước 2: Merge và append các table để giảm số lượng các bảng trong data model.
@@ -117,13 +149,110 @@ Hierarchies, là những dữ liệu có tính chất phân cấp. Ví dụ như
 - Bước 4: Xóa các columns không sử dụng đến.
 - Bước 5: Chuyển đổi kiểu dữ liệu và formats dữ liệu của từng columns về dạng chuẩn.
 
-### 3.2. Tạo data model
+**Tạo data model**
 
 - Bước 6: Xác định và tạo mối liên kết giữa các bảng.
 - Bước 7: Xác định filter direction giữa các bảng.
 
-### 3.3. Bổ sung thêm thêm thông tin cho data model
+**Bổ sung thêm thêm thông tin cho data model**
 
 - Bước 8: Tạo cấu trúc phân cấp (hierarchies)
 - Bước 9: Tạo các bảng, cột và measures
 - Bước 10: Ẩn các cột dữ liệu chỉ mang ý nghĩa liên kết giữa các bảng hoặc làm trung gian cho các tính toán mà không có nhiều ý nghĩa về mặt phân tích. ví dụ như các cột `id`.
+
+## 5. Thực hành
+
+Giả sử chúng ta có một bảng [dữ liệu](./data-modeling-simple.pbix) _([data source](./data.zip))_ về dân số như sau:
+
+{{< figure src="./explore-data.png" >}}
+
+Bây giờ, chúng ta sẽ đi xác định và tạo các bảng Dim và bảng Fact. Để tạo một bảng mới từ một bảng đã có chúng ta có hai lựa chọn:
+
+- **Duplicate**: với lựa chọn này thì Power Query sẽ sao chép toàn bộ queries trong bảng hiện tại, và bảng mới được tạo ra sẽ độc lập với bảng cũ.
+- **Reference**: với lựa chọn này, Power Query sẽ tham chiếu đến bảng hiện tại. Điều đó có nghĩa là nếu bảng hiện tại bị sửa đổi thì bảng mới được tạo ra cũng sẽ bị thay đổi theo.
+
+### 5.1. Tạo bảng Dim Region
+
+Như các bạn có thể nhìn thấy trong hình ảnh trên, mình đã để **Populations** ở trong thư mục input, do đó mình sẽ sử dụng **reference** để tạo bảng mới. Đầu tiên sẽ là bảng **Dim Region**, đây là bảng gồm các thông tin về địa lý _(câu hỏi Where)_. Sau khi bảng _reference_ được tạo ra, chúng ta sẽ đi xóa các cột không liên quan và vào _Remove Rows -> Remove Duplicates_ để xóa các dòng trùng lặp vì các giá trị trong bảng Dim là duy nhất.
+
+{{< figure src="./dim-region.png" width=65% >}}
+
+Tuy nhiên, bảng hiện tại của chúng ta còn thiếu một số thông tin mà chúng ta có thể bổ sung cho nó bằng cách lấy dữ liệu từ [file _codes-country_](./data/codes-country-region.txt).
+
+{{< figure src="./code-country.png" width=80% >}}
+
+Chúng ta sẽ tạo thêm một bảng **Region Fullname** bằng cách nhập dữ liệu (_Home -> Enter Data_) với nội dung như sau:
+
+{{< figure src="./region-names.png" width=80% >}}
+
+Bây giờ, chúng ta sẽ merge dữ liệu từ bảng **Region Fullname** vào bảng **codes-country-region**, sau đó thêm dữ liệu từ bảng **codes-country-region** vào bảng **Dim Region**:
+
+{{< figure src="./merge-region.png" >}}
+
+{{< figure src="./merge-dim.png" >}}
+
+Ôi không, đã có một lỗi xảy ra trong quá trình Merge. Bảng **codes-country-region** đã bị thiếu dữ liệu:
+
+{{< figure src="./missing.png" width=80% >}}
+
+Ta phải tạo thêm một bảng mới, để Append dữ liệu vào **codes-country-region**.
+
+{{< figure src="./add-country.png" width=80% >}}
+
+Sau khi thêm dữ liệu vào trong **codes-country-region**, các bạn nghĩ chúng ta đã xong chưa, thực ra là vẫn còn một vấn đề nữa. Hãy quay trở lại bảng **codes-country-region**, chọn column `ID` và vào _Keep Rows -> Keep Duplicates_:
+
+{{< figure src="./id-duplicates.png" >}}
+
+Trong thực tế, nếu gặp trường hợp này bạn sẽ phải đi tìm hiểu nguyên nhân gây ra lỗi và sửa lại nó. Tuy nhiên vì bài viết này chỉ mang tính minh họa, nên chúng ta sẽ đi _Remove Duplicates_.
+
+Đến đây là chúng ta đã hoàn thành xong bảng Dim đầu tiên, để thêm bảng này vào Data Model các bạn vào _File ---> Apply_, ở đây chúng ta có một số lựa chọn:
+
+{{< figure src="./close-apply.png" width=50% >}}
+
+- **Close**: Thoát khỏi Power Query, dữ liệu được lưu trong Power Query, nếu data source bị hỏng (ví dụ khi mở file ở một máy tính khác) thì các queries của chúng ta cũng gặp vấn đề.
+- **Apply**: Thêm dữ liệu vào data model, tuy nhiên chúng ta vẫn còn ở trong giao diện của Power Query. Sau khi thêm dữ liệu vào data model thì dù dữ liệu ở Power Query có gặp vấn đề thì trong data model vẫn còn.
+- **Close and Apply**: Kết hợp cả hai trường hợp trên.
+
+**Lưu ý:** Với những bảng không thêm vào data model ta nên tắt tùy chọn `Enable load` của bảng đó đi:
+
+{{< figure src="./only-connection.png" width=35% >}}
+
+### 5.2. Tạo bảng Dim Age
+
+Tương tự như phần trên, chúng ta sẽ tạo một bảng mới, xóa các cột không cần thiết và loại bỏ các giá trị duplicates:
+
+{{< figure src="./dim-age.png" width=80% >}}
+
+Có một vấn đề ở đây, đó là bảng **Dim Age** của chúng ta không có cột `ID`. Chúng ta có thể tạo ra một cột `ID` bằng cách vào _Add Column -> Index Column_.
+
+{{< figure src="./Dim-age-final.png" >}}
+
+Tiếp theo chúng ta sẽ tạo thêm hai cột mới là `Age-Group_Max` sử dụng tính năng thêm cột bằng `Extract` và cột `Age-Category` sử dụng `Conditional Column`.
+
+{{< figure src="./conditional-column.png" width=80% >}}
+
+### 5.3. Tạo bảng Fact
+
+Tương tự, chúng ta có một bảng mới tham chiếu đến bảng **Populations**, tuy nhiên vì đây là bảng Fact nên chúng ta không xóa các giá trị bị duplicates.
+
+Vì bảng Fact của chúng ta chưa có cột `Age-ID` để có thể liên kết với bảng **Dim Age** do đó chúng ta sẽ sử dụng tính năng Merge để thêm cột này từ bảng **Dim Age** vào bảng Fact.
+
+Cuối cùng thì xóa các cột không cần thiết và ta có kết quả:
+
+{{< figure src="./fact-table.png" >}}
+
+Các bạn có thể nhân cột `Population` với 1000, bằng cách vào _Transform -> Number Column -> Multiply_, để tránh các hiểu nhầm về mặt tính toán nếu có vì tổng dân số là một số nguyên.
+
+### 5.4. Tạo data model
+
+Cho đến bây giờ, chúng ta đã có ba bảng dữ liệu như sau:
+
+{{< figure src="./create-data-model.png" width=80% >}}
+
+Như các bạn thấy, các bảng dữ liệu của chúng ta hiện tại đang trong trạng thái rời rạc. Do đó bước tiếp theo chúng ta phải làm là đi xác định và liên kết các bảng lại với nhau. Bước này khá đơn giản, các bạn có thể kéo thả các cột có sự liên kết với nhau từ bảng này qua bảng kia là hoàn thành.
+
+{{< figure src="./create-data-model2.png" >}}
+
+Hoặc sử dụng _Manage relationships_
+
+{{< figure src="./manage-relationships.png" >}}

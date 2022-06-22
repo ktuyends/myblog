@@ -20,3 +20,9 @@ lightgallery: true
 ---
 
 <!--more-->
+
+## 1. Descriptive statistics
+
+## 2. Inferential statistics
+
+## 3. Misrepresenting data
