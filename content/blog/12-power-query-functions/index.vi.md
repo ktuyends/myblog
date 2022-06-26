@@ -8,7 +8,7 @@ lastmod: 2022-06-06
 draft: false
 authors: ["Tuyen Kieu"]
 images: ["featured.png"]
-tags: ["Blog", "Power Query"]
+tags: ["Blog", "Power BI", "Power Query"]
 toc:
   enable: true
 license: ""
