@@ -937,13 +937,208 @@ COALESCE([Total Sales],0)
 
 ## 10. Time Intelligence
 
-Time Intelligence hiểu nôm na là một tập hợp của các hàm giúp chúng ta phân tích, toán toán các chỉ số theo thời gian. Ví dụ như đôi lúc bạn sẽ muốn so sánh doanh số bán hàng của tháng này so với tháng trước. Hoặc là tính tổng tích lũy theo thời gian.
+Time Intelligence hiểu nôm na là một tập hợp của các hàm giúp chúng ta phân tích, toán toán các chỉ số theo thời gian. Ví dụ như đôi lúc bạn sẽ muốn so sánh doanh số bán hàng của tháng này so với tháng trước. Hoặc là tính tổng tích lũy theo thời gian. Nhưng trước tiên chúng ta cần phải có một bảng Date trong Data Model.
 
-### 10.1. Date Hierarchies
+### 10.1. Date Table
 
-### 10.2. Date Table
+Để tạo một bảng mới, chúng ta vào _Table Tools -> New Table_, sau đó chúng ta sẽ viết một số câu lệnh DAX để tạo bảng:
 
-### 10.3. Một số hàm DateTime
+```
+DateTable =
+ADDCOLUMNS (
+    CALENDARAUTO(),
+    "Year", YEAR( [Date] ),
+    "Month", FORMAT ( [Date], "mmmm" ),
+    "Month Number", MONTH( [Date] ),
+    "Quarter", FORMAT ( [Date], "\QQ" ),
+    "Weekday", FORMAT ( [Date], "dddd" ),
+    "Week Number", WEEKDAY( [Date] )
+)
+```
+
+Sau khi tạo xong bảng **DateTable**, click chuột phải vào bảng và chọn _Mark as date table_ để Data model biết đây là bảng Dim Date.
+
+Theo mặc định, khi các cột như `Month`, `Weekday` được đưa vào báo cáo thì nó sẽ sắp xếp các giá trị theo thứ tự của bảng chữ cái alphabet. Để thay đổi cơ chế này, hãy lựa chọn cột `Month`, sau đó vào _Column Tools -> Sort by Column -> Month Number_ để sắp xếp cột `Month` theo các giá trị của `Month Number`. Chúng ta làm tương tự đối với `Weekday`.
+
+Hàm `CALENDARAUTO()` sẽ quét tất cả các ngày có trong các bảng và việc đó đôi khi có thể sẽ tạo ra quá là nhiều quan sát. Chúng ta có viết các công thức DAX ở mức độ chi tiết hơn:
+
+```
+DateTable =
+VAR MinDate =
+    YEAR ( MIN ( Winesales[SALE DATE] ) )
+VAR MaxDate =
+    YEAR ( MAX ( Winesales[SALE DATE] ) )
+RETURN
+    ADDCOLUMNS (
+        FILTER (
+            CALENDARAUTO (),
+            YEAR ( [Date] ) >= MinDate
+                && YEAR ( [Date] ) <= MaxDate
+        ),
+        "Year", YEAR ( [Date] ),
+        "Month", FORMAT ( [Date], "mmmm" ),
+        "Month Number", MONTH ( [Date] ),
+        "Quarter", FORMAT ( [Date], "\QQ" ),
+        "Weekday", FORMAT ( [Date], "dddd" ),
+        "Week Number", WEEKDAY ( [Date] )
+    )
+```
+
+**Lưu ý:** Bảng DateTime nên bao gồm dữ liệu của cả một năm, nghĩa là nó phải có đủ tất cả các ngày từ ngày `01/01` đến ngày `31/12`.
+
+### 10.2. Functions
+
+Các hàm Time Intelligence được tính toán dựa vào các ngày cơ sở _(base time)_. Các ngày cơ sở này được xác định dựa vào ngữ cảnh lọc hiện tại _(filter context)_. Ví dụ như là các slicer hoặc filter trong report. Các bạn cứ hiểu đơn giản là, giả sử muốn tính doanh số bán hàng một năm trước năm 2020, thì năm 2020 chính là ngày cơ sở.
+
+{{< figure src="./10-time-intelligence/basetime.jpg" width=80% >}}
+
+Hầu hết các hàm Time Intelligence sẽ yêu cầu một tham số ngày. Ngày này là cột chứa các giá trị ngày duy nhất bên trong **DateTable**.
+
+{{< figure src="./10-time-intelligence/func-parameter.jpg" width=80% >}}
+
+Thông thường, các hàm Time Intelligence sẽ tạo ra một bảng ảo chỉ có một cột được lọc từ cột tham số Date. Bảng ảo này được sử dụng làm filter bên trong hàm CALCULATE. Tuy nhiên cũng có một số hàm sẽ trả về giá trị vô hướng (Scalar) như hàm: LASTDATE, LASTNONBLANK, LASTNONBLANKVALUE. Hàm LASTDATE, LASTNONBLANK có thể được sử dụng làm filter trong hàm CALCULATE còn hàm LASTNONBLANKVALUE thì không.
+
+### 10.3 Một số hàm đơn giản
+
+Các hàm sử dụng trong phần này chủ yếu mang ý nghĩa so sánh:
+
+- **PREVIOUSMONTH**: Tháng trước tính từ tháng trong filter context hiện tại.
+- **SAMEPERIODLASTYEAR**: Thời gian cùng kỳ năm trước, các kỳ có thể là ngày, tháng hoặc năm,...
+- **DATEADD**: Tăng hoặc giảm ngày tháng theo một đơn vị nào đó như year, quarter, month, day.
+- **DATESYTD**: Trả về danh sách các ngày từ đầu năm đến filter context hiện tại.
+- **DATESMTD()**: Trả về danh sách các ngày từ đầu tháng đến filter context hiện tại.
+- **DATESQTD()**: Trả về danh sách các ngày từ đầu quý đến filter context hiện tại.
+
+Chúng ta sẽ đi xây dựng một số measures với base time là tháng 12 - 2021:
+
+{{< figure src="./10-time-intelligence/base-time.png" width=60% >}}
+
+**Previous Month/Year**
+
+```
+Total Cases = SUM( Winesales[CASES SOLD] )
+```
+
+```
+Previous Month Total Cases =
+CALCULATE ( [Total Cases],
+    PREVIOUSMONTH ( DateTable[DATEKEY] )
+)
+```
+
+```
+Previous Year Total Cases =
+CALCULATE ( [Total Cases],
+    PREVIOUSYEAR ( DateTable[DATEKEY] )
+)
+```
+
+Hàm PREVIOUSYEAR giả định kết thúc năm tài chính là `31/12`, bạn có thể thay đổi điều đó bằng cách thêm ngày kết thúc năm tài chính vào trong hàm, ví dụ: `PREVIOUSYEAR ( DateTable[DATEKEY], "2021-03-31")`
+
+**Same Period Last Year - Cùng kỳ năm trước**
+
+```
+Same Period Last Year Cases =
+CALCULATE ( [Total Cases],
+    SAMEPERIODLASTYEAR ( DateTable[DATEKEY] )
+)
+```
+
+**DATEADD - Tính giá trị trong khoảng thời gian trước**
+
+```
+6 Months Ago Cases =
+CALCULATE ( [Total Cases],
+   DATEADD ( DateTable[DATEKEY], -6, MONTH )
+)
+```
+
+```
+30 Days Ago Cases =
+CALCULATE ( [Total Cases] ,
+     DATEADD ( DateTable[DATEKEY], -30, DAY )
+)
+```
+
+**Year to Date - Từ đầu năm tài chính đến hiện tại**
+
+```
+Year To Date Cases =
+CALCULATE ( [Total Cases] ,
+    DATESYTD ( DateTable[DATEKEY] )
+)
+```
+
+Hàm DATESYTD tương tự như PREVIOUSYEAR cũng giả định kết thúc năm tài chính là `31/12`, và bạn hoàn toàn có thể thay đổi ngày này bằng cách thêm ngày kết thúc năm tài chính vào trong hàm.
+
+{{< figure src="./10-time-intelligence/time-intelligence.jpg" width=70% >}}
+
+### 10.4. DATESBETWEEN & DATESINPERIOD
+
+Các hàm trong phần này sẽ giúp chúng ta tính các chỉ số trong một khoảng thời gian nhất định:
+
+- **DATESBETWEEN**: Trả về danh sách các ngày nằm trong khoảng thời gian.
+- **DATESINPERIOD**: Trả về danh sách các ngày trong khoảng từ ngày bắt đầu đến ngày cách ngày bắt đầu một khoảng thời gian xác định, chỉ bao gồm các ngày trong filter context hiện tại. Lưu ý, nếu tham số khoảng cách là `n day` thì sẽ trả về n ngày. Nếu tham số khoảng cách là số âm thì sẽ không bao gồm giá trị mốc.
+- **LASTDATE**: Trả về ngày cuối cùng trong filter context hiện tại.
+
+**Tính tổng tích lũy theo thời gian**
+
+```
+Total Sales =
+SUMX(
+    Winesales,
+    Winesales[CASES SOLD] * RELATED ( Wines[PRICE PER CASE] )
+)
+```
+
+```
+Cumulative Total =
+CALCULATE ( [Total Sales] ,
+    DATESBETWEEN ( DateTable[DATEKEY], 0 ,
+        LASTDATE ( DateTable[DATEKEY] )
+     )
+)
+```
+
+{{< figure src="./10-time-intelligence/cumulative-sum.png" width=45% >}}
+
+**Rolling Annual Totals**
+
+```
+Rolling Annual Total Sales =
+CALCULATE ( [Total Sales],
+    DATESINPERIOD ( DateTable[DATEKEY],
+        LASTDATE ( DateTable[DATEKEY] ) , -1 , YEAR ) )
+```
+
+**Rolling Annual Averages**
+
+```
+Rolling Annual Average Total Sales =
+CALCULATE (
+    [Total Sales] / COUNTROWS ( VALUES ( DateTable[MONTH] ) ),
+    DATESINPERIOD (
+        DateTable[DATEKEY],
+        LASTDATE ( DateTable[DATEKEY] ),  -1,  YEAR
+    )
+)
+```
+
+### 10.5. LASTNONBLANK & LASTNONBLANKVALUE
+
+Hàm `LASTNONBLANK(<column>, <expression>)` tìm ngày cuối cùng mà `<expression>` có giá trị (không BLANK). Nếu bạn muốn xem giá trị đó là bao nhiêu thì sử dụng hàm `LASTNONBLANKVALUE(<column>, <expression>)`. Tương tự thì chúng ta cũng có hàm FIRSTNONBLANK và FIRSTNONBLANKVALUE.
+
+```
+Date of Last Transaction =
+LASTNONBLANK ( DateTable[DATEKEY], [Total Sales] )
+```
+
+```
+Value of Last Transaction =
+LASTNONBLANKVALUE ( DateTable[DATEKEY], [Total Sales] )
+```
+
+{{< figure src="./10-time-intelligence/lastnonblank.jpg" width=70% >}}
 
 ## 11. More about Filter
 
