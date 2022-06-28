@@ -29,8 +29,10 @@ Cho đến nay, chúng ta đã đi qua những kiến thức cơ bản sau:
 
 Thì bài này sẽ là bài viết cuối cùng về chủ đề _Data preparing và data modeling_, sử dụng tất cả những kiến thức nền tảng đã được trình bày trong các bài viết trước để thực hành xây dựng một Data Model phức tạp. Nội dung của bài viết này được trình bày dựa trên quyển sách [_Expert Data Modeling with Power BI_](https://learning.oreilly.com/library/view/expert-data-modeling/9781800205697/) của _Soheil Bakhshi_ và _Christian Wade_.
 
-## 1. Data Preparation
+## 1. DAX and Data Modeling
 
-## 2. Basic Data Modeling
+## 2. Data Preparation
 
-## 3. Advanced Data Modeling
+## 3. Basic Data Modeling
+
+## 4. Advanced Data Modeling

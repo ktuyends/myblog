@@ -1142,8 +1142,215 @@ LASTNONBLANKVALUE ( DateTable[DATEKEY], [Total Sales] )
 
 ## 11. More about Filter
 
+### 11.1. SELECTEDVALUE & CONCATENATEX
+
+Giả sử có một slicer, và trong slicer đó có một số giá trị được lựa chọn. Trong phần này, chúng ta sẽ tìm hiểu một số hàm để giúp chúng ta lấy ra các giá trị được lựa chọn này.
+
+Hàm `SELECTEDVALUE(<ColumnName>, <AlternateResult>)` sẽ trả về cho chúng ta một giá trị từ filter nếu cái filter đó chỉ lọc ra một giá trị duy nhất, ví dụ như khi bạn chỉ chọn một giá trị trong slicer. Ngược lại hàm sẽ trả về giá trị ở tham số `AlternateResult`.
+
+Ví dụ:
+
+```
+Wine Selected =
+"You have selected " & SELECTEDVALUE ( Wines[WINE] )
+```
+
+Áp dụng, giả sử ta có một bảng như sau:
+
+{{< figure src="./11-more-filter/filter-start.jpg" width=55% >}}
+
+Chúng ta sẽ tạo một Card visual với chỉ số vừa tạo ở trên, và ta có kết quả:
+
+{{< figure src="./11-more-filter/card-visual.png" width=65% >}}
+
+Như đã nói thì hàm SELECTEDVALUE chỉ có thể trả về một giá trị được lựa chọn duy nhất, bây giờ nếu bạn lựa chọn nhiều giá tị trong Slicer thì làm sao để có thể lấy được các giá trị đó. Đầu tiên chúng ta làm quen với hàm CONCATENATEX. Hàm này giúp nối các nội dung trong cùng một cột của một bảng thành một chuỗi ký tự. Hàm CONCATENATEX phụ thuộc vào filter context hiện tại.
+
+```
+CONCATENATEX( table, expression, delimiter, order by, order )
+```
+
+Trong đó:
+
+- **table**: Bảng chứa cột có nội dung cần nối.
+- **expression**: Biểu thức trả về một cột có chứa nội dung cần nối.
+- **delimiter**: Ký tự dùng để nối các nội dung, nếu không nhập thì các nội dung sẽ được nối liền nhau.
+- **order by**: Cột được sử dụng làm căn cứ sắp xếp thứ tự kết nối.
+- **order**: Sắp xếp theo thứ tự các chữ cái tăng dần _(ASC - mặc định)_ hoặc giảm dần _(DESC)_
+
+Áp dụng lại hàm CONCATENATEX với ví dụ trên:
+
+```
+Types of Wine =
+CONCATENATEX ( Wines, Wines[WINE], ", " )
+```
+
+{{< figure src="./11-more-filter/card-visual2.png" width=65% >}}
+
+Tuy nhiên, nếu bạn không chọn giá trị nào, tất cả các giá trị sẽ được hiển thị:
+
+{{< figure src="./11-more-filter/card-visual3.png" width=65% >}}
+
+Bây giờ, ta sẽ viết lại biểu thức DAX trên cho các tình huống sẽ gặp phải:
+
+- Không có giá trị nào được lựa chọn trong slicer
+- Có ba giá trị được lựa chọn hoặc ít hơn.
+- Có nhiều hơn ba giá trị được lựa chọn.
+
+Trước tiên chúng ta sẽ làm quen với hàm VALUES. Hàm này khi áp dụng với một cột, nó sẽ tạo ra một bảng ảo chỉ gồm một cột và các giá trị trong cột này là duy nhất. Lưu ý là hàm VALUES phụ thuộc vào filter context hiện tại.
+
+```
+Types of Wine =
+VAR NoFilteredWines =
+    COUNTROWS ( VALUES ( Wines[WINE] ) )
+VAR NoAllWines =
+    COUNTROWS ( ALL ( Wines[WINE] ) )
+RETURN
+    IF (
+        NoFilteredWines = NoAllWines,
+        "Sales by Wine",
+        "Sales by Wine, filtered by " & CONCATENATEX ( Wines, Wines[WINE], ", " )
+    )
+```
+
+Đoạn code này sẽ hiển thị `Sales by Wine` nếu không có giá trị nào được lựa chọn, ngược lại sẽ hiển thị danh sách các giá trị được lựa chọn.
+
+Tiếp theo chúng ta sẽ sử dụng thêm hàm TOPN để giải quyết 2 vấn đề còn lại. Hàm TOPN sẽ tạo ra một cột mới gồm N giá trị đầu tiên từ cột được chỉ định.
+
+```
+Types of Wine =
+VAR NoFilteredWines =
+    COUNTROWS ( VALUES ( Wines[WINE] ) )
+VAR NoAllWines =
+    COUNTROWS ( ALL ( Wines[WINE] ) )
+RETURN
+    IF (
+        NoFilteredWines = NoAllWines,
+        "Sales by Wine",
+        "Sales by Wine, filtered by "
+            & IF (
+                NoFilteredWines <= 3,
+                CONCATENATEX ( Wines, Wines[WINE], ", " ),
+                CONCATENATEX ( TOPN ( 3, VALUES ( Wines[WINE] ) ), Wines[WINE], ", " ) & " and more..."
+            )
+    )
+```
+
+### 11.2. Parameter Tables
+
+Tham số bảng, hiểu đơn giản là chúng ta có thể tạo một bảng làm tham số sử dụng cho một hàm. Ví dụ chúng ta tạo một bảng **What If** như sau:
+
+{{< figure src="./11-more-filter/table-parameters.jpg" width=65% >}}
+
+Bây giờ ta sẽ đi tạo một chỉ số để tính toán dựa vào giá trị được chọn trong slicer.
+
+```
+What If Scenario =
+[Total Sales] * SELECTEDVALUE ( 'What If'[Value] )
+```
+
+{{< figure src="./11-more-filter/table-parameters2.jpg" width=65% >}}
+
+Một ví dụ nữa sử dụng tham số bảng, để lựa chọn chỉ số tính toán từ một slicer.
+
+Ta tạo một bảng như sau:
+
+{{< figure src="./11-more-filter/table-parameters3.jpg" width=65% >}}
+
+```
+MEASURE To Show =
+    SWITCH (
+        SELECTEDVALUE ( 'Select Measures'[Value] ),
+        1, [Total Sales],
+        2, [Total Cases],
+        3, [No. of Sales]
+    )
+```
+
+Kết quả:
+
+{{< figure src="./11-more-filter/table-parameters4.jpg" width=65% >}}
+
+### 11.3. Hàm VALUES
+
+Cú pháp:
+
+```
+VALUES ( table name or column name )
+```
+
+Trong đó:
+
+- **table name:** Khi tham số là một bảng, nó sẽ trả về một bảng gồm các hàng từ bảng được chỉ định sau khi đã lọc theo filter context hiện tại.
+- **column name:** Khi tham số là một cột nó sẽ trả về một bảng chỉ có một cột, gồm các giá trị khác nhau từ cột được chỉ định dựa vào filter context hiện tại.
+
+Khi làm việc với hàm VALUES, có thể chúng ta sẽ kết hợp với hàm `HASONEVALUE(column)`, để kiểm tra xem trong một cột có một hay nhiều giá trị, nếu có một giá trị nó sẽ trả về `True`. Hàm này cũng phụ thuộc vào filter context hiện tại.
+
+Ví dụ, hai code dưới đây là tương đương nhau:
+
+```
+Values Wine =
+IF ( HASONEVALUE ( Wines[WINE] ), VALUES ( Wines[WINE] ), "All Wines" )
+```
+
+```
+Selected Value Wine =
+SELECTEDVALUE ( Wines[WINE], "All Wines" )
+```
+
+### 11.4. Filter Propagation
+
+Cho đến nay, chúng ta mới chỉ làm việc với các bộ lọc đi từ bảng DIM đến bảng FACT, đi từ phía _one side_ đến _many side_.
+
+{{< figure src="./11-more-filter/filter-propagation.jpg" width=80% >}}
+
+Tuy nhiên, trong một số trường hợp bạn sẽ muốn truyền dữ liệu ngược lại với chiều được xác định trong Data Model. Như đã nói trước đó, chúng ta sẽ không thay đổi trên Data Model mà sử dụng một hàm khác để thay đổi chiều, đó là hàm CROSSFILTER.
+
+Nhớ lại một ví dụ trước đó, chúng ta muốn tính tổng số cửa hàng đang bán mỗi loại rượu:
+
+{{< figure src="./11-more-filter/filter-propagation3.jpg" width=45% >}}
+
+{{< figure src="./11-more-filter/filter-propagation2.jpg" width=80% >}}
+
+Như các bạn thấy thì filter direction không cho phép chúng ta lấy thông tin từ bảng **Customers**. Bây giờ chúng ta sẽ đi tìm hiểu về hàm CROSSFILTER:
+
+```
+CROSSFILTER ( column1, column2, direction )
+```
+
+Trong đó:
+
+- **column1**: Tên cột khóa của bảng phía many của mối quan hệ.
+- **column2**: Tên cột khóa của bảng phía one của mối quan hệ.
+- **direction**: single hoặc both.
+
+Ví dụ:
+
+```
+Total Stores =
+CALCULATE (
+    SUM ( Customers[NO. OF STORES] ),
+    CROSSFILTER ( Winesales[CUSTOMER ID], Customers[CUSTOMER ID], BOTH )
+)
+```
+
+### 11.5. Multiple Relationships
+
+Đôi khi, bạn sẽ gặp một số tình huống mà giữa hai bảng có nhiều mối quan hệ, tuy nhiên tại một thời điểm chỉ có một mối quan hệ duy nhất được hoạt động. Ví dụ:
+
+{{< figure src="./11-more-filter/multi-relationships.jpg" width=55% >}}
+
+Trong trường hợp, bạn muốn sử dụng một mối quan hệ không được kích hoạt, các bạn có thể sử dụng hàm USERELATIONSHIP, tương tự như CROSSFILTER. Cú pháp:
+
+```
+USERELATIONSHIP ( column1, column2 )
+```
+
 ## 12. Context Transition
 
 ## 13. Virtual Relationships
 
 ## 14. Table Expansion
+
+## 15. Tài liệu tham khảo
+
+Bài viết này, mình tổng hợp lại các kiến thức dựa trên quyển sách _[Up and Running with DAX for Power BI : A Concise Guide for Non-Technical Users](https://learning.oreilly.com/library/view/up-and-running/9781484281888/)_ của _Alison Box_.

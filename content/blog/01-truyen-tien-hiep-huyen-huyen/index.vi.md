@@ -56,5 +56,6 @@ lightgallery: true
 
 #### Đang đọc:
 
-27. Thâm Không Bỉ Ngạn _(810)_
-28. Xích Tâm Tuần Thiên _(1670)_
+27. Thâm Không Bỉ Ngạn _(840)_
+28. Xích Tâm Tuần Thiên _(1700)_
+29. Quan Âm Chi Ngoại _(50)_
