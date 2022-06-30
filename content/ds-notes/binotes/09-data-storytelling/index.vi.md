@@ -1,9 +1,9 @@
 ---
-title: "Day 9 - Data visualization"
+title: "Day 9 - Data storytelling"
 subtitle: ""
-slug: 09-data-visualization
-date: 2022-07-12
-lastmod: 2022-07-12
+slug: 09-data-storytelling
+date: 2022-07-20
+lastmod: 2022-07-20
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""

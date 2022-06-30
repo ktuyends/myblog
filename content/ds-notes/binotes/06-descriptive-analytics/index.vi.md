@@ -1,9 +1,9 @@
 ---
-title: "Day 8 - Diagnostic analytics"
+title: "Day 6 - Descriptive analytics"
 subtitle: ""
-slug: 08-diagnostic-analytics
-date: 2022-07-05
-lastmod: 2022-07-05
+slug: 06-descriptive-analytics
+date: 2022-07-01
+lastmod: 2022-07-01
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
@@ -11,7 +11,7 @@ images: []
 tags: ["BI"]
 categories: []
 series: [BI Course Notes]
-series_weight: 8
+series_weight: 6
 toc:
   enable: true
 license: ""

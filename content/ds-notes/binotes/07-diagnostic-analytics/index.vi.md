@@ -1,9 +1,9 @@
 ---
-title: "Day 6 - Business statistics"
+title: "Day 7 - Diagnostic analytics"
 subtitle: ""
-slug: 06-business-statistics
-date: 2022-06-14
-lastmod: 2022-06-14
+slug: 07-diagnostic-analytics
+date: 2022-07-05
+lastmod: 2022-07-05
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
@@ -11,7 +11,7 @@ images: []
 tags: ["BI"]
 categories: []
 series: [BI Course Notes]
-series_weight: 6
+series_weight: 7
 toc:
   enable: true
 license: ""
@@ -20,9 +20,3 @@ lightgallery: true
 ---
 
 <!--more-->
-
-## 1. Descriptive statistics
-
-## 2. Inferential statistics
-
-## 3. Misrepresenting data

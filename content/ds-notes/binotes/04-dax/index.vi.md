@@ -1347,7 +1347,476 @@ USERELATIONSHIP ( column1, column2 )
 
 ## 12. Context Transition
 
+Khi học về DAX, một trong những kiến thức nền tảng quan trọng nhất bạn phải nắm được là _Evaluation Context_, có nghĩa là bạn phải hiểu được các loại ngữ cảnh và những tình huống khi mà một ngữ cảnh bị chuyển đổi thành ngữ cảnh khác. Trước khi đi tìm hiểu về Context Transition, chúng ta ôn tập lại hai loại ngữ cảnh đã được nhắc đến trong phần Calculated Columns và Measures: Row Context và Filter Context.
+
+Giả sử trong bảng **Winesales**, chúng ta sẽ tạo ra một Calculated Column với nội dung:
+
+```
+10 Percent of Cases Sold = Winesales[CASES SOLD] * 0.1
+```
+
+Với Row Context, đầu tiên DAX sẽ lặp qua từng hàng bên trong bảng **Winesales**, tìm ra giá trị tương ứng của `CASES SOLD` trong hàng đó và nhân với `0.1`. Các bạn có thể nghĩ về Row Context giống như các phép tính trong một ô _(Cell)_ của Excel, sau đó bạn kéo công thức tính của ô đó xuống các ô bên dưới trong cùng một cột để thực hiện các phép tính tương tự.
+
+Khi nhắc về Filter Context, về cơ bản tất cả các biểu thức DAX đều được tính toán dựa trên ba bước sau:
+
+- **Bước 1**: Xác định các bộ lọc từ slicer, từ reports và visual,...sau đó thực hiện lọc dữ liệu để có một bảng dữ liệu mới.
+- **Bước 2**: Tính toán các chỉ số dựa vào bảng dữ liệu mới này.
+- **Bước 3**: Gửi kết quả tính toán được trở lại slicer, reports, table.
+
+Một ví dụ về Filter Context kết hợp với Row Context, chúng ta tạo ra chỉ số `Total Sales`:
+
+```
+Total Sales =
+SUMX ( Winesales,
+    Winesales[CASES SOLD] * RELATED ( Wines[PRICE PER CASE] )
+)
+```
+
+Ví dụ này có thể được phân tích thành các bước sau:
+
+- Bước 1: Xác định các bộ lọc và gửi đến bảng **Winesales** để lọc dữ liệu _(Filter Context)_.
+- Bước 2: Dựa trên dữ liệu đã được lọc, tạo ra một cột calculated column ảo _(cái này để hình dung)_ tính toán `Winesales[CASES SOLD] * RELATED ( Wines[PRICE PER CASE] )` _(Row Context)_.
+- Bước 3: Tính tổng tất cả các giá trị trong cột ảo vừa tạo và gửi giá trị đó đến reports.
+
+Để nói về Context Transition, về mặt ý nghĩa nó chỉ đơn giản là trong một số tình huống Row Context sẽ bị chuyển đổi thành Filter Context hoặc ngược lại. Và chúng ta sẽ đi xem xét từng tình huống đó.
+
+### 12.1. Calculated Columns
+
+Có hai quy tắc chúng ta cần phải nhớ:
+
+- Thứ nhất, các chỉ số luôn luôn ngầm gọi hàm CALCULATE, cho dù chúng ta có sử dụng hay không.
+- Thứ hai, khi hàm CALCULATE được sử dụng thì sẽ xảy ra Context Transition, Row Context sẽ bị chuyển thành Filter Context.
+
+Để giải thích cho trường hợp, mình sẽ minh họa bằng một số ví dụ sau. Chúng ta bắt đầu với một Calculated Column trong bảng **Winesales**.
+
+```
+Total Cases Column =
+SUM ( Winesales[CASES SOLD] )
+```
+
+Như các bạn sẽ thấy thì, biểu thức này sử dụng Row Context lặp qua từng hàng của bảng dữ liệu sau đó tính tổng tất cả các giá trị bên trong cột `CASES SOLD` vì Filter Context bây giờ được ngầm hiểu là toàn bộ bảng dữ liệu. Do đó tất cả các hàng đều có cùng một giá trị.
+
+{{< figure src="./12-context-transition/calculated-column.jpg" width=80% >}}
+
+Bây giờ chúng ta thử sửa đổi biểu thức DAX trên thành:
+
+```
+Total Cases Column =
+CALCULATE (
+    SUM ( Winesales[CASES SOLD] )
+)
+```
+
+{{< figure src="./12-context-transition/calculated-column2.jpg" width=80% >}}
+
+Như bạn thấy, bây giờ giá trị trong các hàng không còn giống nhau nữa. Khi ta sử dụng hàm CALCULATE mà không có đối số filter thì DAX sẽ sử dụng một tập hợp các giá trị trong tất tất cả các cột còn lại làm filter. Ví dụ với giá trị `213` của `Total Cases Column`, sẽ được tính toán với bộ filter sau:
+
+```
+SALE DATE = 01/01/2017
+WINESALES NO = 2
+SALESPERSON ID = 6
+CUSTOMER ID = 16
+WINE ID = 10
+CASES SOLD  = 213
+```
+
+Tương tự, kết quả cũng giống như trên khi chúng ta có thay thế hàm CALCULATE ở trên bằng một chỉ số:
+
+```
+Total Cases =
+SUM ( Winesales[CASES SOLD] )
+```
+
+```
+Total Cases Column =
+[Total Cases]
+```
+
+Một ví dụ nữa, thay vì tính toán trên bảng Fact, bây giờ chúng ta tính toán trên bảng Dim **Wines**:
+
+```
+Wine Total Cases 1 = SUM ( Winesales[CASES SOLD] )
+```
+
+```
+Wine Total Cases 2 =
+CALCULATE (
+    SUM ( Winesales[CASES SOLD] ) )
+```
+
+```
+Wine Total Cases 3 = [Total Cases]
+```
+
+{{< figure src="./12-context-transition/calculated-column3.jpg" width=80% >}}
+
+Trong phần này, chúng ta đã xem một số ví dụ về Context Transition sử dụng Calculated Column, tuy nhiên thực thì chúng ta sẽ chủ yếu sử dụng các biểu thức DAX khi xây dựng các chỉ số (Measures). Và hoạt động Context Transition bên trong các chỉ số sẽ phức tạp và khó hiểu hơn rất nhiều, nhất là khi chúng ta lồng các chỉ số bên trong biểu thức DAX.
+
+### 12.2. AVERAGE làm Filters
+
+Chúng ta sẽ bắt đầu với hai chỉ số tổng số đơn hàng bán được `No. of Sales` và số lượng hàng trung bình một đơn hàng bán được `Avg Cases`:
+
+```
+No. of Sales = COUNTROWS ( Winesales )
+Avg Cases = AVERAGE ( Winesales[CASES SOLD] )
+```
+
+{{< figure src="./12-context-transition/filter-using-average.png" width=50% >}}
+
+Như trong hình, ví dụ có 180 đơn hàng bán `Bordeaux` và trung bình mỗi đơn hàng bán được khoảng 300 chai. Giả sử bây giờ bạn muốn tìm tổng những đơn hàng mà có số lượng bán `Borrdeaux` lớn hơn 300. Tương tự với những loại rượu vang khác.
+
+```
+No. Of Sales GT Avg =
+VAR AvgCasesTable =
+    FILTER ( Winesales, Winesales[CASES SOLD] > [Avg Cases] )
+RETURN
+    CALCULATE ( [No. Of Sales], AvgCasesTable )
+```
+
+Kết quả:
+
+{{< figure src="./12-context-transition/filter-using-average2.png" width=40% >}}
+
+Kết quả nhận được là không có gì hết, rõ ràng chúng ta đã viết đúng công thức rồi, tại sao lại như vậy nhỉ. Để giải thích cho tình huống này, chúng ta cần nhớ rằng khi nghĩ về DAX chúng ta hãy nghĩ về các cột, hàng và bảng thay vì nghĩ về từng ô. Điều đó có nghĩa là `Winesales[CASES SOLD]` là một cột và `[Avg Cases]` cũng là một cột, hàm FILTER sẽ lặp qua từng hàng trong bảng **Winesales** để tìm các hàng thỏa mãn điều kiện.
+
+Ở trên chúng ta đã nói, khi sử dụng một measure thì Context Transition sẽ xảy ra. Do đó trong trường hợp này `CASE SOLD` luôn bằng với `Avg Cases`:
+
+{{< figure src="./12-context-transition/filter-using-average3.png" width=80% >}}
+
+Bây giờ chúng ta sửa lại biểu thức DAX trên:
+
+```
+No. Of Sales GT Avg =
+VAR AvgCasesTable =
+    FILTER ( Winesales, Winesales[CASES SOLD] > AVERAGE ( Winesales[CASES SOLD] ) )
+RETURN
+    CALCULATE ( [No. Of Sales], AvgCasesTable )
+```
+
+{{< figure src="./12-context-transition/filter-using-average4.png" width=80% >}}
+
+Và chúng ta có kết quả chính xác:
+
+{{< figure src="./12-context-transition/filter-using-average5.png" width=40% >}}
+
+### 12.3. MAX làm Filters
+
+Chúng ta sẽ tiếp tục với một ví dụ nữa, lần này chúng ta đi tính tổng tích lũy theo thời gian.
+
+```
+Cumulative Total =
+VAR FilteredDatesTable =
+    FILTER ( ALL ( DateTable ), DateTable[DATEKEY] <= MAX ( DateTable[DATEKEY] ) )
+RETURN
+    CALCULATE ( [Total Sales], FilteredDatesTable )
+```
+
+Chúng ta đã sử dụng hàm ALL để xóa các bộ lọc hiện tại và hàm FILTER để tạo ra một bảng ảo mới. Nếu ở đây bạn thay `MAX ( DateTable[DATEKEY] )` thành một chỉ số, kết quả sẽ không như mong muốn.
+
+```
+Max Date =
+MAX ( DateTable[DATEKEY] )
+```
+
+```
+Cumulative Total Wrong =
+VAR FilteredDatesTable =
+    FILTER ( ALL ( DateTable ), DateTable[DATEKEY] <= [Max Date] )
+RETURN
+    CALCULATE ( [Total Sales], FilteredDatesTable )
+```
+
+{{< figure src="./12-context-transition/filter-using-max.jpg" width=50% >}}
+
+### 12.4. Measures làm Filters
+
+Với hai ví dụ trên, chúng ta đã gặp vấn đề khi sử dụng các chỉ số làm filter, vậy thì các chỉ số có thể được sử dụng làm filter hay không, câu trả lời là có. Chúng ta sẽ minh họa cho điều này bằng ví dụ tính tổng số đơn hàng có doanh thu lớn hơn `10,000`.
+
+```
+No. Of Sales GT 10,000 =
+VAR MySales =
+    SUMX ( Winesales, Winesales[CASES SOLD] *
+                  RELATED ( Wines[PRICE PER CASE] ) )
+VAR SalesTable =
+    FILTER ( Winesales, MySales > 10000 )
+RETURN
+    CALCULATE ( [No. Of Sales], SalesTable )
+```
+
+Nếu bạn sử dụng biểu thức DAX này sẽ gặp lỗi, vì MySales sẽ hoạt động như Calculated Column và kết quả của tất cả các hàng đều giống nhau:
+
+{{< figure src="./12-context-transition/filter-using-measures.jpg" width=80% >}}
+
+Do đó chúng ta cần sửa lại biểu thức trên một chút:
+
+```
+Total Sales =
+SUMX ( Winesales, Winesales[CASES SOLD] *
+                  RELATED ( Wines[PRICE PER CASE] )
+```
+
+```
+No. Of Sales GT 10,000 =
+VAR SalesTable =
+    FILTER ( Winesales, [Total Sales] > 10000 )
+RETURN
+    CALCULATE ( [No. Of Sales], SalesTable )
+```
+
+### 12.5. Tổng hợp dữ liệu theo bảng DIM
+
+Giả sử chúng ta có một bảng tổng hợp dữ liệu như sau và chúng ta muốn đi tìm giá trị lớn nhất trong cột `Total Cases`:
+
+```
+Max Cases = MAX ( Winesales[CASES SOLD] )
+Total Cases = SUM ( Winesales[CASES SOLD] )
+```
+
+{{< figure src="./12-context-transition/aggregate1.jpg" width=50% >}}
+
+```
+Max of Totals =
+MAXX (
+    ALL ( Wines ) , [Total Cases] )
+```
+
+Nếu bạn không sử dụng ALL để xóa bộ lọc, nó sẽ trả về giá trị tương tự như `Total Cases`. Biểu thức sau sẽ tìm loại rượu có tổng số lượng bán lớn nhất:
+
+```
+Wine with Max =
+VAR MyMax =
+    MAXX ( ALL ( Wines ), [Total Cases] )
+RETURN
+    CALCULATE ( VALUES ( Wines[WINE] ), FILTER ( Wines, [Total Cases] = MyMax ) )
+```
+
+{{< figure src="./12-context-transition/aggregate2.jpg" width=60% >}}
+
+### 12.6. Hàm SUMMARIZE
+
+Hàm ALL có thể tạo ra một bảng ảo gồm một hoặc nhiều cột từ một bảng nào đó. Nhưng nếu bạn muốn tạo ra một bảng kết hợp các cột đến từ nhiều bảng, chúng ta sẽ phải sử dụng hàm SUMMARIZE. Cú pháp:
+
+```
+SUMMARIZE ( table, group by column1, group by column2 etc., name, expression )
+```
+
+Trong đó:
+
+- **table**: Bảng hoặc biểu thức trả về bảng có chứa các cột mà bạn muốn tổng hợp dữ liệu.
+- **group by column**: Các cột mà bạn muốn tổng hợp dữ liệu, có thể cùng bảng hoặc các bảng khác có liên kết.
+- **name**: Tên của cột chỉ số mà bạn sẽ tạo ra.
+- **expression**: Biểu thức tổng hợp dữ liệu.
+
+Ví dụ, tạo một bảng mới _Table tools -> New Table_ với biểu thức sau:
+
+```
+Wine and Year Table =
+SUMMARIZE ( Winesales,
+   Wines[WINE], DateTable[YEAR] )
+```
+
+**Lưu ý:** Tuy cả SUMMARIZE và ALL đểu được sử dụng để tạo ra một bảng ảo kết hợp dữ liệu từ nhiều cột, tuy nhiên ALL loại bỏ filter context hiện tại, còn SUMMARIZE sẽ phụ thuộc vào filter context hiện tại.
+
+### 12.7. Hàm RANKX
+
+Hàm RANKX được sử dụng để xếp hạng dữ liệu theo một chỉ số nào đó.
+
+```
+RANKX ( table, expression, value, order, ties )
+```
+
+Trong đó:
+
+- **table**: Bảng được sử dụng để xếp hạng.
+- **expression**: Chỉ số dùng để xếp hạng các hàng trong bảng trên.
+- **order**: Mặc định là DESC (1 là hạng cao nhất), ASC (1 là hạng thấp nhất).
+- **ties**: _Skip_ - Các giá trị bằng nhau cùng hạng, sau đó bị bỏ qua (ví dụ 1, 2, 2, 2, 5,...). _Dense_ - Các giá trị bằng nhau cùng hạng, số hạng tiếp theo tiếp tục số hạng trước đó (ví dụ 1, 2, 2, 2, 3, 4,...).
+
+Ví dụ:
+
+```
+RANKX ( ALL (Wines), [Total Sales],, DESC)
+```
+
+Ứng dụng hàm RANK để xếp hạng tổng doanh số bán hàng theo từng quý.
+
+```
+Rank by Qtr =
+ IF ( HASONEVALUE(DateTable[Quarter] ),
+      RANKX ( ALL ( DateTable[Quarter] ), [Total Cases] ))
+```
+
+{{< figure src="./12-context-transition/rankx.png" width=40% >}}
+
+### 12.8. Ví dụ
+
+Mỗi một nhân viên bán hàng đều có một danh sách các khách hàng khác nhau. Bây giờ chúng ta sẽ sử dụng tổng hợp những kiến thức từ đầu bài viết cho đến nay để xây dựng một chỉ số đi tìm kiếm những khách hàng mang lại TOP `n%` hoặc BOTTOM `n%` tổng doanh thu. Chúng ta sẽ có ba slicer:
+
+- Top or Bottom: Để lựa chọn xem là tìm kiếm Top hoặc Bottom.
+- Percent: Số lượng khách hàng muốn tìm kiếm.
+- Sales: Danh sách nhân viên bán hàng.
+
+Đầu tiên chúng ta đi tạo hai bảng như hình:
+
+{{< figure src="./12-context-transition/create-table.jpg" width=70% >}}
+
+Sau đó, chúng ta tạo những bảng cần thiết để có một cái nhìn tổng quan.
+
+{{< figure src="./12-context-transition/examp.png" width=70% >}}
+
+Như các bạn thấy thì bây giờ chúng ta còn thiếu một chỉ số để đi tìm kiếm các khách hàng thỏa mãn các filter đến từ slicer.
+
+```
+Top/Bottom PC Customers =
+VAR PercentToFind =
+    COUNTROWS ( ALL ( Customers ) ) * SELECTEDVALUE ( 'Select Percent'[Percent] ) -- Harvest the percent using the slicer selection
+
+VAR RankCustsTop =
+    RANKX ( ALL ( Customers ), [Total Sales],, DESC ) -- Rank the customers descending by Total Sales value (Top = 1)
+VAR FindCustsTop =
+    FILTER ( Customers, RankCustsTop <= PercentToFind ) -- Filter top customers whose rank is less than or equal to the PerCentToFind
+VAR CalcSalesTop =
+    CALCULATE ( [Total Sales], FindCustsTop ) -- Calculate “Total Sales” for top ranked customers
+
+VAR RankCustsBottom =
+    RANKX (
+        FILTER ( ALL ( Customers ), NOT ( ISBLANK ( [Total Sales] ) ) ),
+        [Total Sales],
+        ,
+        ASC
+    ) -- Rank the customers ascending by Total Sales value (Bottom = 1) but only if they have sales
+VAR FindCustsBottom =
+    FILTER ( Customers, RankCustsBottom <= PercentToFind ) -- Filter bottom customers whose rank is less than or equal to the PerCentToFind
+VAR CalcSalesBottom =
+    CALCULATE ( [Total Sales], FindCustsBottom ) -- Calculate “Total Sales” for bottom ranked customers
+
+VAR TopOrBottom =
+    SELECTEDVALUE ( 'Select Top or Bottom'[Top or Bottom] ) -- Harvest whether top or bottom using the slicer selection
+
+RETURN
+    IF (
+        HASONEVALUE ( Customers[CUSTOMER NAME] ),
+        -- This tests that the evaluation is not for the Total Row.
+        IF (
+            TopOrBottom = "top",
+            CalcSalesTop,
+            CalcSalesBottom
+        ),
+        --The calculation for rows not in the Total row
+        CALCULATE (
+            [Total Sales],
+            ALLSELECTED ( Customers[CUSTOMER NAME] )
+        )
+    )
+```
+
 ## 13. Virtual Relationships
+
+Đôi khi vì một lý do nào đó, bạn không thể tạo được mối liên kết giữa các bảng dữ liệu với nhau. Khi đó chúng ta cần sử dụng một số hàm để tìm kiếm các giá trị dựa vào một điều kiện nào đó hoặc là tạo các mối liên kết ảo.
+
+### 13.1. Hàm LOOKUPVALUE
+
+Trong Phần 2 về _[Calculated Column](#2-calculated-column)_, mình đã trình bày về hàm RELATED. Hàm này giúp chúng ta lấy các giá trị từ bảng One đến bảng Many trong mối quan hệ One-to-Many. Nó hoạt động tương tự như hàm VLOOKUP trong Excel, tuy nhiên bạn chỉ có thể sử dụng hàm RELATED khi các bảng đã được liên kết với nhau dựa vào mối quan hệ One-to-Many.
+
+Giả sử bây giờ, với mỗi loại rượu trong bảng **Wines** sẽ được bán ở các mức giá khác nhau tùy thuộc vào số lượng mua hàng. Ví dụ như bảng **Prices** trong file [dữ liệu](./data/4%20DAX%20LOOKUPVALUE.pbix) :
+
+{{< figure src="./13-virtual-relationships/prices.jpg" width=60% >}}
+
+Khi này, trong bảng **Winesales** cũng được thêm một cột `PRICE BAND`:
+
+{{< figure src="./13-virtual-relationships/winesales.jpg" width=80% >}}
+
+Và mối quan hệ giữa các bảng:
+
+{{< figure src="./13-virtual-relationships/data-model.png" width=80% >}}
+
+Như các bạn thấy thì trong trường hợp này, chúng ta không thể sử dụng hàm RELATED để lấy giá của các loại rượu từ bảng **Prices**. Hàm LOOKUPVALUE sẽ giúp ta làm điều đó. Cú pháp:
+
+```
+LOOKUPVALUE( result column name, search column name1, search value1, search column name2, search value2 etc. )
+```
+
+Trong đó:
+
+- **result column name**: Tên của cột giá trị chứa kết quả mà bạn muốn tìm kiếm.
+- **search column name**: Cột chứa giá trị cần tìm, cùng bảng với cột kết quả.
+- **search value**: Cột giá trị tìm kiếm, thường nằm ở một bảng khác.
+
+Các bạn có thể nghĩ `search column name` và `search value` như là các cột khóa giữa hai bảng. Ví dụ:
+
+```
+WINE PRICE =
+LOOKUPVALUE (
+    Prices[PRICE PER CASE],
+    Prices[WINE ID], Winesales[WINE ID],
+    Prices[PRICE BAND], Winesales[PRICE BAND]
+)
+```
+
+Một cách viết khác của biểu thức trên:
+
+```
+WINE PRICE =
+VAR currentwine = Winesales[WINE ID]
+VAR priceband = Winesales[PRICE BAND]
+RETURN
+CALCULATE ( VALUES ( Prices[PRICE PER CASE] ),
+        Prices[PRICE BAND] = priceband,
+        Prices[WINE ID] = currentwine )
+```
+
+### 13.2. Hàm TREATAS
+
+Giả sử bây giờ mỗi nhân viên bán hàng, đều được yêu cầu có một mục tiêu bán hàng hàng năm như bảng **Targets** trong [Data Model](./data/5%20DAX%20TREATAS.pbix) như sau:
+
+{{< figure src="./13-virtual-relationships/target.jpg" width=40% >}}
+
+{{< figure src="./13-virtual-relationships/data-model2.png" width=60% >}}
+
+Và chúng ta muốn so sánh tổng doanh thu mà mỗi nhân viên mang về cho công ty so với mục tiêu đề ra trong từng năm. Trước tiên ta cần 2 chỉ số:
+
+```
+Target = SUM ( Targets[TARGET] )
+Total Sales = SUMX( Winesales , Winesales[CASES SOLD] * RELATED( Wines[PRICE PER CASE]) )
+```
+
+Bây giờ có một vấn đề, chúng ta sẽ lấy `YEAR` từ bảng nào.
+
+{{< figure src="./13-virtual-relationships/target2.jpg" width=80% >}}
+
+Nếu mà chúng ta lấy `YEAR` từ bảng **DataTable** thì chỉ số `Target` sẽ không chính xác, ngược lại nếu chúng ta lấy `YEAR` từ bảng **Targets** thì chỉ số `Total Sales` lại không chính xác.
+
+{{< figure src="./13-virtual-relationships/data-model3.png" width=60% >}}
+
+Như trong Data Model, nếu chúng ta lấy `YEAR` từ bảng **DataTable** thì thông tin không thể truyền đến được bảng **Targets** và ngược lại. Có thể bạn sẽ nghĩ là tạo mối liên kết giữa hai bảng **DataTable** và **Target**, tuy nhiên ở đây chúng ta sẽ gặp phải mối quan hệ Many-to-Many. May mắn là, DAX có một hàm có thể giúp chúng ta giải quyết vấn đề này, đó là hàm TREATAS. Cú pháp:
+
+```
+TREATAS ( table expression, column1, column2 etc. )
+```
+
+Trong đó:
+
+- **table expression**: Là bất kỳ biểu thức nào trả về một bảng.
+- **column**: Một hoặc nhiều cột dùng để tạo liên kết.
+
+Và bây giờ, Target có thể được viết lại như sau:
+
+```
+Target =
+CALCULATE (
+    SUM ( Targets[TARGET] ),
+    TREATAS ( VALUES ( DateTable[YEAR] ), Targets[YEAR] )
+)
+```
+
+{{< figure src="./13-virtual-relationships/data-model4.png" width=60% >}}
+
+Các bạn có thể hình dung về hàm TREATAS đơn giản như sau:
+
+- Đầu tiên TREATAS sử dụng hàm VALUES để tạo một bảng ảo chỉ có một giá trị từ bảng **DataTable**, bởi vì filter context chỉ có một giá trị, giả sử là năm 2017.
+- Sau đó, thông tin này được truyền cho bảng **Target** để lọc các dữ liệu tính toán cho hàm CALCULATE.
+
+{{< figure src="./13-virtual-relationships/target3.jpg" width=50% >}}
 
 ## 14. Table Expansion
 
