@@ -1820,6 +1820,92 @@ Các bạn có thể hình dung về hàm TREATAS đơn giản như sau:
 
 ## 14. Table Expansion
 
+Trong phần này, chúng ta sẽ đi tìm hiểu một khái niệm cuối cùng trong bức tranh lý thuyết tổng thể về DAX - Table Expansion. [Tập dữ liệu](./data/6%20DAX%20Expanded%20Tables.pbix) được sử dụng trong phần này, có Data Models như hình sau:
+
+{{< figure src="./14-data-expansion/data-model.jpg" width=80% >}}
+
+Cho đến nay, chúng ta đã nói rất là nhiều về Filter và Context nhưng vẫn còn một số vấn đề chưa được nói đến:
+
+- Làm thế nào để lọc các dữ liệu trong bảng FACT sử dụng các giá trị trong bảng DIM khi mà các giá trị này không tồn tại trong bảng FACT? Ví dụ như khi chúng ta sử dụng các bộ lọc ở trên slicer nhưng nó lại không tồn tại trong bảng FACT.
+- Chúng ta từng sử dụng hàm ALL để loại bỏ các bộ lọc trong bảng FACT. Nhưng còn với những bộ lọc không ở trong bảng FACT thì sao?
+
+Để trả lời cho các câu hỏi này chúng ta cần kiến thức về Table Expansion, nhưng trước tiên ta ôn tập lại một chút về Column Filter.
+
+### 14.1. Column Filter
+
+Giả sử chúng ta có một biểu thức DAX như sau:
+
+```
+Abel's Cases =
+CALCULATE ( [Total Cases], SalesPeople[SALESPERSON] = "abel" )
+```
+
+Trên thực tế thì biểu thức trên đã được DAX chuyển đổi thành:
+
+```
+Abel's Cases Real =
+CALCULATE (
+    [Total Cases],
+    FILTER ( ALL ( SalesPeople[SALESPERSON] ), SalesPeople[SALESPERSON] = "abel" )
+)
+```
+
+Và như các bạn thấy thì Column Fitler đã bị chuyển đổi thành Table Filter. Trước đó trong Phần 7 về [Table Functions](#7-table-functions), mình có phân tách Filters thành Table và Column. Nhưng thực tế thì không phải như vậy, tất cả các bộ lọc trong DAX đều là Table Filter. Bộ lọc ban đầu đã bị xóa bởi hàm ALL và sau đó bộ lọc mới được thêm vào.
+
+{{< figure src="./14-data-expansion/data-model2.jpg" width=70% >}}
+
+### 14.2. Expanded Tables
+
+Khi các chỉ số được đánh giá, các mối quan hệ One-to-Many cho phép DAX mở rộng bảng hiện tại (base table) bằng cách thêm tất cả các cột từ các bảng có liên quan với chúng. Thông thường bảng ở phía Many của mối quan hệ, sẽ được mở rộng bởi các thông tin từ các bảng ở phía One của mối quan hệ. Ví dụ như trong Data Model của chúng ta, có ba bảng có thể mở rộng là bảng **Winesales, Customers, Regions**. Bảng **Winesales** được mở rộng sẽ chứa tất cả các cột từ tất cả các bảng trong Data Model. Bảng **Customers** được mở rộng sẽ chứa tất cả các cột từ bảng **Regions** và **Region Group**. Cuối cùng, bảng **Regions** được mở rộng sẽ chứa tất cả các cột từ bảng **Region Groups**.
+
+{{< figure src="./14-data-expansion/data-model3.jpg" width=80% >}}
+
+Và khi một bộ lọc được áp dụng thì tất cả các bảng mà chứa cột đó cũng được áp dụng. Đó cũng là lý do mà chúng ta có thể lọc các dữ liệu trong bảng FACT sử dụng các giá trị trong bảng DIM khi mà các giá trị này không tồn tại trong bảng FACT. Tương tự khi một bộ lọc bị xóa bằng hàm ALL thì tất cả các bảng mà chứa cột đó cũng được áp dụng
+
+Các mối quan hệ trong Data Models chỉ tồn tại để mở rộng bảng, và tất cả các tham chiếu đến các bảng trong Data Model trên thực tế là tham chiếu đến bảng được mở rộng.
+
+Ví dụ, khi sử dụng một bảng làm tham số lọc bên trong hàm CALCULATE thì bảng này là bảng mở rộng và chúng ta có thể tham chiếu đến các cột trong bảng mở rộng này và cũng có thể sử dụng bảng mở rộng để lọc dữ liệu bên trong các bảng cơ sở _(base table)_.
+
+```
+Distinct Regions =
+CALCULATE ( COUNTROWS ( Regions ), Winesales )
+```
+
+{{< figure src="./14-data-expansion/data-model4.jpg" width=80% >}}
+
+Đầu tiên, cột `WINE` trong bản **Wines** được sử dụng để lọc cột `WINE` bên trong bảng mở rộng **Winesales**. Sau đó, do bảng mở rộng **Winesales** chứa tất cả các cột trong bảng **Regions** nên bảng mở rộng **Winesales** được sử dụng để lọc `REGION` từ bảng cơ sở **Regions**.
+
+### 14.3. Hàm CALCULATETABLE
+
+Hàm CALCULATETABLE tương tự như hàm CALCULATE, chỉ khác là hàm này sẽ tạo ra một bảng thay vì một giá trị vô hướng như hàm CALCULATE. Hàm CALCULATETABLE giúp tạo ra 1 bảng tính mới từ 1 bảng tính gốc trong đó đã được lọc theo những tiêu chí nhất định. Cú pháp:
+
+```
+CALCULATETABLE (table or table expression, filter1, filter2 etc.)
+```
+
+Trong đó:
+
+- **table or table expression**: Là các bảng mà bạn muốn trả về.
+- **filter**: được sử dụng để lọc các giá trị bên trong table.
+
+Hàm CALCULATETABLE đôi khi được sử dụng tương tự như hàm FILTER, tuy nhiên hai hàm này có một điểm khác nhau. Đó là hàm FILTER sẽ không sửa đổi filter context, nếu không có giá trị FILTER sẽ bỏ qua. Ngược lại hàm CALCULATETABLE sẽ sửa đổi. Ví dụ:
+
+```
+Sales of Red Wines Filter =
+ CALCULATE ( [Total Sales],
+   FILTER ( Wines, Wines[TYPE] = "red" )
+)
+```
+
+```
+Sales of Red Wines CalculateTable =
+CALCULATE ( [Total Sales],
+    CALCULATETABLE ( Wines, Wines[TYPE] = "red" )
+)
+```
+
+{{< figure src="./14-data-expansion/calculatetable.jpg" width=80% >}}
+
 ## 15. Tài liệu tham khảo
 
 Bài viết này, mình tổng hợp lại các kiến thức dựa trên quyển sách _[Up and Running with DAX for Power BI : A Concise Guide for Non-Technical Users](https://learning.oreilly.com/library/view/up-and-running/9781484281888/)_ của _Alison Box_.
