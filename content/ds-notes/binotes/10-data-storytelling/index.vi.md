@@ -1,9 +1,9 @@
 ---
-title: "Day 6 - Descriptive analytics"
+title: "Day 10 - Data storytelling"
 subtitle: ""
-slug: 06-descriptive-analytics
-date: 2022-07-01
-lastmod: 2022-07-01
+slug: 10-data-storytelling
+date: 2022-07-20
+lastmod: 2022-07-20
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
@@ -11,7 +11,7 @@ images: []
 tags: ["BI"]
 categories: []
 series: [BI Course Notes]
-series_weight: 6
+series_weight: 10
 toc:
   enable: true
 license: ""

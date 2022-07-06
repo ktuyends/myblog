@@ -1,16 +1,16 @@
 ---
-title: "MLF - Linear Algebra"
+title: "DaDM - Data Preparation"
 subtitle: ""
-slug: 01-linear-algebra
-date: 2022-07-01
-lastmod: 2022-07-01
+slug: dadm-01-data-preparation
+date: 2022-07-02
+lastmod: 2022-07-02
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
 images: []
-tags: ["Math", "Linear Algebra"]
+tags: ["BI", "DAX", "Data Modeling"]
 categories: []
-series: [Machine Learning Foundations]
+series: [DAX and Data Modeling]
 series_weight: 1
 toc:
   enable: true
@@ -19,6 +19,4 @@ hiddenFromHomePage: false
 lightgallery: true
 ---
 
-```python
-
-```
+<!--more-->

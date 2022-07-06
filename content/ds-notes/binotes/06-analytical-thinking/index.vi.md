@@ -1,9 +1,9 @@
 ---
-title: "Day 7 - Diagnostic analytics"
+title: "Day 6 - Analytical Thinking"
 subtitle: ""
-slug: 07-diagnostic-analytics
-date: 2022-07-05
-lastmod: 2022-07-05
+slug: 06-analytical-thinking
+date: 2022-06-28
+lastmod: 2022-06-28
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
@@ -11,7 +11,7 @@ images: []
 tags: ["BI"]
 categories: []
 series: [BI Course Notes]
-series_weight: 7
+series_weight: 6
 toc:
   enable: true
 license: ""

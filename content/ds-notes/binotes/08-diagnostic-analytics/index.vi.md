@@ -1,9 +1,9 @@
 ---
-title: "Day 8 - Data visualization"
+title: "Day 8 - Diagnostic analytics"
 subtitle: ""
-slug: 08-data-visualization
-date: 2022-07-12
-lastmod: 2022-07-12
+slug: 08-diagnostic-analytics
+date: 2022-07-05
+lastmod: 2022-07-05
 draft: false
 authors: ["Tuyen Kieu"]
 description: ""
