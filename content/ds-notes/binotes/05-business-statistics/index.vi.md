@@ -129,6 +129,24 @@ Hệ số tương quan _(Correlation)_ được sử dụng để mô tả về 
 
 {{< figure src="./01-descriptive-statistics/correlation_coefficient.png" >}}
 
+{{< admonition type=notes title="Excel Functions" open=true >}}
+
+Một số hàm Excel thường sử dụng cho thống kê mô tả:
+
+- Trung bình: AVERAGE
+- Trung vị: MEDIAN
+- Mode: MODE
+- Độ lệch chuẩn: STDEV.S _(sample)_
+- Hệ số biến thiên: STDEV.S/AVERAGE
+- Khoảng biến thiên: MAX - MIN
+- Phân vị: QUARTILE.EXC
+- Skewness: SKEW
+- Covariance: COVARIANCE.S
+- Hệ số tương quan: CORREL
+- Tần số: FREQUENCY
+
+{{< /admonition >}}
+
 ## 2. Inferential Statistics
 
 ### 2.1. Population và Sample

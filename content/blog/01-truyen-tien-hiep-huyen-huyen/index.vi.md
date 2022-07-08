@@ -45,17 +45,18 @@ lightgallery: true
 16. Đại Quản Gia Là Ma Hoàng _(770/1312)_
 17. Vũ Luyện Đỉnh Phong _(3282/6003)_
 18. Toàn Cầu Cao Võ _(770/1437)_
-19. Vũ Thần Chúa Tể _(2793/?)_
-20. Nhất Kiếm Độc Tôn _(1975/?)_
-21. Ta Có Một Thân Bị Động Kỹ _(810/?)_
-22. Vạn Cổ Thần Đế _(3480/?)_
-23. Cửu Tinh Bá Thể Quyết _(4800/?)_
-24. Mink Đường Phố Số 13 _(350/?)_
-25. Dạ Mệnh Danh Thuật _(750/?)_
+19. Vũ Thần Chúa Tể _(2793)_
+20. Nhất Kiếm Độc Tôn _(1975)_
+21. Ta Có Một Thân Bị Động Kỹ _(810)_
+22. Vạn Cổ Thần Đế _(3480)_
+23. Cửu Tinh Bá Thể Quyết _(4800)_
+24. Mink Đường Phố Số 13 _(350)_
+25. Dạ Mệnh Danh Thuật _(750/)_
 26. Tinh Môn _(626/626)_
+27. Thâm Không Bỉ Ngạn _(870)_
 
 #### Đang đọc:
 
-27. Thâm Không Bỉ Ngạn _(866)_
-28. Xích Tâm Tuần Thiên _(1710)_
-29. Quan Âm Chi Ngoại _(79)_
+28. Xích Tâm Tuần Thiên _(1711)_
+29. Quan Âm Chi Ngoại _(82)_
+30. Hồn Chủ _(153)_

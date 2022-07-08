@@ -1,5 +1,5 @@
 ---
-title: "Day 3 - Data modeling (theory)"
+title: "Day 3 - Data modeling"
 subtitle: ""
 slug: 03-data-modeling-theory
 date: 2022-05-26

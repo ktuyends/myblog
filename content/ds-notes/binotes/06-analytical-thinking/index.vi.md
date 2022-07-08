@@ -1,5 +1,5 @@
 ---
-title: "Day 6 - Analytical Thinking"
+title: "Day 6 - Analytical thinking"
 subtitle: ""
 slug: 06-analytical-thinking
 date: 2022-06-28
