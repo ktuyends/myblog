@@ -19,12 +19,11 @@ lightgallery: true
 
 ## 1. Một số việc muốn làm
 
-- Mua vali
-- Xây dựng lại tủ quần áo
+- Buy Vali American Tourister Visby
 - Vòng cổ
-- Nước hoa
+- Body mist
 - Dung dịch VS
-- Tủ giày (Dr, sneaker trắng, thể thao)
+- Tủ giày (Dr, Puma, New Balance)
 - Trekking
 - Nhảy dù
 - Đi HCM
@@ -34,7 +33,6 @@ lightgallery: true
 - Một SĐT mới
 - Một tài khoản mới
 - Kiếm tiền
-- Con đường nào cho tương lai
 
 ## 2. Jumping Ropes
 
